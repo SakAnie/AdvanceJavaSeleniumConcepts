@@ -1,0 +1,75 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2636
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Georgia;\f1\fnil\fcharset0 Georgia-Italic;\f2\fnil\fcharset0 Menlo-Regular;
+\f3\fnil\fcharset0 Menlo-Bold;}
+{\colortbl;\red255\green255\blue255;\red251\green2\blue7;\red0\green0\blue0;\red128\green0\blue128;
+\red0\green0\blue0;\red0\green0\blue255;\red251\green2\blue255;\red153\green102\blue51;}
+{\*\expandedcolortbl;;\cssrgb\c100000\c14913\c0;\csgray\c0;\cssrgb\c57919\c12801\c57269;
+\cssrgb\c0\c0\c0;\cssrgb\c1680\c19835\c100000;\cssrgb\c100000\c25279\c100000;\cssrgb\c66800\c47512\c25860;}
+\paperw11900\paperh16840\margl1011\margr1011\margb1445\margt1011\vieww14000\viewh16000\viewkind1\viewscale220
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Selenium - Notes- 1\
+===============\
+\
+
+\f1\i \cf2 1. How to set JAVA_HOME in mac?
+\f0\i0 \cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f2\fs22 \cf3 \CocoaLigature0 \
+apple@Apples-MacBook-Air ~ % vim ~/.bash_profile\
+\
+write:-\
+========\
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-17.0.1.jdk/Contents/Home\
+\
+\
+apple@Apples-MacBook-Air ~ % source ~/.bash_profile\
+apple@Apples-MacBook-Air ~ % echo $JAVA_HOME\
+/Library/Java/JavaVirtualMachines/jdk-17.0.1.jdk/Contents/Home\
+\
+\
+2.		Prog1_Gettingstarted with Selenium \
+=============================================\
+\
+// Here, \cf2 ChromeDriver\cf3  is a class which has selenium methods . this class implements \cf4 WebDriver\cf3  \cf4 interface\cf3 . Similarly, \cf2 FirefoxDriver\cf3  is also a class which has same methods as ChromeDriver & it also \cf2 implements\cf3  WebDriver interface.\
+\
+\
+//\cf2 ChromeDriver\cf3  class not only implements the WebDriver interface but on the top of that they also h\cf2 ave their own exclusive methods\
+\cf3 \
+
+\f3\b \cf4 Interface?
+\f2\b0 \cf3 \
+it is a group of related methods which have \cf2 empty body(abstract methods)\cf3 . It provides a \cf2 blueprint/Contractual obligation\cf3  to the classes which implements them. Those classes responsibility is to implement those abstract methods. The class must provide the full definition of the declared abstract methods inside that interface. \
+\
+\cf2 \'93Interface enforces the class to follow the contract\'94\
+\
+\cf5 Interview Concepts:\
+--------------------\cf2 \
+\cf3 ChromeDriver \cf6 driver1\cf3 =new ChromeDriver();\
+//\cf6 driver1\cf3  obj has \cf6 access to all methods inside ChromeDriver class\cf3 \
+\
+FirefoxDriver driver2=new FirefoxDriver();\
+\
+WebDriver \cf7 driver3\cf3 =new ChromeDriver();\
+//\cf7 driver3\cf3  has \cf7 access to only the WebDriver interface methods which are implemented by the ChromeDriver class , not the specific class methods which are exclusive to chromeDriver\
+\
+\cf5 //What is Driver Server executer (chromedriver.exe , geckodriver.exe -firefox) & why needed?\
+\cf8 chrome key- > 
+\f3\b webdriver.chrome.driver
+\f2\b0 \
+firefox key-> 
+\f3\b webdriver.gecko.driver\
+
+\f2\b0 Edge->
+\f3\b  webdriver.edge.driver
+\f2\b0 \cf7 \
+\cf8 Selenium can\'92t directly access any browser, it needs 
+\f3\b a middle man proxy
+\f2\b0  who can give the selenium the control of that particular browser\
+\
+\cf5 3. Difference between driver.close() & driver.quit()?\
+\cf4 driver.quit()\cf5  is better because all associated windows are closed which were opened by selenium during the script execution. \cf4 It quits the driver.\cf5 \
+\
+\cf4 driver.close()\cf5  only \cf4 closes the current browser\cf5  where the execution control is. \
+}{\*\beandata789c9d935d6f82301486aff157748db752d876b12d8851c1c4cc2099b86497153a65e32ba5cef1ef57444aeb66b68c1bda73fabe4f7b4e6b8d3ed3047c105ac6793684a66e4040b2308fe26c3b84eb6036b88323bb675d39cb69f0e2bba048e292017f3d59cca7000e101a17454210720207f88bf92a00dc0321d78300ee182b1e103a1c0e3aae57e9619ed60b4be4d3bc2094550b6e36e0023d6211e498c65dd90e8f4671c8ec9e66bd93caee631aee62bec242f594474b46f9666d6ff5482a128d45fa146f75f9e68d84ac14324c29ae07c2a09fed934492692d573b3984092e855e4e37f9e9acbf9e3b5d5eb3e28c912da1f6ad85dae1518854636fa5f39fec2cf6a6502e603aceb5ca5140a8f36ca16715f93ff7e64fdc2eda567ce28ebd27f6ead6f78d778ef1e866cf48f9dcf4dfdba71ba591d2490dd334ee0df5c03ff68b5c3a9fb8360e57711aa6958c92572c8f8552b2dfead9d0329c1289f70b4354a4736bbc585e887b2a8a56cf2704670e665830cece7cde24513053ad540756ded6e9e109b6501bf52759b43a0b1d5facddfb02aa1d4161}

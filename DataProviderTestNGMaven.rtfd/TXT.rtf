@@ -1,0 +1,582 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2636
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Georgia;\f1\fnil\fcharset0 Georgia-BoldItalic;\f2\fnil\fcharset0 Georgia-Bold;
+\f3\fnil\fcharset0 Galvji-Bold;\f4\fnil\fcharset0 Menlo-Bold;\f5\fnil\fcharset0 Menlo-Regular;
+\f6\fnil\fcharset0 Menlo-BoldItalic;\f7\fnil\fcharset0 Menlo-Italic;\f8\fnil\fcharset0 MarkerFelt-Thin;
+}
+{\colortbl;\red255\green255\blue255;\red251\green2\blue7;\red127\green0\blue128;\red0\green0\blue0;
+\red100\green100\blue100;\red42\green0\blue255;\red127\green0\blue85;\red106\green62\blue62;\red0\green0\blue192;
+\red181\green137\blue0;\red38\green139\blue210;\red147\green161\blue161;\red133\green153\blue0;\red42\green161\blue152;
+\red63\green127\blue95;\red242\green156\blue33;\red252\green102\blue102;\red33\green255\blue6;\red235\green148\blue207;
+}
+{\*\expandedcolortbl;;\cssrgb\c100000\c14913\c0;\cssrgb\c57919\c12801\c57269;\cssrgb\c0\c0\c0;
+\csgenericrgb\c39216\c39216\c39216;\csgenericrgb\c16471\c0\c100000;\csgenericrgb\c49804\c0\c33333;\csgenericrgb\c41569\c24314\c24314;\csgenericrgb\c0\c0\c75294;
+\csgenericrgb\c70980\c53725\c0;\csgenericrgb\c14902\c54510\c82353;\csgenericrgb\c57647\c63137\c63137;\csgenericrgb\c52157\c60000\c0;\csgenericrgb\c16471\c63137\c59608;
+\csgenericrgb\c24706\c49804\c37255;\csgenericrgb\c95000\c61000\c13000;\cssrgb\c100000\c49327\c47400;\cssrgb\c0\c97680\c0;\csgenericrgb\c92000\c58000\c81000;
+}
+\paperw11900\paperh16840\margl1011\margr1011\margb1445\margt1011\vieww14000\viewh16000\viewkind1\viewscale220
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f0\fs18 \cf0 TESTNG CONCEPT , PARAMTERIZATION, DATA-PROVIDER ,READ DATA FROM EXCEL SHEET\
+===================================\
+\
+1. TESTNG\
+=========\
+- \cf2 Using TestNG, we can have control over our test case execution\cf0 \
+-Testing 
+\f1\i\b New Generation
+\f0\i0\b0 \
+-unit testing framework\
+-available as open source in form of jar(library)\
+- used only by 
+\f1\i\b JAVA developers & testers\
+-
+\f0\i0\b0 it has all features of JUNIT plus additional advantages like:-\
+\
+A. 
+\f2\b ANNOTATIONS :\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf3 (i)PreCondition annotations:\cf0 \
+\
+@BeforeSuite\
+@BeforeTest\
+@BeforeClass\
+@BeforeMethod\
+\
+\cf3 (ii)Test annotation:\cf0 \
+@Test\
+\
+\cf3 (iii)Postcondition annotation:\cf0 \
+@AfterMethod\
+@AfterClass\
+@AfterTest\
+@AfterSuite\
+\
+\
+SEQUENCE OF EXECUTION:-\
+\cf3 @BeforeSuite\
+@BeforeTest 
+\f0\b0 \cf4 <scope of execution only within the class>\
+
+\f2\b \cf3 @BeforeClass 
+\f0\b0 \cf4 <scope of execution only within 
+\f2\b \cf3 the class>\
+@BeforeMethod\
+@Test\
+@AfterMethod\
+@AfterTest
+\f0\b0 \cf4 <scope of execution only within the class>\
+
+\f2\b \cf3 @AfterClass 
+\f0\b0 \cf4 <scope of execution only within the class>\
+
+\f2\b \cf3 @AfterSuite\
+\
+\cf0 \
+\
+OTHER ADVANTAGES OF TestNG:\
+==========================\
+1)(@Beforesuite,@BeforeTest,@BeforeClass,@BeforeMethod  order)\
+@AfterMethod,@AfterClass,@AfterTest,@AfterSuite\
+suit>test>packages>class>method\
+\
+2)Priority,\
+3)Listeners\
+4)dependsonMethods,\
+5)include,\
+6)exclude lot of manipulations,\
+7)parameterization,\
+8)dataprovider,\
+ 9)groups,\
+10)TestNG Assertion . Assert.assertRrue etc\
+)\
+\
+1) It provides us capability of testNg xmls where we can arrange the Tests Module wise for logical classification.\
+\cf2 XML hierarchy:\
+suite>test>packages>classes>methods\
+\
+in-order to execute regression tests if we want the package to run all of its tests , then use PFB\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf2 {{\NeXTGraphic Screenshot 2022-02-23 at 1.33.54 AM.png \width10100 \height3980 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf0 {{\NeXTGraphic Screenshot 2022-02-23 at 1.07.58 AM.png \width9860 \height6160 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf0 \
+2)Open source framework: easy to configure
+\f0\b0 \
+
+\f2\b 3)we can customise test execution SEQUENCE
+\f0\b0 \
+4)
+\f2\b we can PRIORITISE tests using priority attribute
+\f0\b0 \
+@Test(
+\f2\b \cf3 priority=1)\cf0 ,
+\f0\b0 @Test(priority=2)\
+the 1st will execute before 2\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf2 \
+Please note:The scope of priority attribute is within the same class only. for example, if a test has priority 1 in one class and same priority in other class . if we run the entire test suite together then the test which is mentioned in the class defined before in the testng.xml will be executed\
+\
+by default, the alphabetical order of method name decides the order of execution of the function written under @Test.\cf0 \
+5)
+\f2\b we can generate HTML reports
+\f0\b0 \
+6)
+\f2\b Data PARAMETERISATION
+\f0\b0  (@DataProvider etc)\
+7)\cf2 VVI:I have 100test cases , i want to only few specific out of those 100 from the test suite what will i do?\cf0 \
+We can distribute tests in 
+\f2\b GROUPS\
+@Test(\cf3 groups=\{\'93title\'94\})\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f0\b0 \cf4 tag all tests  across different classes which you want to group together with the above notation and then use this in testRunner file xml.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf4 {{\NeXTGraphic Screenshot 2022-03-01 at 3.34.11 PM.png \width28800 \height18000 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf4 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f2\b \cf3 it will only run tests which are defined with group annotation\
+\
+\cf0 \
+8)TestNg ASSERTIONS\
+\
+HARD ASSERTS\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f0\b0 \cf0 If they fail then further code are not executed
+\f2\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f0\b0 \cf3 Assert.assertEquals(String actual,String expected)\
+Assert.assertEquals(String actual,String expected,String err_message)\
+Assert.assertEquals(boolean actual, boolean expected)\
+Assert.assertTrue(condition)\
+Assert.assertFalse(condition)\
+Assert.assertTrue(condition,errmsg)\
+Assert.assertFalse(condition,errmsg)
+\f2\b \cf0 \
+\
+SOFT ASSERT\
+
+\f0\b0 \cf3 sofAssert saasert=new softAssert();\
+saassert.assertAll();\cf0 \
+
+\f2\b \
+TestNG HELPER attributes:\
+(i)enabled\
+(ii)dependsOnMethods\
+(iii) timeout\
+\
+9) DISABLE A TEST\
+\cf3 @Test(enabled=\'93False\'94)\cf0 \
+\
+When we know some known bug in the system and we want to ignore that test for reporting purpose , we set that test to enabled=\'93False\'94 until the bug is resolved \
+\
+WHAT IS A DEPENDENCY IN TESTNG? \cf2 VI for interview\cf0 \
+
+\f0\b0 \cf3 @Test(
+\f2\b dependOnMethods=\'93LoginTest
+\f0\b0 \'94)\cf0 \
+public void homePageLaunched()\{\
+\}\
+the function will execute only when the LoginTest Method is PASS.\
+\
+if your test depends upon multiple methods then\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f3\b \cf2 @Test(dependOnMethods=\'93LoginTest\'94,\'94WebPageLogin\'94)
+\f0\b0 \cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f2\b \cf0 HOW CAN YOU EXECUTE A TEST N NO OF TIMES USING TESTNG?
+\f0\b0 \
+\cf3 @Test(
+\f2\b invocationCount=8)\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f0\b0 \cf0 public void print()\{\
+\}\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f2\b \cf0 HOW CAN YOU TERMINATE A TEST IN TESTNG?
+\f0\b0 \
+@Test(
+\f2\b \cf3 timeout=5000)
+\f0\b0 \cf0 \
+This will mark the test case as FAILED if it takes more than 5seconds\
+\
+\'93when we know some particular test does take more time for execution\'94\
+\
+
+\f2\b HOW CAN YOU BYPASS AN EXCEPTION IN TESTNG?
+\f0\b0 \
+@Test(
+\f2\b \cf3 expectedException=numberFormatException)
+\f0\b0 \cf0 \
+the test will pass ignoring the expected exception\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f2\b \cf4 HOW CAN YOU SKIP ANY TEST IN TESTNG? \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f0\b0 \cf4 method1:\
+using 
+\f2\b \cf2 <exclude>
+\f0\b0 \cf4  in testng XML under <methods>\
+\
+method2: \
+using 
+\f2\b \cf2 <include>
+\f0\b0 \cf4  in testNg XML under <methods> . it will only include the specified test(method) and will exclude rest methods under that Class.\
+\
+PFB screenshot:
+\f2\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f0\b0 \cf0 \
+public void skipExc()\{\
+throw new \cf3 skipException\cf0 (\'93Skipping skipexc);\
+\}\
+or in the testNG XML file(Runner file)\
+exclude the method(TestCase) as shown below\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf0 {{\NeXTGraphic Screenshot 2022-02-23 at 1.15.47 AM.png \width15160 \height4400 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf0 \
+\
+If we want to exclude multiple n no of tests together, then make the use of 
+\f2\b \cf2 regular expression
+\f0\b0 \cf0  for the same.\
+Example:\
+<exclude name=\'93Mobile.*\'94/>\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f2\b \cf0 WHERE IS THE REPORT GENERATED IN TESTNG?
+\f0\b0 \
+test-output folder->index.html\
+\
+\
+\
+\
+
+\f2\b TYPES OF PARAMETERISATION IN TESTNG\
+\
+1. @Parameters\
+2.@DataProvider
+\f0\b0 \
+\
+\
+\
+\
+2. PARAMETERIZATION IN TESTNG\
+=========================\
+when we have 
+\f2\b small  data set , then we use @Parameters. 
+\f0\b0 but when more  data sets needs to be feed to the tests then @DataProvider\
+\
+We can use testng.xml file to pass the \cf2 value\cf0  of the parameters defined in the class where test case method is defined using @Parameters .\
+\
+\cf3 public class passingParameters\{\cf0 \
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf2 @Parameters(\{\'93user_name\'94,\'94password\'94\})\
+\cf0 @Test\
+public void loginApp(\cf2 String user_name,String password\cf0 )\
+\{\
+driver.get(..);\
+driver.findElement({\field{\*\fldinst{HYPERLINK "http://By.id"}}{\fldrslt By.id}}(\'93login\'94)).sendKeys(\cf2 user_name\cf0 );\
+driver.findElement(By.password(\'93password\'94)).sendKeys(\cf2 password\cf0 );\
+\}\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf3 \}\cf0 \
+testNg.xml file \
+==========\cf2 \
+we can put parameter: VVI\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\fs28 \cf2 (i) at suite level \
+(ii)at test level.\
+\'93If the parameter is written under ,Suite tag , then its set at Suite level.\
+If the parameter is written under Test tag, then its set at test level.\'94
+\fs18 \cf0 \
+\
+we can put different parameters values for the same parameter across different test cases as well\
+\
+<Suite name=\'93suitename\'94>\
+<test name=\'93testname1\'94>\
+<parameter name=\'93\cf3 user_name\cf0 \'94 \cf2 value=\'93user1\'94/>\cf0 \
+<parameter name=\'93\cf3 password\cf0 \'94 \cf2 value=\'93password1/\'94/>\cf0 \
+<Classes>\
+<class name=\'93\cf3 PassingParameters\cf0 \'94/> //we can mention list of classes here\
+</Classes>\
+</test>\
+\
+<test name=\'93testname2\'94>\
+<parameter name=\'93\cf3 user_name\cf0 \'94 \cf2 value=\'93user2\'94/>\cf0 \
+<parameter name=\'93\cf3 password\cf0 \'94 \cf2 value=\'93password2/\'94/>\cf0 \
+<Classes>\
+<class name=\'93\cf3 PassingParameters\cf0 \'94/> //we can mention list of classes here\
+</Classes>\
+</test>\
+</Suite>\
+\
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f4\b \cf0 testClass
+\f5\b0 \
+\pard\pardeftab720\partightenfactor0
+\cf5 @Parameters\cf0 (\{ \cf6 "username"\cf0 , \cf6 "password"\cf0  \})\
+\cf5 @Test\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f4\b \cf7 public
+\f5\b0 \cf0  
+\f4\b \cf7 void
+\f5\b0 \cf0  setData(String \cf8 username\cf0 , String \cf8 password\cf0 ) \{\
+		System.
+\f6\i\b \cf9 out
+\f5\i0\b0 \cf0 .println(\cf6 "The username is"\cf0  + \cf8 username\cf0 );\
+		System.
+\f6\i\b \cf9 out
+\f5\i0\b0 \cf0 .println(\cf6 "The password is"\cf0  + \cf8 password\cf0 );\
+\
+	\}\
+\
+\
+
+\f4\b testNg.xml
+\f5\b0 \
+\pard\pardeftab720\partightenfactor0
+\cf10 <?\cf11 xml\cf12  version\cf10 =\cf12 "\cf10 1.0\cf12 " encoding\cf10 =\cf12 "\cf10 UTF-8\cf12 "\cf10 ?>\cf0 \
+<!\cf13 DOCTYPE\cf0  \cf11 suite\cf0  SYSTEM "https://testng.org/testng-1.0.dtd">\
+<\cf11 suite\cf0  \cf12 thread-count\cf0 =\cf12 "\cf14 2\cf12 "\cf0  \cf12 name\cf0 =\cf12 "\cf14 Suite\cf12 "\cf0 >\
+	<\cf11 parameter\cf0  \cf12 name\cf0 =\cf12 "\cf14 username\cf12 "\cf0  \cf12 value\cf0 =\cf12 \'93\cf14 ch\cf12 aku\'94\cf0 ></\cf11 parameter\cf0 >\
+	<\cf11 parameter\cf0  \cf12 name\cf0 =\cf12 "\cf14 password\cf12 "\cf0  \cf12 value\cf0 =\cf12 "\cf14 Mauri\cf12 "\cf0 ></\cf11 parameter\cf0 >\
+	<\cf11 test\cf0  \cf12 thread-count\cf0 =\cf12 "\cf14 2\cf12 "\cf0  \cf12 name\cf0 =\cf12 "\cf14 Test\cf12 "\cf0 >\
+		<\cf11 classes\cf0 >\
+			<\cf11 class\cf0  \cf12 name\cf0 =\cf12 "\cf14 ./dataProviderExample.java\cf12 "\cf0 ></\cf11 class\cf0 >\
+		</\cf11 classes\cf0 >\
+	</\cf11 test\cf0 > \cf12 <!-- Test -->\cf0 \
+</\cf11 suite\cf0 > \cf12 <!-- Suite -->\cf0 \
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f0 \cf0 \
+\
+\
+\
+3.DATA-PROVIDER\
+===============\
+- When we have 
+\f2\b very large data set needs to be applied on. a single test-case during automation,
+\f0\b0  then we use DataProvider.\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f2\b \cf0 -DataProvider 
+\f0\b0 is a method  which is annotated using 
+\f2\b \cf3 @DataProvider
+\f0\b0 \cf0  & it returns\
+- 
+\f2\b \cf2 2D-Array Of Objects to the java test method which is using it\cf0 \
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f0\b0 \cf0 -First Dimension: Contains \'91
+\f2\b Data-Set\'92
+\f0\b0 \
+-Second Dimension: Contains \'91
+\f2\b parameter Values\'92\
+\
+
+\f0\b0 -It can be defined in the s
+\f2\b ame class
+\f0\b0  or in t
+\f2\b he super class
+\f0\b0 \
+-If we use DataProvider in different class , then the data-provider method needs to be 
+\f2\b \cf2 static
+\f0\b0 \cf0 .\
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f4\b \cf7 public
+\f5\b0 \cf0  
+\f4\b \cf7 class
+\f5\b0 \cf0  dataProviderExample \{\
+\
+	\cf5 @Test\cf0 (dataProvider = \cf6 "getData"\cf0 )\
+	
+\f4\b \cf7 public
+\f5\b0 \cf0  
+\f4\b \cf7 void
+\f5\b0 \cf0  setData(String \cf8 username\cf0 ,String \cf8 password\cf0 ) \{\
+		System.
+\f6\i\b \cf9 out
+\f5\i0\b0 \cf0 .println(\cf6 "The username is"\cf0 +\cf8 username\cf0 );\
+		System.
+\f6\i\b \cf9 out
+\f5\i0\b0 \cf0 .println(\cf6 "The password is"\cf0 +\cf8 password\cf0 );\
+\
+	\}\
+\
+	\cf5 @DataProvider\cf0 \
+	
+\f4\b \cf7 public
+\f5\b0 \cf0  Object[][] getData() \{\
+		Object[][] \cf8 data\cf0  = 
+\f4\b \cf7 new
+\f5\b0 \cf0  Object[3][2];\
+\
+		\cf15 // 1st row\cf0 \
+		\cf8 data\cf0 [0][0] = \cf6 "Sakshi1"\cf0 ;\
+		\cf8 data\cf0 [0][1] = \cf6 "Password_Sakshi1"\cf0 ;\
+		\
+		\cf15 // 2nd row\cf0 \
+		\cf8 data\cf0 [1][0] = \cf6 "Sakshi2"\cf0 ;\
+		\cf8 data\cf0 [1][1] = \cf6 "Password_Sakshi2"\cf0 ;\
+		\
+		\cf15 // 3rd row\cf0 \
+		\cf8 data\cf0 [2][0] = \cf6 "Sakshi3"\cf0 ;\
+		\cf8 data\cf0 [2][1] = \cf6 "Password_Sakshi3"\cf0 ;\
+\
+		
+\f4\b \cf7 return
+\f5\b0 \cf0  \cf8 data\cf0 ;\
+\
+	\}\
+\
+\}\
+\
+\pard\pardeftab720\partightenfactor0
+\cf15 //Second DataProvider\cf0 \
+	\cf5 @DataProvider\cf0 (name = \cf6 "getData2"\cf0 )\
+	
+\f4\b \cf7 public
+\f5\b0 \cf0  Object[][] getData2() \{\
+		Object[][] \cf8 \ul \ulc8 data\cf0 \ulnone  = 
+\f4\b \cf7 new
+\f5\b0 \cf0  Object[3][2];\
+\
+		
+\f4\b \cf7 return
+\f5\b0 \cf0  
+\f4\b \cf7 new
+\f5\b0 \cf0  Object[][] \{ \{ \cf6 "Anie1"\cf0 , \cf6 "Password1"\cf0  \}, \{ \cf6 "Anie2"\cf0 , \cf6 "Password2"\cf0  \}, \{ \cf6 "Anie3"\cf0 , \cf6 "Password3"\cf0  \} \};\
+\
+	\}\
+\pard\pardeftab720\partightenfactor0
+
+\f7\i \cf0 \
+\
+
+\f5\i0 \
+\
+\
+EXAMPLE2:
+\f2\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf0 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f5\b0 \cf0 \cb16 //Test_POST\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f8 \cf17 @DataProvider(name=\'93dataForPost\'94)\
+\pard\pardeftab720\partightenfactor0
+
+\f5 \cf4 public Object[][] dataForPost()\{\
+\
+Object[][] data=new Object[2][3]; //to read from csv\
+data[0][0]=\'93Rahul\'94;//object type can read any dataType\
+data[0][1]=\'93Singh\'94;\
+data[0][2]=1;\
+\
+data[1][0]=\'93Raj\'94;\
+data[1][1]=\'93Verma\'94;\
+data[1][2]=2;\
+\
+return data;\
+\
+\}
+\f8 \cf17 \
+\pard\pardeftab720\partightenfactor0
+
+\f5 \cf0 \
+\
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f8 \cf17 @Test(DataProvider=\'93dataForPost\'94)
+\f5 \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf4 public void test_post(String firstName,String lastName,int SubjectID)\cf18 \{\
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb19 //Create the request Body\cb1 \
+		\
+		JSONObject \cf8 requestBody\cf0 =
+\f4\b \cf7 new
+\f5\b0 \cf0  JSONObject();\
+		\cf8 \ul requestBody\cf0 \ulc0 .put(\cf6 \ulc6 \'93firstName\cf0 \ulc0 , \cf4 \ulnone firstName\cf0 \ul )\ulnone ;\
+		\cf8 \ul \ulc8 requestBody\cf0 \ulc0 .put(\cf6 \ulc6 \'93lastName\cf0 \ulc0 ,\cf4 \ulnone lastName\cf0 \ul )\ulnone ;\
+\pard\pardeftab720\partightenfactor0
+\cf8 \ul \ulc8 		requestBody\cf0 \ulc0 .put(\cf6 \ulc6 \'93subJectID\cf0 \ulc0 ,\cf4 \ulnone SubjectID\cf0 \ul )\ulnone ;\
+\
+\cf8 \ul \ulc8 		\cf0 \ulnone \
+\pard\pardeftab720\partightenfactor0
+\cf4 //BASEURI\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f7\i \cf9 		baseURI
+\f5\i0 \cf0 =\cf6 "https://reqres.in/api"\cf0 ;\
+	    \
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb19 //Send the request body and assert the response\cb1 \
+		
+\f7\i given
+\f5\i0 ()\
+			.header(\cf6 "Content-Type"\cf0 ,\cf6 "application/json"\cf0 )\
+			.contentType(ContentType.
+\f6\i\b \cf9 JSON
+\f5\i0\b0 \cf0 )\
+			.accept(ContentType.
+\f6\i\b \cf9 JSON
+\f5\i0\b0 \cf0 )\
+			.body(\cf8 requestBody\cf0 .toJSONString())\
+		.when()\
+			.post(\cf6 "/users"\cf0 )\
+		.then()\
+			.statusCode(201)\
+			.log().all(); \cf15 //to log the whole response \ul Json\ulnone  in the console\cf0 \
+	\cf18 \}\cf0 \
+\
+\}//end of class\
+\
+\
+4.HOW TO READ DATA FROM EXCEL SHEET\
+===================================\
+\
+video1:\
+\pard\pardeftab720\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://www.youtube.com/watch?v=CV3SOorFydE"}}{\fldrslt \cf0 https://www.youtube.com/watch?v=CV3SOorFydE}}\
+\
+\
+video2:\
+\pard\pardeftab720\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://www.youtube.com/watch?v=02ANy2pu_ZA"}}{\fldrslt \cf0 https://www.youtube.com/watch?v=02ANy2pu_ZA}}\
+\
+\
+}{\*\beandata789c9d935d6f82301486aff157748db752d876b12d8851c1c4cc2099b86497153a65e32ba5cef1ef57444aeb66b68c1bda73fabe4f7b4e6b8d3ed3047c105ac6793684a66e4040b2308fe26c3b84eb6036b88323bb675d39cb69f0e2bba048e292017f3d59cca7000e101a17454210720207f88bf92a00dc0321d78300ee182b1e103a1c0e3aae57e9619ed60b4be4d3bc2094550b6e36e0023d6211e498c65dd90e8f4671c8ec9e66bd93caee631aee62bec242f594474b46f9666d6ff5482a128d45fa146f75f9e68d84ac14324c29ae07c2a09fed934492692d573b3984092e855e4e37f9e9acbf9e3b5d5eb3e28c912da1f6ad85dae1518854636fa5f39fec2cf6a6502e603aceb5ca5140a8f36ca16715f93ff7e64fdc2eda567ce28ebd27f6ead6f78d778ef1e866cf48f9dcf4dfdba71ba591d2490dd334ee0df5c03ff68b5c3a9fb8360e57711aa6958c92572c8f8552b2dfead9d0329c1289f70b4354a4736bbc585e887b2a8a56cf2704670e665830cece7cde24513053ad540756ded6e9e109b6501bf52759b43a0b1d5facddfb02aa1d4161}

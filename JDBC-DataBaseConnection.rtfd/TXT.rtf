@@ -1,0 +1,160 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2636
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Georgia;\f1\fnil\fcharset0 Georgia-Bold;}
+{\colortbl;\red255\green255\blue255;\red251\green2\blue7;\red251\green2\blue7;\red127\green0\blue128;
+\red251\green2\blue255;\red0\green0\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c100000\c14913\c0;\cssrgb\c100000\c14913\c0;\cssrgb\c57919\c12801\c57269;
+\cssrgb\c100000\c25279\c100000;\cssrgb\c1680\c19835\c100000;\cssrgb\c0\c0\c0;}
+\paperw11900\paperh16840\margl1011\margr1011\margb1445\margt1011\vieww14000\viewh16000\viewkind1\viewscale220
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 DataBase Connection To Selenium\
+==========================\
+\
+Dependency name: \cf2 mysql-connector-java\
+\cf0 \
+CREATE dataBase Organization;\
+Use Organization;//use this db for further queries\
+Create TABLE Employees(Name VARCHAR(10),ID int,Age int);\
+describe Employees; //to print a table content\
+insert into Employees values(\'93Sakshi\'94,502842,29);\
+\
+\
+What all Classes needed for db connection in selenium code? Present in java.sql   package\
+1)DriverManager\
+2)Connection\
+3)Statement\
+4)ResultSet\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf0 {{\NeXTGraphic Screenshot 2022-02-21 at 11.02.06 PM.png \width28800 \height18000 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf0 \
+CODE TO HANDLE:\
+===============\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f1\b \cf3 step1
+\f0\b0 \cf3 :Connection con=DriverManager.getConnection(\'93jdbc:{\field{\*\fldinst{HYPERLINK "mysql://%E2%80%9C+host+%E2%80%9D:%E2%80%9D+port+%E2%80%9D/dbName%E2%80%9D+username+password"}}{\fldrslt \cf3 mysql://\'93+host+\'94:\'94+port+\'94/dbName\'94+username+password}});\
+\
+//connect to mysql db server which is hosted on locally on host with port. login to the dbName database with username and password\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f1\b \cf4 step2
+\f0\b0 :Statement s=con.createStatement();\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf3 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f1\b \cf5 step3
+\f0\b0 :ResultSet rs=s.executeQuery(\'93select * from tableName\'94);\cf3 \
+\
+
+\f1\b \cf6 step4:
+\f0\b0 while(rs.next())\{\
+Syso(rs.getString(username));\
+Syso(rs.getString(password));\
+\}\cf0 \
+\
+Please note: rs.next() is needed otherwise it will start at index 0 where coulm names are written.\
+\
+IN SELENIUM: using \cf3 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf0  class\
+===============================\
+Problem statement:\
+Here we are passing credentials to the login page directly from database.\
+\
+Solution:\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\fs18 \cf0 import java.sql.Connection;\
+\
+import java.sql.\cf3 DriverManager;\cf0 \
+\
+import java.sql.SQLException;\
+\
+import java.sql.\cf3 Connection;\cf0 \
+\
+import java.sql.DriverManager;\
+\
+import java.sql\cf4 .\cf3 ResultSet;\cf0 \
+\
+import java.sql.SQLException;\
+\
+import java.sql.\cf3 Statement;\cf0 \
+\
+import org.openqa.selenium.By;\
+\
+import org.openqa.selenium.WebDriver;\
+\
+import org.openqa.selenium.firefox.FirefoxDriver;\
+\
+public class jdbcconection \{\
+\
+public static void main(String[] args) throws SQLException, ClassNotFoundException \{\
+\
+// TODO Auto-generated method stub\
+\
+String host="localhost";\
+\
+String port= "3306";\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf3 Connection con=DriverManager.getConnection("jdbc:mysql://" + host + ":" + port + "/demoDB\'94, "root", "root");\
+\
+Statement s=con.createStatement();\
+\
+ResultSet rs=s.executeQuery("select * from credentials where scenario ='rewardscard'");\
+\
+while(rs.next())\
+\
+\{\
+\
+WebDriver driver= new FirefoxDriver();\
+\
+driver.get("https://login.salesforce.com");\
+\
+driver.findElement(By.xpath(".//*[@id='username']")).sendKeys(rs.getString("username"));\
+\
+driver.findElement(By.xpath(".//*[@id='password']")).sendKeys(rs.getString("password"));\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf0 \}\
+\
+\}\
+\
+\}\
+\
+GENERIC:\
+step1:\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf0 {{\NeXTGraphic Screenshot 2022-02-21 at 11.19.21 PM.png \width19040 \height4600 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf0 \
+\
+step2:Use class \cf3 DBConnectionManager\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf0 {{\NeXTGraphic Screenshot 2022-02-21 at 11.28.38 PM.png \width28300 \height3760 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf3 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf7 \
+
+\f1\b METHOD2:
+\f0\b0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf3 Connection con=DriverManager.getConnection("jdbc:mysql://" + host + ":" + port + "/demoDB\'94, "root", "root");\
+Statement s=con.createStatement();\
+ResultSet rs=s.executeQuery("select * from credentials where scenario ='rewardscard'");\
+while(rs.next())\
+\
+\{\
+\
+WebDriver driver= new FirefoxDriver();\
+driver.get("https://login.salesforce.com");\
+driver.findElement(By.xpath(".//*[@id='username']")).sendKeys(rs.getString("username"));\
+driver.findElement(By.xpath(".//*[@id='password']")).sendKeys(rs.getString("password"));\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf0 \}\
+\
+}{\*\beandata789c9d935d6f82301486aff157748db752d876b12d8851c1c4cc2099b86497153a65e32ba5cef1ef57444aeb66b68c1bda73fabe4f7b4e6b8d3ed3047c105ac6793684a66e4040b2308fe26c3b84eb6036b88323bb675d39cb69f0e2bba048e292017f3d59cca7000e101a17454210720207f88bf92a00dc0321d78300ee182b1e103a1c0e3aae57e9619ed60b4be4d3bc2094550b6e36e0023d6211e498c65dd90e8f4671c8ec9e66bd93caee631aee62bec242f594474b46f9666d6ff5482a128d45fa146f75f9e68d84ac14324c29ae07c2a09fed934492692d573b3984092e855e4e37f9e9acbf9e3b5d5eb3e28c912da1f6ad85dae1518854636fa5f39fec2cf6a6502e603aceb5ca5140a8f36ca16715f93ff7e64fdc2eda567ce28ebd27f6ead6f78d778ef1e866cf48f9dcf4dfdba71ba591d2490dd334ee0df5c03ff68b5c3a9fb8360e57711aa6958c92572c8f8552b2dfead9d0329c1289f70b4354a4736bbc585e887b2a8a56cf2704670e665830cece7cde24513053ad540756ded6e9e109b6501bf52759b43a0b1d5facddfb02aa1d4161}

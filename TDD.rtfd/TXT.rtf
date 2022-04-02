@@ -1,0 +1,66 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2636
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Georgia;\f1\fnil\fcharset0 Georgia-Bold;}
+{\colortbl;\red255\green255\blue255;\red251\green2\blue7;}
+{\*\expandedcolortbl;;\cssrgb\c100000\c14913\c0;}
+\paperw11900\paperh16840\margl1011\margr1011\margb1445\margt1011\vieww14000\viewh16000\viewkind1\viewscale220
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 TDD, BDD, ATDD\
+---------------------------\
+-3 Agile Best Practises\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf2 -Test First \cf0 approach\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f1\b \cf0 Disadvantage of TDD?
+\f0\b0 \
+Answer: \cf2 If requirement is changes at later point, then it becomes very costly and tedious task\cf0 \
+[1]Test Driven Development (Author-\cf2 Developers\cf0 ) is for unit testing\
+==============================================\
+
+\f1\b Iterative Development Process .
+\f0\b0 \
+
+\f1\b Test cases are written before the actual code development
+\f0\b0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf2 Add test-->Execute-->(All fail)-->write Code-->execute-->partial pass-->REFACTOR-->repeat until all green\cf0 \
+Devs define unit Test cases (using Junit,TestNg)\
+They run their Build-->all Fail\
+then they start coding--> few fail\
+they refactor the code --and execute \cf2 n cycles until all green\
+Moto of TDD-- is my code working correctly\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf0 \
+[2]Behaviour Driven Development(\cf2 PO, Dev, QA(Author)\cf0 - \cf2 Collaboration\cf0 ,keeping everyone on same page as per Requirement)\
+==========================================\
+1. Product Behaviour focused. \cf2 Cucumber\cf0 \
+2. Use of 
+\f1\b \cf2 Gherkin language
+\f0\b0 \cf0  understandable by \cf2 everyone(technical + non-technical). Always ask questions to Business while Development to make sure they are aligned\cf0 \
+3.Requirements are outlined as Test cases(english) converted to Feature Files.\
+4. Then Using feature files, codes are written->refactored to make it all green.\
+5.We can achieve BDD by Cucumber,JBehave etc\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf2 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf0 \
+\
+\
+[3]Acceptance Test Driven Development(BLR5->\cf2 BPM,TPM (Author)\cf0 \
+============================================\
+high Level abstraction of TDD/BDD.\
+1.PO/Business/\cf2 TPM defined Acceptance Criteria\cf0 \
+2. Using those Acceptance Criteria, QA will define Test Cases\
+3.Now, same like TDD\
+First Build, will fail over those Test cases\
+Code refactor\
+Then make the build pass with those Test Cases.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf2 Demo to Business\cf0 \
+Deliver to client\
+\
+Example:---\
+{{\NeXTGraphic Screenshot 2022-03-04 at 2.00.06 PM.png \width28800 \height18000 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}}{\*\beandata789c9d935d6f82301486aff157748db752d876b12d8851c1c4cc2099b86497153a65e32ba5cef1ef57444aeb66b68c1bda73fabe4f7b4e6b8d3ed3047c105ac6793684a66e4040b2308fe26c3b84eb6036b88323bb675d39cb69f0e2bba048e292017f3d59cca7000e101a17454210720207f88bf92a00dc0321d78300ee182b1e103a1c0e3aae57e9619ed60b4be4d3bc2094550b6e36e0023d6211e498c65dd90e8f4671c8ec9e66bd93caee631aee62bec242f594474b46f9666d6ff5482a128d45fa146f75f9e68d84ac14324c29ae07c2a09fed934492692d573b3984092e855e4e37f9e9acbf9e3b5d5eb3e28c912da1f6ad85dae1518854636fa5f39fec2cf6a6502e603aceb5ca5140a8f36ca16715f93ff7e64fdc2eda567ce28ebd27f6ead6f78d778ef1e866cf48f9dcf4dfdba71ba591d2490dd334ee0df5c03ff68b5c3a9fb8360e57711aa6958c92572c8f8552b2dfead9d0329c1289f70b4354a4736bbc585e887b2a8a56cf2704670e665830cece7cde24513053ad540756ded6e9e109b6501bf52759b43a0b1d5facddfb02aa1d4161}

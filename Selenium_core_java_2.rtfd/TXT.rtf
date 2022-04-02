@@ -1,0 +1,615 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2636
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Georgia;\f1\fnil\fcharset0 Menlo-Regular;\f2\fnil\fcharset0 Menlo-Bold;
+\f3\fnil\fcharset0 Menlo-BoldItalic;\f4\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red251\green2\blue7;\red106\green62\blue62;\red127\green0\blue85;
+\red42\green0\blue255;\red0\green0\blue192;\red63\green127\blue95;\red127\green0\blue85;\red106\green62\blue62;
+\red63\green127\blue95;\red42\green0\blue255;\red0\green0\blue192;\red251\green2\blue7;\red153\green102\blue51;
+\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c100000\c14913\c0;\csgenericrgb\c41569\c24314\c24314;\csgenericrgb\c49804\c0\c33333;
+\csgenericrgb\c16471\c0\c100000;\csgenericrgb\c0\c0\c75294;\csgenericrgb\c24706\c49804\c37255;\csgenericrgb\c49804\c0\c33333;\csgenericrgb\c41569\c24314\c24314;
+\csgenericrgb\c24706\c49804\c37255;\csgenericrgb\c16471\c0\c100000;\csgenericrgb\c0\c0\c75294;\cssrgb\c100000\c14913\c0;\cssrgb\c66800\c47512\c25860;
+\cssrgb\c0\c0\c0;}
+\paperw11900\paperh16840\margl1011\margr1011\margb1445\margt1011\vieww14000\viewh16000\viewkind1\viewscale220
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f0\fs18 \cf0 ADVANCE JAVA PROGRAMMING:\
+==========================\
+\
+
+\f1\fs24 PROGRAM1: \cf2 Date\cf0  & \cf2 SimpleDateFormat \cf0 class\
+\pard\pardeftab720\partightenfactor0
+\cf0 ================================================
+\f0\fs18 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1 \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf0 		Date \cf3 dateObj\cf0  = 
+\f2\b \cf4 new
+\f1\b0 \cf0  Date();\
+		\cf2 SimpleDateFormat\cf0  \cf3 sdf1\cf0  = 
+\f2\b \cf4 new
+\f1\b0 \cf0  \cf2 SimpleDateFormat\cf0 (\cf5 "M/dd/yyyy"\cf0 );\
+		SimpleDateFormat \cf3 sdf\cf0  = 
+\f2\b \cf4 new
+\f1\b0 \cf0  SimpleDateFormat(\cf5 "M/dd/yyyy hh:mm:ss"\cf0 );\
+		System.
+\f3\i\b \cf6 out
+\f1\i0\b0 \cf0 .println(\cf3 sdf1\cf0 .format(\cf3 dateObj\cf0 )); -->\
+o/p: 1/16/2022\
+		System.
+\f3\i\b \cf6 out
+\f1\i0\b0 \cf0 .println(\cf3 sdf\cf0 .format(\cf3 dateObj\cf0 ));-->\
+\pard\pardeftab720\partightenfactor0
+\cf0 o/p:1/16/2022 01:10:09\
+\pard\pardeftab720\partightenfactor0
+\cf0 		System.
+\f3\i\b \cf6 out
+\f1\i0\b0 \cf0 .println(\cf3 dateObj\cf0 .toString());-->\
+o/p:Sun Jan 16 01:10:09 IST 2022\
+\
+\
+
+\fs24 PROGRAM2: \cf2 Calender\cf0  class\
+=========================
+\fs18 \
+\pard\pardeftab720\partightenfactor0
+\cf0 	\cf7 //\ul Calender\ulnone  Class - ***MORE USEFUL DUE TO VARIOUS INBUILT METHODS***\cf0 \
+		\
+		Calendar \cf3 cal\cf0 = Calendar\cf2 .
+\f4\i getInstance
+\f1\i0 ();\cf0 \
+		\cf2 SimpleDateFormat\cf0  \cf3 sdf2\cf0 =
+\f2\b \cf4 new
+\f1\b0 \cf0  \cf2 SimpleDateFormat\cf0 (\cf5 "M/dd/yyyy"\cf0 );\
+		System.
+\f3\i\b \cf6 out
+\f1\i0\b0 \cf0 .println(\cf3 sdf2\cf0 .format(\cf2 cal.getTime\cf0 ())); \cf7 //getTime() return Calendar object\cf0 \
+		System.
+\f3\i\b \cf6 out
+\f1\i0\b0 \cf0 .println(\cf3 cal\cf0 .
+\f3\i\b \cf6 \ul \ulc6 DAY_OF_MONTH
+\f1\i0\b0 \cf0 \ulnone );\
+		System.
+\f3\i\b \cf6 out
+\f1\i0\b0 \cf0 .println(\cf3 cal\cf0 .
+\f3\i\b \cf6 \ul \ulc6 DAY_OF_WEEK
+\f1\i0\b0 \cf0 \ulnone );\
+		System.
+\f3\i\b \cf6 out
+\f1\i0\b0 \cf0 .println(\cf3 cal\cf0 .
+\f3\i\b \cf6 \ul \ulc6 DAY_OF_WEEK_IN_MONTH
+\f1\i0\b0 \cf0 \ulnone );\
+		System.
+\f3\i\b \cf6 out
+\f1\i0\b0 \cf0 .println(\cf3 cal\cf0 .
+\f3\i\b \cf6 \ul \ulc6 DAY_OF_WEEK_IN_MONTH
+\f1\i0\b0 \cf0 \ulnone );\
+
+\fs24 \
+PROGRAM3:\cf2 CONSTRUCTOR\cf0 \
+=====================
+\fs18 \
+
+\f2\b \cf4 public
+\f1\b0 \cf0  
+\f2\b \cf4 class
+\f1\b0 \cf0  ConstructorAndSuperDemo \{\
+\
+	\cf7 //Constructor is just like a method() with name as \ul Classname\ulnone () & NO RETURN TYPE\cf0 \
+\
+	\cf7 //If we do not define any Constructor then the internal constructor is called\cf0 \
+	\cf7 // by java.\cf0 \
+\
+	\cf7 // However, if we define any (1) constructor , then internal constructor will\cf0 \
+	\cf7 // NOT be called\cf0 \
+\
+	\cf7 // Instance Variable\cf0 \
+	String \cf6 variablename\cf0  = \cf5 "Class variable from ConstructorAndSuperDemo"\cf0 ;\
+\
+	\cf7 // Custom Constructor-1\cf0 \
+	
+\f2\b \cf4 public
+\f1\b0 \cf0  ConstructorAndSuperDemo() \{\
+\
+		System.
+\f3\i\b \cf6 out
+\f1\i0\b0 \cf0 .println(\cf5 "I am custom Default Constructor with no parameter/argument"\cf0 );\
+System.
+\f3\i\b \cf6 out
+\f1\i0\b0 \cf0 .println(\cf5 "The class variable is "\cf0 +\cf6 variablename\cf0 );/\cf2 /we can access class variable from any constructor\
+\
+\cf0 	\}\
+	\
+	\cf7 //Custom constructor-2\cf0 \
+	
+\f2\b \cf4 public
+\f1\b0 \cf0  ConstructorAndSuperDemo(
+\f2\b \cf4 int
+\f1\b0 \cf0  \cf3 a\cf0 ,
+\f2\b \cf4 int
+\f1\b0 \cf0  \cf3 b\cf0 ) \{\
+\
+		System.
+\f3\i\b \cf6 out
+\f1\i0\b0 \cf0 .println(\cf5 "Custom constructor 2: I have 2 Arguments "\cf0 +\cf3 a\cf0 +\cf5 "and "\cf0 +\cf3 b\cf0 );\
+\
+	\}\
+	\
+	\cf7 //Custom constructor-3\cf0 \
+		
+\f2\b \cf4 public
+\f1\b0 \cf0  ConstructorAndSuperDemo(String \cf3 s\cf0 ) \{\
+\
+			System.
+\f3\i\b \cf6 out
+\f1\i0\b0 \cf0 .println(\cf5 "Custom Constructor-3: I have One Argument of type String "\cf0 +\cf3 s\cf0 );\
+\
+		\}\
+\
+	
+\f2\b \cf4 public
+\f1\b0 \cf0  
+\f2\b \cf4 static
+\f1\b0 \cf0  
+\f2\b \cf4 void
+\f1\b0 \cf0  main(String[] \cf3 args\cf0 ) \{\
+\
+		ConstructorAndSuperDemo \cf3 \ul \ulc3 obj1\cf0 \ulnone =
+\f2\b \cf4 new
+\f1\b0 \cf0  ConstructorAndSuperDemo();\cf7 //This will call custom\cf0 \
+		\cf7 //default constructor & not the java internal constructor\cf0 \
+		\
+		\cf7 //If we do not have the custom constructor-1 defined , then we create the above object with default constructor\cf0 \
+		\
+		\cf7 //The moment main function executes & java encounters the 'new' keyword, the first thing which executes is the Constructor method.  \cf0 \
+		\
+		ConstructorAndSuperDemo \cf3 \ul \ulc3 obj2\cf0 \ulnone =
+\f2\b \cf4 new
+\f1\b0 \cf0  ConstructorAndSuperDemo(\cf5 "Sakshi"\cf0 );\
+\
+		ConstructorAndSuperDemo \cf3 \ul \ulc3 obj3\cf0 \ulnone =
+\f2\b \cf4 new
+\f1\b0 \cf0  ConstructorAndSuperDemo(5,7);\
+\
+	\}\
+\
+\}\
+o/p:\
+I am custom Default Constructor with no parameter/argument\
+The class variable is Class variable from ConstructorAndSuperDemo\
+Custom Constructor-3: I have One Argument of type String Sakshi\
+Custom constructor 2: I have 2 Arguments 5and 7\
+\
+\pard\pardeftab720\partightenfactor0
+
+\fs24 \cf0 ====PROGRAM_4: 
+\f0 \cf2 ARRAYS ,ARRAYLIST,STRINGS IN JAVA\cf0 ==
+\fs18 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f1 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf8 import
+\f1\b0 \cf0  java.util.ArrayList;\
+\
+
+\f2\b \cf8 public
+\f1\b0 \cf0  
+\f2\b \cf8 class
+\f1\b0 \cf0  CoreJavaConcepts \{\
+\
+	
+\f2\b \cf8 public
+\f1\b0 \cf0  
+\f2\b \cf8 static
+\f1\b0 \cf0  
+\f2\b \cf8 void
+\f1\b0 \cf0  main(String[] \cf9 args\cf0 ) \{\
+\
+		\cf10 // Variables & dataType\cf0 \
+		
+\f2\b \cf8 int
+\f1\b0 \cf0  \cf9 \ul \ulc9 a\cf0 \ulnone  = 123;\
+		
+\f2\b \cf8 double
+\f1\b0 \cf0  \cf9 \ul b\cf0 \ulnone  = 55.876;\
+		
+\f2\b \cf8 boolean
+\f1\b0 \cf0  \cf9 \ul c\cf0 \ulnone  = 
+\f2\b \cf8 true
+\f1\b0 \cf0 ;\
+		
+\f2\b \cf8 char
+\f1\b0 \cf0  \cf9 \ul d\cf0 \ulnone  = \cf11 'g'\cf0 ;\
+		String \cf9 \ul e\cf0 \ulnone  = \cf11 "I_am_String"\cf0 ;\
+\
+		\cf10 // Arrays Declaration in Java-Method1\cf0 \
+		
+\f2\b \cf8 int
+\f1\b0 \cf0 [] \cf9 arr1\cf0  = 
+\f2\b \cf8 new
+\f1\b0 \cf0  
+\f2\b \cf8 int
+\f1\b0 \cf0 [6];\
+		\cf9 arr1\cf0 [0] = 45;\
+		\cf9 arr1\cf0 [1] = 4;\
+		\cf9 arr1\cf0 [2] = 67;\
+		\cf9 arr1\cf0 [3] = 76;\
+		\cf9 arr1\cf0 [4] = 76;\
+		\cf9 arr1\cf0 [5] = 6;\
+		System.
+\f3\i\b \cf12 out
+\f1\i0\b0 \cf0 .println(\cf11 "Array1 is"\cf0  + \cf9 arr1\cf0 );\
+\
+		
+\f2\b \cf8 for
+\f1\b0 \cf0  (
+\f2\b \cf8 int
+\f1\b0 \cf0  \cf9 i\cf0  = 0; \cf9 i\cf0  < \cf9 arr1\cf0 .\cf12 length\cf0 ; \cf9 i\cf0 ++) \{\
+			System.
+\f3\i\b \cf12 out
+\f1\i0\b0 \cf0 .println(\cf11 "Array1 is ...."\cf0  + \cf9 arr1\cf0 [\cf9 i\cf0 ]);\
+		\}\
+\
+\cf10 //Arrays Declaration in Java-Method2	\cf0 \
+		
+\f2\b \cf8 int
+\f1\b0 \cf0 [] \cf9 arr2\cf0  = \{ 3, 4, 1, 23, 4, 4 \};\
+		System.
+\f3\i\b \cf12 out
+\f1\i0\b0 \cf0 .println(\cf11 "array2 is"\cf0  + \cf9 arr2\cf0 );\
+\
+		
+\f2\b \cf8 for
+\f1\b0 \cf0  (
+\f2\b \cf8 int
+\f1\b0 \cf0  \cf9 i\cf0  = 0; \cf9 i\cf0  < \cf9 arr2\cf0 .\cf12 length\cf0 ; \cf9 i\cf0 ++) \{\
+			System.
+\f3\i\b \cf12 out
+\f1\i0\b0 \cf0 .println(\cf11 "Array2 is ...."\cf0  + \cf9 arr2\cf0 [\cf9 i\cf0 ]);\
+		\}\
+\
+\cf10 //array of Strings\cf0 \
+		String[] \cf9 strArr\cf0  = \{ \cf11 "Sakshi"\cf0 , \cf11 "is"\cf0 , \cf11 "best"\cf0 , \cf11 "anie"\cf0 , \cf11 "is"\cf0 , \cf11 "good"\cf0  \};\
+		
+\f2\b \cf8 for
+\f1\b0 \cf0  (
+\f2\b \cf8 int
+\f1\b0 \cf0  \cf9 i\cf0  = 0; \cf9 i\cf0  < \cf9 strArr\cf0 .\cf12 length\cf0 ; \cf9 i\cf0 ++) \{\
+			System.
+\f3\i\b \cf12 out
+\f1\i0\b0 \cf0 .println(\cf11 "\\nArray of Strings is..."\cf0  + \cf9 strArr\cf0 [\cf9 i\cf0 ]);\
+		\}\
+\
+		\cf10 // for-Each Loop in Java. Here s is a local variable\cf0 \
+		
+\f2\b \cf8 for
+\f1\b0 \cf0  (String \cf9 s\cf0  : \cf9 strArr\cf0 ) \{\
+			System.
+\f3\i\b \cf12 out
+\f1\i0\b0 \cf0 .println(\cf9 s\cf0 );\
+\
+		\}\
+\
+------ARRAYS MULTIDIMENSIONAL--------------\
+
+\f2\b \cf8 package
+\f1\b0 \cf0  practiseSelenium;\
+\
+
+\f2\b \cf8 public
+\f1\b0 \cf0  
+\f2\b \cf8 class
+\f1\b0 \cf0  CoreJavaPractiseArrays \{\
+	
+\f2\b \cf8 public
+\f1\b0 \cf0  
+\f2\b \cf8 static
+\f1\b0 \cf0  
+\f2\b \cf8 void
+\f1\b0 \cf0  main(String[] \cf9 args\cf0 ) \{\
+\
+		\cf10 // ARRRAY DECLARATION- Using 
+\f2\b new
+\f1\b0  keyWord-memory allocation beforehand\cf0 \
+		
+\f2\b \cf8 int
+\f1\b0 \cf0 [] \cf9 arr\cf0  = 
+\f2\b \cf8 new
+\f1\b0 \cf0  
+\f2\b \cf8 int
+\f1\b0 \cf0 [6];\
+		\cf9 arr\cf0 [0] = 45;\
+		\cf9 arr\cf0 [1] = 9;\
+		\cf9 arr\cf0 [2] = 89;\
+		\cf9 arr\cf0 [3] = 76;\
+		\cf9 arr\cf0 [4] = 32;\
+		\cf9 arr\cf0 [5] = 87;\
+		\cf10 // \ul arr\ulnone [6]=78;//UNCHECKED EXCEPTION-RUN-TIME:ArayIndexOutOfBounce\cf0 \
+		\cf10 // \ul arr\ulnone [87]=98; //UNCHECKED EXCEPTION-RUN-TIME:ArayIndexOutOfBounce\cf0 \
+\
+		
+\f2\b \cf8 int
+\f1\b0 \cf0 [][] \cf9 multiarr\cf0  = 
+\f2\b \cf8 new
+\f1\b0 \cf0  
+\f2\b \cf8 int
+\f1\b0 \cf0 [3][2]; \cf10 // 3 rows & 2 columns\cf0 \
+		\cf9 multiarr\cf0 [0][0] = 4;\
+		\cf9 multiarr\cf0 [0][1] = 3;\
+		\cf9 multiarr\cf0 [1][0] = 2;\
+		\cf9 multiarr\cf0 [1][1] = 8;\
+		\cf9 multiarr\cf0 [2][0] = 7;\
+		\cf9 multiarr\cf0 [2][1] = 6;\
+\
+		\cf10 // ARRAY DECLARATION- using literals\cf0 \
+		
+\f2\b \cf8 int
+\f1\b0 \cf0 [] \cf9 \ul arr2\cf0 \ulnone  = \{ 3, 4, 5, 6, 7, 1, 2, 3, 4 \}; \cf10 // easier method\cf0 \
+		
+\f2\b \cf8 int
+\f1\b0 \cf0 [][] \cf9 \ul multiarr2\cf0 \ulnone  = \{ \{ 3, 4 \}, \{ 5, 6 \}, \{ 8, 9 \} \}; \cf10 // no of elements is equal to no of rows defined 3*2\cf0 \
+\
+		\cf10 // Print all values of a 2D Array of a given size m*n m=3 , n=2\cf0 \
+		
+\f2\b \cf8 for
+\f1\b0 \cf0  (
+\f2\b \cf8 int
+\f1\b0 \cf0  \cf9 i\cf0  = 0; \cf9 i\cf0  < 3; \cf9 i\cf0 ++) \{\
+			
+\f2\b \cf8 for
+\f1\b0 \cf0  (
+\f2\b \cf8 int
+\f1\b0 \cf0  \cf9 j\cf0  = 0; \cf9 j\cf0  < 2; \cf9 j\cf0 ++) \{\
+				System.
+\f3\i\b \cf12 out
+\f1\i0\b0 \cf0 .\cf13 print\cf0 (\cf9 multiarr\cf0 [\cf9 i\cf0 ][\cf9 j\cf0 ]);\
+\
+			\}\
+			System.
+\f3\i\b \cf12 out
+\f1\i0\b0 \cf0 .print(\cf11 "\\n"\cf0 );\
+		\}\
+\
+		\cf10 // Find The Least Value in a 3*3 matrix\cf0 \
+		
+\f2\b \cf8 int
+\f1\b0 \cf0 [][] \cf9 arrayobj\cf0  = \{ \{ 1, 2, 3 \}, \{ 4, 5, 6 \}, \{ 7, 8, 9 \} \};\
+		
+\f2\b \cf13 int
+\f1\b0  min = arrayobj[0][0];\
+\cf0 		System.
+\f3\i\b \cf12 out
+\f1\i0\b0 \cf0 .println(\cf9 arrayobj\cf0 [2][2]);\
+		
+\f2\b \cf8 for
+\f1\b0 \cf0  (
+\f2\b \cf8 int
+\f1\b0 \cf0  \cf9 i\cf0  = 0; \cf9 i\cf0  <3; \cf9 i\cf0 ++) \{\
+			
+\f2\b \cf8 for
+\f1\b0 \cf0  (
+\f2\b \cf8 int
+\f1\b0 \cf0  \cf9 j\cf0  = 0; \cf9 j\cf0  < 3; \cf9 j\cf0 ++) \{\
+				
+\f2\b \cf8 if
+\f1\b0 \cf0  ((\cf9 arrayobj\cf0 [\cf9 i\cf0 ][\cf9 j\cf0 ]) < \cf9 min\cf0 ) \{\
+					\cf9 min\cf0  = \cf9 arrayobj\cf0 [\cf9 i\cf0 ][\cf9 j\cf0 ];\
+\
+				\}\
+			\}\
+		\}\
+		System.
+\f3\i\b \cf12 out
+\f1\i0\b0 \cf0 .println(\cf9 min\cf0 );\
+	\}\
+\
+\}\
+\
+-----2D ARRAY CISCO INTERVIEW---------\
+{{\NeXTGraphic Screenshot 2022-01-15 at 10.06.22 PM.png \width28800 \height18000 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\
+\
+\
+\
+-------ARRAYLIST------------------------------------------\
+		\cf10 //ArrayList:- For Dynamic Array*** we can grow size of the array dynamically\cf0 \
+		ArrayList<String> \cf9 arrayList\cf0 =
+\f2\b \cf8 new
+\f1\b0 \cf0  ArrayList<String>();\
+		\
+		\cf9 arrayList\cf0 .add(\cf11 "Sakshi"\cf0 );\
+		\cf9 arrayList\cf0 .add(\cf11 "God"\cf0 );\
+		\cf9 arrayList\cf0 .add(\cf11 "Dance"\cf0 );\
+		\cf9 arrayList\cf0 .add(3, \cf11 "hello"\cf0 ); \cf10 //at index 3 , add the  string value Hello\cf0 \
+		System.
+\f3\i\b \cf12 out
+\f1\i0\b0 \cf0 .println(\cf9 arrayList\cf0 ); \cf10 //directly we can print elements of arrayList no need for for or for each loop\cf0 \
+		\cf9 arrayList\cf0 .remove(1); \cf10 //remove the contents at index 1\cf0 \
+		System.
+\f3\i\b \cf12 out
+\f1\i0\b0 \cf0 .println(\cf9 arrayList\cf0 );\
+		System.
+\f3\i\b \cf12 out
+\f1\i0\b0 \cf0 .println(\cf9 arrayList\cf0 .get(0)); \cf10 //extract the value present at 0th index\cf0 \
+		\
+-----STRING---------------------------		\
+\cf10 //String is a \ul pre\ulnone -defined class in java\cf0 \
+		\
+\cf10 //string declaration method1- by using string literals directly\cf0 \
+		String \cf9 s1\cf0 = \cf11 "Leonardo"\cf0 ; \cf10 // here , memory allocation happens only for one literal \ul obj\ulnone  created in SCP to which s1 points from stack\cf0 \
+		String \cf9 s3\cf0 =\cf11 "Leonardo"\cf0 ;\
+		\
+		\cf10 //here value of s3 is same as s1  (s1.equals(s2)==true,\cf0 \
+		System.
+\f3\i\b \cf12 out
+\f1\i0\b0 \cf0 .println(\cf11 "Value of s1 & s2 ref variable is same:"\cf0 +\cf9 s1\cf0 .equals(\cf9 s3\cf0 ));\
+		\
+		\cf10 //also the \ul ref\ulnone  variables s3 points to the same \ul obj\ulnone  in SCP as s1 , thus\cf0 \
+		
+\f2\b \cf8 if
+\f1\b0 \cf0 (\cf9 s1\cf0 ==\cf9 s3\cf0 ) \{\
+			System.
+\f3\i\b \cf12 out
+\f1\i0\b0 \cf0 .println(\cf11 "\\n Here, s1"\cf0 +\cf9 s1\cf0 +\cf11 "and"\cf0 +\cf11 "s3 "\cf0 +\cf9 s3\cf0 +\cf11 "points to  the same LITERAL object in STRING CONSTANT POOL"\cf0 );\
+		\}\
+		\
+		\
+		\
+		\
+		\cf10 //String \ul delcaration\ulnone  METHOD2- by using new operator\cf0 \
+		String \cf9 s2\cf0 = 
+\f2\b \cf8 new
+\f1\b0 \cf0  String(\cf11 "DiCaprio"\cf0 ); \cf10 //here, two \ul obj\ulnone  are created one in SCP other in heap memory\cf0 \
+		String \cf9 s4\cf0 =
+\f2\b \cf8 new
+\f1\b0 \cf0  String(\cf11 "DiCaprio"\cf0 );\
+		\
+		\cf10 //here, value of \ul ref\ulnone  variable s2 is same as that of s4\cf0 \
+		System.
+\f3\i\b \cf12 out
+\f1\i0\b0 \cf0 .println(\cf11 "Value of s1 & s2 ref variable is same:"\cf0 +\cf9 s2\cf0 .equals(\cf9 s4\cf0 ));\
+		\
+		\
+		\cf10 //However, here both \ul ref\ulnone  variables are NOT pointing to the same object but to two \ul diff\ulnone  objects sitting in SCP\cf0 \
+		
+\f2\b \cf8 if
+\f1\b0 \cf0 (\cf9 s2\cf0 ==\cf9 s4\cf0 ) \{\
+			System.
+\f3\i\b \cf12 out
+\f1\i0\b0 \cf0 .println(\cf11 "\\n Here, s1"\cf0 +\cf9 s1\cf0 +\cf11 "and"\cf0 +\cf11 "s3 "\cf0 +\cf9 s3\cf0 +\cf11 "points to  the same LITERAL object in STRING CONSTANT POOL"\cf0 );\
+		\}\
+		
+\f2\b \cf8 else
+\f1\b0 \cf0  \{\
+			System.
+\f3\i\b \cf12 out
+\f1\i0\b0 \cf0 .println(\cf11 "s2 & s4 are not pointing to the same object "\cf0 );\
+		\}\
+		\
+		\
+		\
+		\cf10 // CONVERT STRING INTO ARRAY USING SPLIT function & store it into a string[] array\cf0 \
+		String \cf9 s\cf0 =\cf11 "Sakshi is a good girl"\cf0 ;\
+		String[]  \cf9 s5\cf0  =\cf9 s\cf0 .split(\cf11 " "\cf0 );\
+		System.
+\f3\i\b \cf12 out
+\f1\i0\b0 \cf0 .println(\cf9 s5\cf0 [3]);\
+		System.
+\f3\i\b \cf12 out
+\f1\i0\b0 \cf0 .println(\cf9 s\cf0 .charAt(3));\
+		\
+		\cf10 //Reverse a string\cf0 \
+		
+\f2\b \cf8 for
+\f1\b0 \cf0 (
+\f2\b \cf8 int
+\f1\b0 \cf0  \cf9 i\cf0 =\cf9 s\cf0 .length()-1;\cf9 i\cf0 >=0;\cf9 i\cf0 --) \{\
+			System.
+\f3\i\b \cf12 out
+\f1\i0\b0 \cf0 .println(\cf9 s\cf0 .charAt(\cf9 i\cf0 ));\
+		\}\
+		\
+		\
+	\}\
+\}\
+=================================\
+How to print?\
+1 2 3 4\
+5 6 7\
+8 9\
+10\
+\
+
+\f2\b \cf8 int
+\f1\b0 \cf0  \cf9 count\cf0 =1;\
+	
+\f2\b \cf8 for
+\f1\b0 \cf0  (
+\f2\b \cf8 int
+\f1\b0 \cf0  \cf9 i\cf0 =0;\cf9 i\cf0 <4;\cf9 i\cf0 ++) \{\
+		
+\f2\b \cf8 for
+\f1\b0 \cf0 (
+\f2\b \cf8 int
+\f1\b0 \cf0  \cf9 k\cf0 =1;\cf9 k\cf0 <=4-\cf9 i\cf0 ;\cf9 k\cf0 ++) \{\
+			System.
+\f3\i\b \cf12 out
+\f1\i0\b0 \cf0 .print(\cf9 count\cf0 );\
+			\cf9 count\cf0 ++;\
+			\
+		\}\
+		System.
+\f3\i\b \cf12 out
+\f1\i0\b0 \cf0 .print(\cf11 "\\n"\cf0 );\
+	\}\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\fs24 \cf0 PROGRAM_5: 
+\f0 \cf2 EXCEPTIONAL HANDLING\cf0  IN JAVA==\
+\pard\pardeftab720\partightenfactor0
+
+\fs18 \cf0 >>\cf2 All exceptions occur at run- time only\cf0 \
+>>CHECKED EXCEPTION:- \
+--It occurs due to programmer code issue. it can be handled by the coder\
+--The compiler can check before we start the program execution, if that exception will occur or not. \
+--Example: \cf14 ArrayIndexOutOfBoundException(), FileNotFoundException() \cf0 etc. \
+--It basically warns the programmer to correct the code.\
+>>UN-CHECKED EXCEPTION:-\
+--The complier can\'92t check beforehand if the exception will occur or not\
+--usually happens due to memory issue etc\
+--Example: \cf14 ArithmeticException() \
+\cf0 >>Exceptional Handling -\
+>>Syntax:\
+try\{\
+//risky code\
+\}\
+catch(ExceptionClassName    exceptionObject)\{\
+\}\
+\
+>> One try \cf2 can be followed by multiple catch blocks
+\f1 \cf0 \
+>> \cf2 Finally\cf0  Block \
+\
+\pard\pardeftab720\partightenfactor0
+\cf14 try\{\cf0 \
+//risky code\
+\cf14 \}\cf0 \
+\cf14 catch(Exception e)\{\cf0 \
+//exception handling code\
+\cf14 \}\cf0 \
+\cf14 finally\{\cf0 \
+\
+// this piece of code will always execute, even if the script breaks in the middle.\
+Example: \cf2 we should always keep driver.quit() method under finally block.\cf0  it will make sure all the browser/tabs are closed even if the script fails or passes.\
+\
+example: \cf2 delete the cookies under finally  block\cf0 \
+\
+\cf14 \}\
+\
+\
+\cf15 >> We can use finally block \cf2 without catch\cf15  also.\
+\
+try\{\
+\
+//risky code\
+\
+\}\
+\
+finally\{\
+\
+//driver.close();\
+\
+\}\
+\
+>> \cf2 Interview question:\cf15  Is there any way that finally block will not be executed?\
+\
+Ans:If \cf2 we stop the JVM forcefully in the middle of the program execution\
+-----------------------------------------------------------------------------}{\*\beandata789c9d935d6f82301486aff157748db752d876b12d8851c1c4cc2099b86497153a65e32ba5cef1ef57444aeb66b68c1bda73fabe4f7b4e6b8d3ed3047c105ac6793684a66e4040b2308fe26c3b84eb6036b88323bb675d39cb69f0e2bba048e292017f3d59cca7000e101a17454210720207f88bf92a00dc0321d78300ee182b1e103a1c0e3aae57e9619ed60b4be4d3bc2094550b6e36e0023d6211e498c65dd90e8f4671c8ec9e66bd93caee631aee62bec242f594474b46f9666d6ff5482a128d45fa146f75f9e68d84ac14324c29ae07c2a09fed934492692d573b3984092e855e4e37f9e9acbf9e3b5d5eb3e28c912da1f6ad85dae1518854636fa5f39fec2cf6a6502e603aceb5ca5140a8f36ca16715f93ff7e64fdc2eda567ce28ebd27f6ead6f78d778ef1e866cf48f9dcf4dfdba71ba591d2490dd334ee0df5c03ff68b5c3a9fb8360e57711aa6958c92572c8f8552b2dfead9d0329c1289f70b4354a4736bbc585e887b2a8a56cf2704670e665830cece7cde24513053ad540756ded6e9e109b6501bf52759b43a0b1d5facddfb02aa1d4161}

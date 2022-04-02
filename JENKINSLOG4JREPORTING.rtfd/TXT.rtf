@@ -1,0 +1,546 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2636
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Georgia;\f1\fnil\fcharset0 Menlo-Regular;\f2\fnil\fcharset0 Georgia-Bold;
+\f3\fnil\fcharset0 Menlo-Bold;\f4\fnil\fcharset0 Menlo-Italic;\f5\fnil\fcharset0 Menlo-BoldItalic;
+\f6\fnil\fcharset0 HelveticaNeue-Bold;\f7\fnil\fcharset0 HelveticaNeue;\f8\fnil\fcharset0 Monaco;
+}
+{\colortbl;\red255\green255\blue255;\red251\green2\blue7;\red38\green139\blue210;\red127\green0\blue85;
+\red0\green0\blue192;\red100\green100\blue100;\red63\green127\blue95;\red106\green62\blue62;\red42\green0\blue255;
+\red255\green255\blue11;\red38\green139\blue210;\red0\green0\blue0;\red127\green0\blue128;\red21\green22\blue24;
+\red255\green255\blue255;\red0\green0\blue117;\red49\green49\blue49;\red82\green0\blue83;\red83\green85\blue2;
+\red16\green121\blue2;\red234\green234\blue234;\red181\green137\blue0;\red147\green161\blue161;\red42\green161\blue152;
+\red127\green159\blue191;}
+{\*\expandedcolortbl;;\cssrgb\c100000\c14913\c0;\csgenericrgb\c14902\c54510\c82353;\csgenericrgb\c49804\c0\c33333;
+\csgenericrgb\c0\c0\c75294;\csgenericrgb\c39216\c39216\c39216;\csgenericrgb\c24706\c49804\c37255;\csgenericrgb\c41569\c24314\c24314;\csgenericrgb\c16471\c0\c100000;
+\cssrgb\c100000\c100000\c0;\csgenericrgb\c14902\c54510\c82353;\cssrgb\c0\c0\c0;\cssrgb\c57919\c12801\c57269;\cssrgb\c10980\c11373\c12157;
+\cssrgb\c100000\c100000\c100000;\cssrgb\c0\c0\c53333;\cssrgb\c25098\c25098\c25098;\cssrgb\c40000\c0\c40000;\cssrgb\c40000\c40000\c0;
+\cssrgb\c0\c53333\c0;\cssrgb\c93333\c93333\c93333;\csgenericrgb\c70980\c53725\c0;\csgenericrgb\c57647\c63137\c63137;\csgenericrgb\c16471\c63137\c59608;
+\csgenericrgb\c49804\c62353\c74902;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}}{\leveltext\leveltemplateid1\'01\'00;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}}{\leveltext\leveltemplateid101\'01\'00;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid2}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}}
+\paperw11900\paperh16840\margl1011\margr1011\margb1445\margt1011\vieww14000\viewh16000\viewkind1\viewscale220
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 JENKINS , REPORTING,LOG4J\
+=======================\
+\
+-->Jenkins is an \cf2 open source automation server\cf0 \
+-->it is mainly used to \cf2 build,deploy,automate\cf0  any project\
+step1:Download Jenkins\
+step2:Execute:  java jar jenkins.war\
+\
+step3:We need only 2 pre-requsisties installed in our machine:\
+1)Java\
+2)Maven\
+\
+\
+Scheduling Chron JOB:\
+\
+M H D M DayWeek. [M\cf2 HDM\cf0 D]\
+\
+Minutes Hours DayOfMonth Month DayOfWeek comooand..\
+\
+Extent Reports:\
+============\
+Prerequisites in eclipse:-\
+\
+1.A Maven Project\
+2.TestNg dependency\
+3.Selenium dependency\
+4.Extent report dependency\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs18 \cf0 \
+		<\cf3 dependency\cf0 >\
+			<\cf3 groupId\cf0 >org.testng</\cf3 groupId\cf0 >\
+			<\cf3 artifactId\cf0 >\cf2 testng\cf0 </\cf3 artifactId\cf0 >\
+			<\cf3 version\cf0 >7.5</\cf3 version\cf0 >\
+			<\cf3 scope\cf0 >test</\cf3 scope\cf0 >\
+		</\cf3 dependency\cf0 >\
+		<\cf3 dependency\cf0 >\
+			<\cf3 groupId\cf0 >org.seleniumhq.selenium</\cf3 groupId\cf0 >\
+			<\cf3 artifactId\cf0 >\cf2 selenium-java\cf0 </\cf3 artifactId\cf0 >\
+			<\cf3 version\cf0 >4.1.2</\cf3 version\cf0 >\
+		</\cf3 dependency\cf0 >\
+		<\cf3 dependency\cf0 >\
+			<\cf3 groupId\cf0 >com.aventstack</\cf3 groupId\cf0 >\
+			<\cf3 artifactId\cf0 >\cf2 extentreports\cf0 </\cf3 artifactId\cf0 >\
+			<\cf3 version\cf0 >5.0.9</\cf3 version\cf0 >\
+		</\cf3 dependency\cf0 >
+\f0\fs24 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f2\b \cf0 Selenium does not have inbuilt reporting mechanism, so we need 2 external classes: [HTML REPORTS]\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f0\b0 \cf0 Classes used for Extent Reporting:\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf2 1.ExtentReports\
+2.ExtentSparkReporter\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs18 \cf0 \
+\
+
+\f3\b \cf4 import
+\f1\b0 \cf0  com.aventstack.extentreports.ExtentReports;\
+
+\f3\b \cf4 import
+\f1\b0 \cf0  com.aventstack.extentreports.reporter.ExtentSparkReporter;\
+
+\f3\b \cf4 import
+\f1\b0 \cf0  \ul com.relevantcodes.extentreports.ExtentTest\ulnone ;\
+\
+
+\f3\b \cf4 public
+\f1\b0 \cf0  
+\f3\b \cf4 class
+\f1\b0 \cf0  ExtentReportDemo \{\
+\
+	ExtentReports \cf5 extent\cf0 ;\
+	\cf6 @BeforeTest\cf0 \
+	
+\f3\b \cf4 public
+\f1\b0 \cf0  
+\f3\b \cf4 void
+\f1\b0 \cf0  configuration() \{\
+		\cf7 // ExtentSparkReporter Class //ExtentReport Class\cf0 \
+\
+		String \cf8 path\cf0  = System.
+\f4\i getProperty
+\f1\i0 (\cf9 "user.dir"\cf0 ) + \cf9 "\\\\Sakshireport\\\\inex.html"\cf0 ;\
+		\cf2 ExtentSparkReporter\cf0  \cf8 reporter\cf0  = 
+\f3\b \cf4 new
+\f1\b0 \cf0  ExtentSparkReporter(\cf8 path\cf0 );\
+		\cf8 reporter\cf0 .config().setReportName(\cf9 "Sakshi first report"\cf0 );\
+		\cf8 reporter\cf0 .config().setDocumentTitle(\cf9 "Sakshi Web Automation report"\cf0 );\
+		\
+		\cf2 ExtentReports\cf0  \cf8 extent\cf0 =
+\f3\b \cf4 new
+\f1\b0 \cf0  ExtentReports();\
+		\cf8 extent\cf0 .attachReporter(\cf8 reporter\cf0 );\
+		\cf8 extent\cf0 .setSystemInfo(\cf9 "Tester"\cf0 , \cf9 "Sakshi"\cf0 );\
+\
+	\}\
+\
+	\cf6 @Test\cf0 \
+	
+\f3\b \cf4 public
+\f1\b0 \cf0  
+\f3\b \cf4 void
+\f1\b0 \cf0  initialDemoExtentReport() \{\
+		//\cf2 ExtentTest test=extent.createTest("\cf2 \ul \ulc2 Sakshi\cf2 \ulnone  Test");\cf0 \
+		\
+		
+\f3\b \cf2 extent.createTest("Initial Demo by Sakshi");
+\f1\b0 \cf0 \
+		System.
+\f4\i setProperty
+\f1\i0 (\cf9 "webdriver.chrome.driver"\cf0 , \cf9 "chromedriver"\cf0 );\
+		WebDriver \cf8 driver\cf0  = 
+\f3\b \cf4 new
+\f1\b0 \cf0  ChromeDriver();\
+		\cf8 driver\cf0 .get(\cf9 "https://wwww.facebook.com"\cf0 );\
+		System.
+\f5\i\b \cf5 out
+\f1\i0\b0 \cf0 .println(\cf8 driver\cf0 .getTitle());\
+		\cf8 driver\cf0 .quit();\
+		
+\f3\b \cf2 extent.flush();\
+
+\f1\b0 \cf0 \
+	\}\
+\
+\}
+\fs24 \
+\
+\
+LOG4J FrameWork: from org.Apache\
+=================================\
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb10 ((A)Maven Dependency---> \
+(B)Create Log4J.xml(What?Where?How?)---->\
+(C) how will test know where is Log4j.xml?\
+in pom.xml , write\
+\pard\pardeftab720\partightenfactor0
+\cf0 \cb1 <\cf11 build\cf0 >\
+		\cb10 <\cf11 resources\cf0 >\
+			<\cf11 resource\cf0 >\
+				<\cf11 directory\cf0 >src/main/resources</\cf11 directory\cf0 >\
+				<\cf11 filtering\cf0 >true</\cf11 filtering\cf0 >\
+\
+			</\cf11 resource\cf0 >\
+		</\cf11 resources\cf0 >\cb1 \
+		<\cf11 plugins\cf0 >\
+\
+			<\cf11 plugin\cf0 >\cb10 \
+\pard\pardeftab720\partightenfactor0
+\cf0 (D)use static Log instance in the target class & start using {\field{\*\fldinst{HYPERLINK "http://log.info"}}{\fldrslt log.info}}(),log.error(),log.debug() etc\
+\cb1 \
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\fs18 \cf12 Log4j can be utilised to any java framework.
+\fs24 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\fs18 \cf0 ex: selenium,appium,rest assured frameworks\
+\pard\pardeftab720\partightenfactor0
+
+\fs24 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\fs18 \cf0 When we want to design the code in such a way that if we get specific lines in the console output or in FILE, then it should treat it as error or as successful message.\
+To handle such use-case, without using SYSO, we can directly use log4J framework.
+\fs24 \
+\
+
+\fs18 <\cf3 dependency\cf0 >\
+		<\cf3 groupId\cf0 >org.apache.logging.log4j</\cf3 groupId\cf0 >\
+		<\cf3 artifactId\cf0 >\cf2 log4j-api\cf0 </\cf3 artifactId\cf0 >\
+		<\cf3 versi\cb10 on\cf0 >2.17.2<\cb1 /\cf3 version\cf0 >\
+</\cf3 dependency\cf0 >\
+<\cf3 dependency\cf0 >\
+		<\cf3 groupId\cf0 >org.apache.logging.log4j</\cf3 groupId\cf0 >\
+		<\cf3 artifactId\cf0 >\cf2 log4j-core\cf0 </\cf3 artifactId\cf0 >\
+		<\cf3 version\cf0 >2.17.2</\cf3 version\cf0 >\
+</\cf3 dependency\cf0 >\
+\
+\cb10 Please note: 2.17 is the most stable version released after that Log4shell attack in Dec2021\
+\cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f5\i\b \cf13 //Common Syntax for every class logger
+\f1\i0\b0 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\b \cf4 import
+\f1\b0 \cf0  org.apache.logging.log4j.*;\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f5\i\b \cf13 //We define a GLOBAL log Variable(SINGLETON CLASS TECHNIQUE)
+\f1\i0\b0 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\b \cf4 private
+\f1\b0 \cf0  
+\f3\b \cf4 static
+\f1\b0 \cf0  Logger 
+\f4\i \cf5 \ul \ulc5 log
+\f1\i0 \cf0 \ulnone =LogManager.
+\f4\i getLogger
+\f1\i0 (Log4JExample.
+\f3\b \cf4 class
+\f1\b0 \cf0 .getName())
+\fs24 ;\
+\pard\pardeftab720\partightenfactor0
+
+\fs18 \cf0 \
+\pard\pardeftab720\sa400\partightenfactor0
+
+\f6\b \cf14 \cb15 \expnd0\expndtw0\kerning0
+Use log. Error()
+\f7\b0 \'a0to log when elements are not displayed in the page or if any validations fail\
+
+\f6\b Use Log. Debug()
+\f7\b0 \
+When e\cf2 ach Selenium action is performed like click, SendKeys, getText()\
+
+\f6\b \cf14 Use log.info()
+\f7\b0 \
+When op\cf2 eration is successfully completed ex: After loading page, or after any successful validations\
+\cf14 It\'92s just counterpart to log. Error()\
+
+\f6\b USING CONFIGURATION IN LOG4J.XML to CONTROL THE LOGGING (What?Where?How?etc)\
+========================================================================\
+/resource/-->create Log4j.xml\
+what(<Console target=SYSTEM_OUT Console name=\'93Console\'94>\
+? How? --><appenders>\
+what? --><Loggers>\
+\pard\pardeftab720\sa400\partightenfactor0
+\cf14 {{\NeXTGraphic Screenshot 2022-03-03 at 9.32.24 AM.png \width24100 \height8440 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\pardeftab720\sa400\partightenfactor0
+\cf14 \
+1)Where to log?\
+Ans:- Using <appenders> tag , we are saying to log in <console>\
+\pard\pardeftab720\sa400\partightenfactor0
+
+\f8\b0 \cf16 \cb1 <Console\cf17  \cf18 name\cf19 =\cf20 \'93Console\'94 target=:\'94SYSTEM_OUT\'94\cf16 >\cf17 \
+\pard\pardeftab720\sa400\partightenfactor0
+
+\f6\b \cf14 \cb15 2)How to log?\
+Ans: Using <appenders> tag , 
+\f8\b0 \cf16 \cb21 <PatternLayout\cf17  \cf18 pattern\cf19 =\cf20 "%m%n"\cf16 />\
+
+\f6\b \cf14 \cb15 3)What to log?\
+Under <loggers> tag, give\
+(i) <root l\cf2 evel=\'93error\'94\cf14  >if you want to log only the error, if you want to log the entire thing then you give \cf2 level=\'93trace\'94.\
+\pard\pardeftab720\sa400\partightenfactor0
+\cf12 (ii). if you want to control  at class level then use\cf2 \
+<logger name=\'93pkg.class\'94 level=\'93error\'94>\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls1\ilvl0
+\f8\b0 \cf2 \cb1 \
+<Loggers>\cf17 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls1\ilvl0\cf17 \cb21 \kerning1\expnd0\expndtw0 {\listtext	16	}\expnd0\expndtw0\kerning0
+    \cf16 <Logger\cf17  \cf18 name\cf19 =\cf20 "org.apache.test"\cf17  \cf18 level\cf19 =\cf20 "trace"\cf17  \cf18 additivity\cf19 =\cf20 "false"\cf16 >\cf17 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls1\ilvl0\cf17 \cb1 \kerning1\expnd0\expndtw0 {\listtext	17	}\expnd0\expndtw0\kerning0
+      \cf16 <AppenderRef\cf17  \cf18 ref\cf19 =\cf20 "Out"\cf16 />\cf17 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls1\ilvl0\cf17 \cb21 \kerning1\expnd0\expndtw0 {\listtext	18	}\expnd0\expndtw0\kerning0
+    \cf16 </Logger>\cf17 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls1\ilvl0\cf17 \cb1 \kerning1\expnd0\expndtw0 {\listtext	19	}\expnd0\expndtw0\kerning0
+    \cf16 <Root\cf17  \cf18 level\cf19 =\cf20 "error"\cf16 >\cf17 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls1\ilvl0\cf17 \cb21 \kerning1\expnd0\expndtw0 {\listtext	20	}\expnd0\expndtw0\kerning0
+      \cf16 <AppenderRef\cf17  \cf18 ref\cf19 =\cf20 "Out"\cf16 />\cf17 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls1\ilvl0\cf17 \cb1 \kerning1\expnd0\expndtw0 {\listtext	21	}\expnd0\expndtw0\kerning0
+    \cf16 </Root>\cf17 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls1\ilvl0\cf2 \cb21 </Loggers>\cf17 \
+\pard\pardeftab720\sa400\partightenfactor0
+
+\f6\b \cf14 \cb10 Explanation:-For org.apache.test class, print all the logs while for the rest classes print only the error\cb15 \
+\
+=========================================================================\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls2\ilvl0
+\f8\b0 \cf16 \cb1 \kerning1\expnd0\expndtw0 {\listtext	1	}\cf19 	1	\expnd0\expndtw0\kerning0
+<?\cf17 xml version\cf19 =\cf20 "1.0"\cf17  encoding\cf19 =\cf20 "UTF-8"\cf19 ?>\cf17 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls2\ilvl0\cf16 \cb21 \kerning1\expnd0\expndtw0 {\listtext	2	}\expnd0\expndtw0\kerning0
+<Configuration\cf17  \cf18 status\cf19 =\cf20 "WARN"\cf16 >\cf17 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls2\ilvl0\cf17 \cb1 \kerning1\expnd0\expndtw0 {\listtext	3	}\expnd0\expndtw0\kerning0
+  \cf16 <Appenders>\cf17 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls2\ilvl0\cf17 \cb21 \kerning1\expnd0\expndtw0 {\listtext	4	}\expnd0\expndtw0\kerning0
+    \cf16 <Console\cf17  \cf18 name\cf19 =\cf20 "Console"\cf17  \cf18 target\cf19 =\cf20 "SYSTEM_OUT"\cf16 >\cf17 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls2\ilvl0\cf17 \cb1 \kerning1\expnd0\expndtw0 {\listtext	5	}\expnd0\expndtw0\kerning0
+      \cf16 <PatternLayout\cf17  \cf18 pattern\cf19 =\cf20 "%d\{HH:mm:ss.SSS\} [%t] %-5level %logger\{36\} - %msg%n"\cf16 />\cf17 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls2\ilvl0\cf17 \cb21 \kerning1\expnd0\expndtw0 {\listtext	6	}\expnd0\expndtw0\kerning0
+    \cf16 </Console>\cf17 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls2\ilvl0\cf17 \cb1 \kerning1\expnd0\expndtw0 {\listtext	7	}\expnd0\expndtw0\kerning0
+  \cf16 </Appenders>\cf17 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls2\ilvl0\cf17 \cb21 \kerning1\expnd0\expndtw0 {\listtext	8	}\expnd0\expndtw0\kerning0
+  \cf16 <Loggers>\cf17 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls2\ilvl0\cf17 \cb1 \kerning1\expnd0\expndtw0 {\listtext	9	}\expnd0\expndtw0\kerning0
+    \cf16 <Root\cf17  \cf18 level\cf19 =\cf20 "error"\cf16 >\cf17 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls2\ilvl0\cf17 \cb21 \kerning1\expnd0\expndtw0 {\listtext	10	}\expnd0\expndtw0\kerning0
+      \cf16 <AppenderRef\cf17  \cf18 ref\cf19 =\cf20 "Console"\cf16 />\cf17 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls2\ilvl0\cf17 \cb1 \kerning1\expnd0\expndtw0 {\listtext	11	}\expnd0\expndtw0\kerning0
+    \cf16 </Root>\cf17 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls2\ilvl0\cf17 \cb21 \kerning1\expnd0\expndtw0 {\listtext	12	}\expnd0\expndtw0\kerning0
+  \cf16 </Loggers>\cf17 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls2\ilvl0\cf16 \cb1 \kerning1\expnd0\expndtw0 {\listtext	13	}\expnd0\expndtw0\kerning0
+</Configuration>
+\fs26 \cf17 \
+\pard\tx560\pardeftab720\partightenfactor0
+\cf17 \
+\pard\pardeftab720\sa400\partightenfactor0
+
+\f7\fs18 \cf14 \cb15 HOW CAN WE AVOID UNNECESSARY LOGS?\
+===================================\
+If we want to track entire logs of certain test class and only error logs of certain test class, then how can we achieve it?\
+\pard\pardeftab720\sa400\partightenfactor0
+\cf14 {{\NeXTGraphic Screenshot 2022-03-03 at 9.24.29 AM.png \width21500 \height9160 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\pardeftab720\sa400\partightenfactor0
+\cf14 \
+under \cf2 <Loggers>,\cf14 \
+ set <root level=\'93trace\'94> //for rest entire classes use root\
+set<Logger name=\'93pkg.classname\'94 level=\'93error\'94 additivity=\'93false\'94> //specify the class name under Logger tag\
+\cf2 </loggers>\
+\pard\pardeftab720\sa400\partightenfactor0
+\cf12 HOW CAN WE SEND LOGS TO SOME EXTERNAL FILE INSTEAD OF CONSOLE\
+===========================================================\
+Config File:\
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf22 \cb1 \kerning1\expnd0\expndtw0 <?\cf3 xml\cf23  version\cf22 =\cf23 "\cf22 1.0\cf23 " encoding\cf22 =\cf23 "\cf22 UTF-8\cf23 "\cf22 ?>\cf0 \
+<\cf3 \ul \ulc3 Configuration\cf0 \ulnone  \cf23 status\cf0 =\cf23 "\cf24 WARN\cf23 "\cf0 >\
+       <\cf3 Properties\cf0 >\
+<\cf3 Property\cf0  \cf23 name\cf0 =\cf23 "\cf24 basePath\cf23 "\cf0 >./logs</\cf3 Property\cf0 >\
+</\cf3 Properties\cf0 >\
+ \
+  <\cf3 Appenders\cf0 >\
+     \cf2  <RollingFile name="File"\cf0  \cf2 fileName="$\{basePath\}/prints.log" filePattern="$\{basePath\}/prints-%d\{yyyy-MM-dd\}.log"\cf0 >\
+     <\cf3 PatternLayout\cf0  \cf23 pattern\cf0 =\cf23 "\cf24 %d\{HH:mm:ss.SSS\} [%t] %-5level %logger\{36\} - %msg%n\cf23 "\cf0 />\
+      \cf2 <SizeBasedTriggeringPolicy \cf23 size\cf0 =\cf23 "\cf24 500\cf23 "\cf0  /> -- if size of log file exceeds 500 then create new log file in the same location with name appended with timepstamp\
+       \cf2    </RollingFile>\cf0 \
+    <\cf3 Console\cf0  \cf23 name\cf0 =\cf23 "\cf2 Console\cf23 "\cf0  \cf23 target\cf0 =\cf23 "\cf24 SYSTEM_OUT\cf23 "\cf0 >\
+      <\cf3 PatternLayout\cf0  \cf23 pattern\cf0 =\cf23 "\cf24 %d\{HH:mm:ss.SSS\} [%t] %-5level %logger\{36\} - %msg%n\cf23 "\cf0 />\
+    </\cf3 Console\cf0 >\
+  </\cf3 Appenders\cf0 >\
+  <\cf3 Loggers\cf0 >\
+    <\cf3 Root\cf0  \cf23 level\cf0 =\cf23 "\cf24 trace\cf23 "\cf0 >\
+      <\cf3 AppenderRef\cf0  \cf23 ref\cf0 =\cf23 "\cf2 File\cf23 "\cf0 />\
+    </\cf3 Root\cf0 >\
+  </\cf3 Loggers\cf0 >\
+</\cf3 Configuration\cf0 >
+\f7 \cf12 \cb15 \expnd0\expndtw0\kerning0
+\
+\pard\pardeftab720\sa400\partightenfactor0
+\cf12 {{\NeXTGraphic Screenshot 2022-03-03 at 11.25.11 AM.png \width8440 \height5260 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\pardeftab720\sa400\partightenfactor0
+
+\fs36 \cf2 \
+\pard\pardeftab720\partightenfactor0
+
+\f3\b\fs18 \cf4 \cb1 \kerning1\expnd0\expndtw0 package
+\f1\b0 \cf0  Log4j;\
+\
+
+\f3\b \cf4 import
+\f1\b0 \cf0  org.apache.logging.log4j.LogManager;\
+
+\f3\b \cf4 import
+\f1\b0 \cf0  org.apache.logging.log4j.Logger;\
+
+\f3\b \cf4 import
+\f1\b0 \cf0  org.openqa.selenium.By;\
+
+\f3\b \cf4 import
+\f1\b0 \cf0  org.openqa.selenium.WebDriver;\
+
+\f3\b \cf4 import
+\f1\b0 \cf0  org.openqa.selenium.WebElement;\
+
+\f3\b \cf4 import
+\f1\b0 \cf0  org.openqa.selenium.chrome.ChromeDriver;\
+
+\f3\b \cf4 import
+\f1\b0 \cf0  org.openqa.selenium.interactions.Actions;\
+\
+
+\f3\b \cf4 public
+\f1\b0 \cf0  
+\f3\b \cf4 class
+\f1\b0 \cf0  Log4jTest \{\
+\
+	
+\f3\b \cf2 private
+\f1\b0  
+\f3\b static
+\f1\b0  Logger 
+\f4\i log
+\f1\i0  = LogManager.
+\f4\i getLogger
+\f1\i0 (Log4jTest.
+\f3\b class
+\f1\b0 .getName());\cf0 \
+\
+	
+\f3\b \cf4 public
+\f1\b0 \cf0  
+\f3\b \cf4 static
+\f1\b0 \cf0  
+\f3\b \cf4 void
+\f1\b0 \cf0  main(String[] \cf8 args\cf0 ) \{\
+		\cf7 // 
+\f3\b \cf25 TODO
+\f1\b0 \cf7  Auto-generated method stub\cf0 \
+		
+\f4\i \cf5 log
+\f1\i0 \cf0 .debug(\cf9 "Setting chrome driver property"\cf0 );\
+		System.
+\f4\i setProperty
+\f1\i0 (\cf9 "webdriver.chrome.driver"\cf0 , \cf9 "chromedriver"\cf0 );\
+		WebDriver \cf8 driver\cf0  = 
+\f3\b \cf4 new
+\f1\b0 \cf0  ChromeDriver();\
+		\cf8 driver\cf0 .manage().window().maximize();\
+		
+\f4\i \cf5 log
+\f1\i0 \cf0 .info(\cf9 "Window Maximized"\cf0 );\
+		
+\f4\i \cf5 log
+\f1\i0 \cf0 .debug(\cf9 "Now hitting Amazon server"\cf0 );\
+		\cf8 driver\cf0 .get(\cf9 "https://www.amazon.com/"\cf0 );\
+		
+\f4\i \cf5 log
+\f1\i0 \cf0 .info(\cf9 "Landed on amazon home page"\cf0 );\
+		Actions \cf8 \ul \ulc8 a\cf0 \ulnone  = 
+\f3\b \cf4 new
+\f1\b0 \cf0  Actions(\cf8 driver\cf0 );\
+\
+		\cf7 /*\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf7 		 * a.moveToElement(driver.findElement(By.xpath("//*[@id='\ul twotabsearchtextbox\ulnone ']")\cf0 \
+\cf7 		 * ))\cf0 \
+\cf7 		 * .click().keyDown(Keys.SHIFT).sendKeys("\ul capitalletters\ulnone ").doubleClick().build()\cf0 \
+\cf7 		 * .perform(); a.moveToElement(driver.findElement(By.cssSelector(\cf0 \
+\cf7 		 * "a[id='\ul nav\ulnone -link-accountList']"))).build().perform();\cf0 \
+\cf7 		 * a.moveToElement(driver.findElement(By.cssSelector(\cf0 \
+\cf7 		 * "a[id='\ul nav\ulnone -link-accountList']"))).contextClick().build().perform();\cf0 \
+\cf7 		 */\cf0 \
+\
+		\cf8 driver\cf0 .get(\cf9 "http://jqueryui.com/demos/droppable/"\cf0 );\
+		
+\f4\i \cf5 log
+\f1\i0 \cf0 .debug(\cf9 "Getting the frames count"\cf0 );\
+		System.
+\f5\i\b \cf5 out
+\f1\i0\b0 \cf0 .println(\cf8 driver\cf0 .findElements(By.
+\f4\i tagName
+\f1\i0 (\cf9 "iframe"\cf0 )).size());\
+		
+\f4\i \cf5 log
+\f1\i0 \cf0 .info(\cf9 "Frames count retrieved"\cf0 );\
+		
+\f3\b \cf4 try
+\f1\b0 \cf0  \{\
+			\cf8 driver\cf0 .switchTo().frame(0);\
+			
+\f4\i \cf5 log
+\f1\i0 \cf0 .info(\cf9 "Successfully switched to frame"\cf0 );\
+		\} 
+\f3\b \cf4 catch
+\f1\b0 \cf0  (Exception \cf8 e\cf0 ) \{\
+			
+\f4\i \cf5 log
+\f1\i0 \cf0 .error(\cf9 "Cannot identify the frame"\cf0 );\
+		\}\
+		\cf7 // driver.switchTo().frame(driver.findElement(By.cssSelector("iframe.demo-frame")));\cf0 \
+		
+\f4\i \cf5 log
+\f1\i0 \cf0 .debug(\cf9 "Identifying Draggable objects"\cf0 );\
+		WebElement \cf8 draggable\cf0  = \cf8 driver\cf0 .findElement(By.
+\f4\i id
+\f1\i0 (\cf9 "draggable"\cf0 ));\
+		WebElement \cf8 droppable\cf0  = \cf8 driver\cf0 .findElement(By.
+\f4\i id
+\f1\i0 (\cf9 "droppable"\cf0 ));\
+		
+\f3\b \cf4 new
+\f1\b0 \cf0  Actions(\cf8 driver\cf0 ).dragAndDrop(\cf8 draggable\cf0 , \cf8 droppable\cf0 ).build().perform();\
+		
+\f4\i \cf5 log
+\f1\i0 \cf0 .info(\cf9 "Drag and drop success"\cf0 );\
+\
+	\}\
+\
+\}
+\fs24 \
+\pard\pardeftab720\sa400\partightenfactor0
+
+\f7\fs36 \cf14 \cb15 \expnd0\expndtw0\kerning0
+\
+}{\*\beandata789c9d935d6f82301486aff157748db752d876b12d8851c1c4cc2099b86497153a65e32ba5cef1ef57444aeb66b68c1bda73fabe4f7b4e6b8d3ed3047c105ac6793684a66e4040b2308fe26c3b84eb6036b88323bb675d39cb69f0e2bba048e292017f3d59cca7000e101a17454210720207f88bf92a00dc0321d78300ee182b1e103a1c0e3aae57e9619ed60b4be4d3bc2094550b6e36e0023d6211e498c65dd90e8f4671c8ec9e66bd93caee631aee62bec242f594474b46f9666d6ff5482a128d45fa146f75f9e68d84ac14324c29ae07c2a09fed934492692d573b3984092e855e4e37f9e9acbf9e3b5d5eb3e28c912da1f6ad85dae1518854636fa5f39fec2cf6a6502e603aceb5ca5140a8f36ca16715f93ff7e64fdc2eda567ce28ebd27f6ead6f78d778ef1e866cf48f9dcf4dfdba71ba591d2490dd334ee0df5c03ff68b5c3a9fb8360e57711aa6958c92572c8f8552b2dfead9d0329c1289f70b4354a4736bbc585e887b2a8a56cf2704670e665830cece7cde24513053ad540756ded6e9e109b6501bf52759b43a0b1d5facddfb02aa1d4161}

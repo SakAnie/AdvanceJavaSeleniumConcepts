@@ -1,0 +1,229 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2636
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Georgia;\f1\fnil\fcharset0 Georgia-Bold;\f2\fnil\fcharset0 Menlo-Bold;
+\f3\fnil\fcharset0 Menlo-Regular;\f4\fnil\fcharset0 Menlo-BoldItalic;\f5\fnil\fcharset0 Menlo-Italic;
+}
+{\colortbl;\red255\green255\blue255;\red255\green255\blue11;\red127\green0\blue85;\red0\green0\blue192;
+\red106\green62\blue62;\red251\green2\blue7;\red63\green127\blue95;\red100\green100\blue100;\red0\green0\blue0;
+}
+{\*\expandedcolortbl;;\cssrgb\c100000\c100000\c0;\csgenericrgb\c49804\c0\c33333;\csgenericrgb\c0\c0\c75294;
+\csgenericrgb\c41569\c24314\c24314;\cssrgb\c100000\c14913\c0;\csgenericrgb\c24706\c49804\c37255;\csgenericrgb\c39216\c39216\c39216;\cssrgb\c0\c0\c0;
+}
+\paperw11900\paperh16840\margl1011\margr1011\margb1445\margt1011\vieww14000\viewh16000\viewkind1\viewscale220
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 HASHCODE() & EQUALS() IN JAVA\
+===========================\
+\cb2 Please note:\
+=========\
+(i)If two objects are 
+\f1\b equal
+\f0\b0  then they 
+\f1\b must have same hashCode()
+\f0\b0 \
+(ii)If two objects are NOT equal, then they might not have same hashCode or have same HashCode()->(hashCollision in the bucket)\
+\cb1 \
+(iii) HASH COLLISION: HashCode () can be same for different objects.\
+\
+HashCode()?  H(big integer value) : hashing function applied over a big integer value.\
+\
+Suppose there is a Class called Student which  accepts Student_ID in its constructor \
+=========================================================\
+\pard\pardeftab720\partightenfactor0
+
+\f2\b\fs18 \cf3 package
+\f3\b0 \cf0  practiseSelenium2;\
+\
+
+\f2\b \cf3 import
+\f3\b0 \cf0  java.util.Objects;\
+\
+
+\f2\b \cf3 public
+\f3\b0 \cf0  
+\f2\b \cf3 class
+\f3\b0 \cf0  Student \{\
+\
+	
+\f2\b \cf3 private
+\f3\b0 \cf0  
+\f2\b \cf3 int
+\f3\b0 \cf0  \cf4 id\cf0 ;\
+	
+\f2\b \cf3 public
+\f3\b0 \cf0  Student(int id) \{\
+		{\field{\*\fldinst{HYPERLINK "http://this.id"}}{\fldrslt this.id}}=id;\
+	\}\
+	
+\f2\b \cf3 public
+\f3\b0 \cf0  
+\f2\b \cf3 int
+\f3\b0 \cf0  getId() \{\
+		
+\f2\b \cf3 return
+\f3\b0 \cf0  \cf4 id\cf0 ;\
+	\}\
+
+\f2\b \cf3 	public
+\f3\b0 \cf0  
+\f2\b \cf3 void
+\f3\b0 \cf0  setId(
+\f2\b \cf3 int
+\f3\b0 \cf0  \cf5 id\cf0 ) \{\
+		
+\f2\b \cf3 this
+\f3\b0 \cf0 .\cf4 id\cf0  = \cf5 id\cf0 ;\
+	\}\
+\
+\
+
+\f2\b \cf3 public
+\f3\b0 \cf0  
+\f2\b \cf3 class
+\f3\b0 \cf0  HashCodeEqualsStudent \{\
+	\
+	
+\f2\b \cf3 public
+\f3\b0 \cf0  
+\f2\b \cf3 static
+\f3\b0 \cf0  
+\f2\b \cf3 void
+\f3\b0 \cf0  main(String[] \cf5 args\cf0 ) \{\
+		Student \cf5 sobj1\cf0 =
+\f2\b \cf3 new
+\f3\b0 \cf0  Student(23);\
+		Student \cf5 sobj2\cf0 =
+\f2\b \cf3 new
+\f3\b0 \cf0  Student(23);\
+		\
+		\
+		System.
+\f4\i\b \cf4 out
+\f3\i0\b0 \cf0 .println(\cf5 sobj1\cf0 .equals(\cf5 sobj2\cf0 )); \cf6 //Returns FALSE because they can not identify the \cf7 duplicity\cf6 . How to correct it?\
+\pard\pardeftab720\partightenfactor0
+\cf0 		\
+		\
+		\cf7 //However, if we use similar with PRIMITIVE CLASSES LIKE INTEGER<<BOOLEAN<CHARACTER<DOUBLE, then they can identify the duplicity and will not allow duplicate elements\cf0 \
+		Integer \cf5 stobj1\cf0 =
+\f2\b \cf3 new
+\f3\b0 \cf0  \ul \strike \strikec0 Integer\strike0\striked0 (23)\ulnone ;\
+		Integer \cf5 stobj2\cf0 =
+\f2\b \cf3 new
+\f3\b0 \cf0  \ul \strike \strikec0 Integer\strike0\striked0 (23)\ulnone ;\
+		System.
+\f4\i\b \cf4 out
+\f3\i0\b0 \cf0 .println(\cf5 stobj1\cf0 .equals(\cf5 stobj2\cf0 )); //returns true\
+\
+\}\
+\
+\
+\pard\pardeftab720\partightenfactor0
+\cf6 We can resolve it by overriding hasCode() and equals() methods in Student Class.\
+the similar way we generate getter and setter. These methods are already overridden in the primitive class types\cf0 \
+\
+\
+	\cf8 @Override\cf0 \
+	
+\f2\b \cf3 public
+\f3\b0 \cf0  
+\f2\b \cf3 int
+\f3\b0 \cf0  hashCode() \{\
+		
+\f2\b \cf3 return
+\f3\b0 \cf0  Objects.
+\f5\i hash
+\f3\i0 (\cf4 id\cf0 );\
+	\}\
+	\cf8 @Override\cf0 \
+	
+\f2\b \cf3 public
+\f3\b0 \cf0  
+\f2\b \cf3 boolean
+\f3\b0 \cf0  equals(Object \cf5 obj\cf0 ) \{\
+		
+\f2\b \cf3 if
+\f3\b0 \cf0  (
+\f2\b \cf3 this
+\f3\b0 \cf0  == \cf5 obj\cf0 )\
+			
+\f2\b \cf3 return
+\f3\b0 \cf0  
+\f2\b \cf3 true
+\f3\b0 \cf0 ;\
+		
+\f2\b \cf3 if
+\f3\b0 \cf0  (\cf5 obj\cf0  == 
+\f2\b \cf3 null
+\f3\b0 \cf0 )\
+			
+\f2\b \cf3 return
+\f3\b0 \cf0  
+\f2\b \cf3 false
+\f3\b0 \cf0 ;\
+		
+\f2\b \cf3 if
+\f3\b0 \cf0  (getClass() != \cf5 obj\cf0 .getClass())\
+			
+\f2\b \cf3 return
+\f3\b0 \cf0  
+\f2\b \cf3 false
+\f3\b0 \cf0 ;\
+		Student \cf5 other\cf0  = (Student) \cf5 obj\cf0 ;\
+		
+\f2\b \cf3 return
+\f3\b0 \cf0  \cf4 id\cf0  == \cf5 other\cf0 .\cf4 id\cf0 ;\
+	\}\
+	
+\f2\b \cf3 public
+\f3\b0 \cf0  
+\f2\b \cf3 void
+\f3\b0 \cf0  setId(
+\f2\b \cf3 int
+\f3\b0 \cf0  \cf5 id\cf0 ) \{\
+		
+\f2\b \cf3 this
+\f3\b0 \cf0 .\cf4 id\cf0  = \cf5 id\cf0 ;\
+	\}\
+	\
+\
+\}
+\fs24 \
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f0 \cf0 CONTRACT BETWEEN HASHCODE() and EQUALS() ?\
+========================================\
+if we over write the Equals() method,\cf6  in such a way that lets say for two students with same ID should point to the same student object, t\cf0 hen ,we must override the hashCode() method too. \
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf6 This is because, in the memory those two student objects still have two different memory location. default hashCode() works on memory location. if we do not override it, then it might be data-inconsistency.\
+\
+As per HashMAp rule, we cant have duplicate Keys in a HashMap, but if the HashCode() will be different for stuObj1 and stuObj2 , then it means the same student (which we have coded in such a way that they are equal object now) is sitting at two different places as KEY in the HashMAP. this violates hashMap key principle of Key uniqueness.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf6 {{\NeXTGraphic Screenshot 2022-03-06 at 12.43.32 PM.png \width28800 \height18000 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf0 \
+\
+Example : If two student objects points to the same Student , then they must have same HashCode as well.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf6 If,\
+(student1.equals(student2)) ===>true\
+then,\
+(hashCode(student1)==hashCode(student2)===>MUST!!!!\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf6 {{\NeXTGraphic Screenshot 2022-03-06 at 12.38.38 PM.png \width28800 \height18000 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf6 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f1\b \cf9 Interview Question2:\
+what will happen if equals method always returns false and the hashCode always return the same constant value?\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f0\b0\fs18 \cf6 Answer: All the nodes will be added to the same bucket (because address HashCode is same) & as link list chain .PFB
+\fs24 \cf9 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf9 {{\NeXTGraphic Screenshot 2022-03-06 at 12.48.08 PM.png \width28800 \height18000 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf6 \
+}{\*\beandata789c9d935d6f82301486aff157748db752d876b12d8851c1c4cc2099b86497153a65e32ba5cef1ef57444aeb66b68c1bda73fabe4f7b4e6b8d3ed3047c105ac6793684a66e4040b2308fe26c3b84eb6036b88323bb675d39cb69f0e2bba048e292017f3d59cca7000e101a17454210720207f88bf92a00dc0321d78300ee182b1e103a1c0e3aae57e9619ed60b4be4d3bc2094550b6e36e0023d6211e498c65dd90e8f4671c8ec9e66bd93caee631aee62bec242f594474b46f9666d6ff5482a128d45fa146f75f9e68d84ac14324c29ae07c2a09fed934492692d573b3984092e855e4e37f9e9acbf9e3b5d5eb3e28c912da1f6ad85dae1518854636fa5f39fec2cf6a6502e603aceb5ca5140a8f36ca16715f93ff7e64fdc2eda567ce28ebd27f6ead6f78d778ef1e866cf48f9dcf4dfdba71ba591d2490dd334ee0df5c03ff68b5c3a9fb8360e57711aa6958c92572c8f8552b2dfead9d0329c1289f70b4354a4736bbc585e887b2a8a56cf2704670e665830cece7cde24513053ad540756ded6e9e109b6501bf52759b43a0b1d5facddfb02aa1d4161}

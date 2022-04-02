@@ -1,0 +1,216 @@
+//VmWare
+
+
+Railway station
+
+5 train timings:
+
+train1: comes by 10am , departs by 10:45am 
+
+train2: comes by 10:10am, deparats by 10:40am
+
+train3: comes by 10:45am, departs by 11:30am
+
+train4: comes by 9pm,departs by 10:15pm
+
+train5: comes by 9:30pm,departs 10:30pm
+
+Minimum no of platforms  that I need to accomodate the train timings.
+5trains.
+
+
+
+public int platform(int incoming_time, int outgoing_time){
+
+
+//
+
+array_incoming--->i
+array_outgoing--> j
+
+
+if(array_outgoing[i]> array_incoming[j]){
+platform_count++;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+train2..train1..train1...train2
+)
+if(train2outgoingtime < incomingtimeoftrain1){
+
+only 1 platform
+
+}
+
+return no_of_platforms;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SHARE PROBLEM:
+
+Per Month : Vmare : 110$, 95$, 61$, 180$, 110$, 115$, 200$, ...30 values
+
+Min value of Share Price
+Max value of Share Price
+
+
+a=[110$, 95$, 61$, 180$, 110$, 115$, 200$],...];
+
+int no_of_shares=a.length ;
+
+int min=a[0]; = 110$
+int max=a[no_of_shares-1];  =a[6]=200$
+
+O(n)
+for(int i=1;i<no_of_shares-2;i++){
+
+if(min>a[i]){
+
+min=a[i];//replacing the minium value with the current value of the array
+}
+elseif(max<a[i]){
+max=a[i];
+}
+
+}
+
+
+
+
+SYSO ("min is"+min+"max is"+max);
+
+ARRAY_REVERSAL 
+================
+a=[1,2,3,4,5,6];
+int temp;
+for(int i=0;i<a.length;i++){
+
+for(j=length-1;j>0;j--){
+
+//swap a[i] & a[j] using temp variable
+
+temp=a[i];
+a[i]=a[j];
+a[j]=temp;
+
+
+
+}
+
+
+}
+
+o/p: reversed array:
+
+
+
+===============
+
+
+array rotation?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,337 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2636
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Georgia;\f1\fnil\fcharset0 Menlo-Bold;\f2\fnil\fcharset0 Menlo-Regular;
+\f3\fnil\fcharset0 Menlo-BoldItalic;\f4\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red127\green0\blue85;\red0\green0\blue0;\red251\green2\blue7;
+\red147\green161\blue161;\red38\green139\blue210;\red128\green0\blue128;\red106\green62\blue62;\red63\green127\blue95;
+\red106\green62\blue62;\red42\green0\blue255;\red0\green0\blue192;}
+{\*\expandedcolortbl;;\csgenericrgb\c49804\c0\c33333;\cssrgb\c0\c0\c0;\cssrgb\c100000\c14913\c0;
+\csgenericrgb\c57647\c63137\c63137;\csgenericrgb\c14902\c54510\c82353;\cssrgb\c57919\c12801\c57269;\csgenericrgb\c41569\c24314\c24314;\csgenericrgb\c24706\c49804\c37255;
+\csgenericrgb\c41569\c24314\c24314;\csgenericrgb\c16471\c0\c100000;\csgenericrgb\c0\c0\c75294;}
+\paperw11900\paperh16840\margl1011\margr1011\margb1445\margt1011\vieww14000\viewh16000\viewkind1\viewscale220
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 READING/WRITING DATA THROUGH EXCEL\
+==================================\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b\fs18 \cf2 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b0 \cf3 1)It happens through 
+\f1\b \cf4 apache POI \cf2 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b0 \cf5 <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->\cf0 \
+		<\cf6 dependency\cf0 >\
+			<\cf6 groupId\cf0 >org.apache.poi</\cf6 groupId\cf0 >\
+			<\cf6 artifactId\cf0 >
+\f1\b \cf4 poi-ooxml
+\f2\b0 \cf0 </\cf6 artifactId\cf0 >\
+			<\cf6 version\cf0 >3.9</\cf6 version\cf0 >\
+		</\cf6 dependency\cf0 >\
+		\cf5 <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->\cf0 \
+		<\cf6 dependency\cf0 >\
+			<\cf6 groupId\cf0 >org.apache.poi</\cf6 groupId\cf0 >\
+			<\cf6 artifactId\cf0 >
+\f1\b \cf4 poi
+\f2\b0 \cf0 </\cf6 artifactId\cf0 >\
+			<\cf6 version\cf0 >5.2.0</\cf6 version\cf0 >\
+		</\cf6 dependency\cf0 >
+\f1\b \cf2 \
+\pard\pardeftab720\partightenfactor0
+\cf2 \
+\pard\pardeftab720\partightenfactor0
+
+\f2\b0 \cf3 2) Import these classes:\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 \
+package
+\f2\b0 \cf0  practiseSelenium;\
+\
+
+\f1\b \cf2 import
+\f2\b0 \cf0  java.io.
+\f1\b \cf4 File
+\f2\b0 \cf0 ;\
+
+\f1\b \cf2 import
+\f2\b0 \cf0  java.io.
+\f1\b \cf4 FileInputStream
+\f2\b0 \cf0 ;\
+
+\f1\b \cf2 import
+\f2\b0 \cf0  java.io.
+\f1\b \cf4 IOException
+\f2\b0 \cf0 ;\
+
+\f1\b \cf2 import
+\f2\b0 \cf0  java.util.
+\f1\b \cf4 Iterator;\
+\pard\pardeftab720\partightenfactor0
+
+\f2\b0 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 import
+\f2\b0 \cf0  org.apache.poi.ss.usermodel.
+\f1\b \cf4 Cell
+\f2\b0 \cf0 ;\
+
+\f1\b \cf2 import
+\f2\b0 \cf0  \cf3 org.apache.poi.ss.usermodel
+\f1\b \cf4 .Row
+\f2\b0 \cf0 ;\
+
+\f1\b \cf2 import
+\f2\b0 \cf0  org.apache.poi.xssf.usermodel.
+\f1\b \cf4 XSSFSheet;
+\f2\b0 \cf0 \
+
+\f1\b \cf2 import
+\f2\b0 \cf0  org.apache.poi.xssf.usermodel.
+\f1\b \cf4 XSSFWorkbook;\
+\
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2\b0 \cf3 \
+3) We need to follow below approach: (revise ache se)\
+======================================\
+1.Get hold of the \cf4 Excel file\cf3  using \cf7 File\cf3  and \cf7 FileInputstream\cf3  class\
+2.Get hold of the \cf4 WorkBook\cf3  using \cf7 XSSFWorkBook\cf3  class\
+3.Get hold of the \cf4 Sheets\cf3  inside that workbook using \cf7 XSSFSheet\cf3  class\
+4.Get hold of the \cf4 Rows\cf3  inside each sheet using\
+ Iterator<Row> row_Iterator=\cf7 sheet.iterator();\cf3 ----> Row firstrow=row_Iterator.next();\
+5.Get hold of the \cf4 Cells\cf3  inside each row using \
+Iterator<Cell> cell_iterator=\cf7 firstrow.cellIterator();\
+\cf3 6.Get hold of \cf4 each cell value\cf3  using Cell class\
+\cf7 Cell\cf0  cellboxValue=\cf7 cell_iterator.next()\cf0 ;\
+\
+\
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+a better way to handle data type of the excel cell value\
+===========================================================\
+\pard\pardeftab720\partightenfactor0
+
+\fs24 \cf0 {{\NeXTGraphic Screenshot 2022-02-22 at 8.32.25 PM.png \width5920 \height2980 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}
+\fs18 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+if(
+\f1\b \cf4 cellObj.getCellType()==CellType.STRING)
+\f2\b0 \cf0 \{ //to check the type of the value of the cell\
+\
+arrayList.add(
+\f1\b \cf4 NumberToTextConverter.toText
+\f2\b0 \cf0 (c.getNumericCellValue()));
+\fs24 \
+
+\fs18 \
+CODE: LIVE EXAMPLE FROM SCRATCH:\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 package
+\f2\b0 \cf0  practiseSelenium;\
+\
+
+\f1\b \cf2 import
+\f2\b0 \cf0  java.io.File;\
+
+\f1\b \cf2 import
+\f2\b0 \cf0  java.io.FileInputStream;\
+
+\f1\b \cf2 import
+\f2\b0 \cf0  \ul java.io.FileNotFoundException\ulnone ;\
+
+\f1\b \cf2 import
+\f2\b0 \cf0  java.io.IOException;\
+
+\f1\b \cf2 import
+\f2\b0 \cf0  java.util.ArrayList;\
+
+\f1\b \cf2 import
+\f2\b0 \cf0  java.util.Iterator;\
+\
+
+\f1\b \cf2 import
+\f2\b0 \cf0  org.apache.poi.ss.usermodel.Cell;\
+
+\f1\b \cf2 import
+\f2\b0 \cf0  org.apache.poi.ss.usermodel.CellType;\
+
+\f1\b \cf2 import
+\f2\b0 \cf0  org.apache.poi.ss.usermodel.Row;\
+
+\f1\b \cf2 import
+\f2\b0 \cf0  org.apache.poi.ss.util.NumberToTextConverter;\
+
+\f1\b \cf2 import
+\f2\b0 \cf0  org.apache.poi.xssf.usermodel.XSSFSheet;\
+
+\f1\b \cf2 import
+\f2\b0 \cf0  org.apache.poi.xssf.usermodel.XSSFWorkbook;\
+\
+
+\f1\b \cf2 public
+\f2\b0 \cf0  
+\f1\b \cf2 class
+\f2\b0 \cf0  DataDrivenExcelExampleFinal \{\
+	\
+	\cf9 /*\cf0 \
+\cf9 	 * THE TEST SCENARIO: IDENTIFY THE COLUMN WHERE "
+\f1\b TESTCASES
+\f2\b0 " IS PRESENT BY SCANNING ALL THE COLUMNS\cf0 \
+\cf9 	 * ONCE THE TESTCASES COLUMN IS IDENTIFIES,THEN TRY TO SEARCH THE "
+\f1\b PURCHASE
+\f2\b0 " TEST CASE BY SCANNING ENTIRE ROWS OF THAT COLUMN\cf0 \
+\cf9 	 * \cf0 \
+\cf9 	 */\cf0 \
+\
+	\cf9 // 1)Identify \ul Testcases\ulnone  \ul coloum\ulnone  by scanning the entire 1st row\cf0 \
+	\cf9 // 2)once \ul coloumn\ulnone  is identified then scan entire \ul testcase\ulnone  \ul coloum\ulnone  to identify purchase \ul testcase\ulnone  row\cf0 \
+	\cf9 // 3)after you grab purchase \ul testcase\ulnone  row = pull all the data of that row and feed\cf0 \
+	\cf9 // 4)into test\cf0 \
+\
+	
+\f1\b \cf2 public
+\f2\b0 \cf0  ArrayList<String> getData(String \cf10 testcaseName\cf0 ) 
+\f1\b \cf2 throws
+\f2\b0 \cf0  IOException \{\
+		\cf9 // fileInputStream argument\cf0 \
+		ArrayList<String> \cf10 a\cf0  = 
+\f1\b \cf2 new
+\f2\b0 \cf0  ArrayList<String>();\
+\
+		File \cf10 file\cf0 =
+\f1\b \cf2 new
+\f2\b0 \cf0  File(\cf11 "C://Users//rahul//Documents//demodata.xlsx"\cf0 );\
+		FileInputStream \cf10 fis\cf0  = 
+\f1\b \cf2 new
+\f2\b0 \cf0  FileInputStream(\cf10 file\cf0 );\
+		XSSFWorkbook \cf10 \ul \ulc10 workbook\cf0 \ulnone  = 
+\f1\b \cf2 new
+\f2\b0 \cf0  XSSFWorkbook(\cf10 fis\cf0 );\
+\
+		
+\f1\b \cf2 int
+\f2\b0 \cf0  \cf10 sheets\cf0  = \cf10 workbook\cf0 .getNumberOfSheets();\
+		
+\f1\b \cf2 for
+\f2\b0 \cf0  (
+\f1\b \cf2 int
+\f2\b0 \cf0  \cf10 i\cf0  = 0; \cf10 i\cf0  < \cf10 sheets\cf0 ; \cf10 i\cf0 ++) \{\
+			
+\f1\b \cf2 if
+\f2\b0 \cf0  (\cf10 workbook\cf0 .getSheetName(\cf10 i\cf0 ).equalsIgnoreCase(\cf11 "testdata"\cf0 )) \{\
+				XSSFSheet \cf10 sheet\cf0  = \cf10 workbook\cf0 .getSheetAt(\cf10 i\cf0 );\
+				\cf9 // Identify \ul Testcases\ulnone  \ul coloum\ulnone  by scanning the entire 1st row\cf0 \
+\
+				Iterator<Row> \cf10 rows\cf0  = \cf10 sheet\cf0 .iterator();\cf9 // sheet is collection of rows\cf0 \
+				Row \cf10 firstrow\cf0  = \cf10 rows\cf0 .next();\
+				Iterator<Cell> \cf10 ce\cf0  = \cf10 firstrow\cf0 .cellIterator();\cf9 // row is collection of cells\cf0 \
+				
+\f1\b \cf2 int
+\f2\b0 \cf0  \cf10 k\cf0  = 0;\
+				
+\f1\b \cf2 int
+\f2\b0 \cf0  \cf10 coloumn\cf0  = 0;\
+				
+\f1\b \cf2 while
+\f2\b0 \cf0  (\cf10 ce\cf0 .hasNext()) \{\
+					Cell \cf10 value\cf0  = \cf10 ce\cf0 .next();\
+\
+					
+\f1\b \cf2 if
+\f2\b0 \cf0  (\cf10 value\cf0 .getStringCellValue().equalsIgnoreCase(\cf11 "TestCases"\cf0 )) \{\
+						\cf10 coloumn\cf0  = \cf10 k\cf0 ;\
+\
+					\}\
+\
+					\cf10 k\cf0 ++;\
+				\}\
+				System.
+\f3\i\b \cf12 out
+\f2\i0\b0 \cf0 .println(\cf10 coloumn\cf0 );\
+\
+				\cf9 //// once \ul coloumn\ulnone  is identified then scan entire \ul testcase\ulnone  \ul coloum\ulnone  to identify\cf0 \
+				\cf9 //// purchase \ul testcase\ulnone  row\cf0 \
+				
+\f1\b \cf2 while
+\f2\b0 \cf0  (\cf10 rows\cf0 .hasNext()) \{\
+\
+					Row \cf10 r\cf0  = \cf10 rows\cf0 .next();\
+\
+					
+\f1\b \cf2 if
+\f2\b0 \cf0  (\cf10 r\cf0 .getCell(\cf10 coloumn\cf0 ).getStringCellValue().equalsIgnoreCase(\cf10 testcaseName\cf0 )) \{\
+\
+						\cf9 //// after you grab purchase \ul testcase\ulnone  row = pull all the data of that row and\cf0 \
+						\cf9 //// feed into test\cf0 \
+\
+						Iterator<Cell> \cf10 cv\cf0  = \cf10 r\cf0 .cellIterator();\
+						
+\f1\b \cf2 while
+\f2\b0 \cf0  (\cf10 cv\cf0 .hasNext()) \{\
+							Cell \cf10 c\cf0  = \cf10 cv\cf0 .next();\
+							
+\f1\b \cf2 if
+\f2\b0 \cf0  (\cf10 c\cf0 .getCellType() == CellType.
+\f3\i\b \cf12 STRING
+\f2\i0\b0 \cf0 ) \{\
+\
+								\cf10 a\cf0 .add(\cf10 c\cf0 .getStringCellValue());\
+							\} 
+\f1\b \cf2 else
+\f2\b0 \cf0  \{\
+\
+								\cf10 a\cf0 .add(NumberToTextConverter.
+\f4\i toText
+\f2\i0 (\cf10 c\cf0 .getNumericCellValue()));\
+\
+							\}\
+						\}\
+					\}\
+\
+				\}\
+\
+			\}\
+		\}\
+		
+\f1\b \cf2 return
+\f2\b0 \cf0  \cf10 a\cf0 ;\
+\
+	\}\
+	\
+	
+\f1\b \cf2 public
+\f2\b0 \cf0  
+\f1\b \cf2 static
+\f2\b0 \cf0  
+\f1\b \cf2 void
+\f2\b0 \cf0  main(String[] \cf10 args\cf0 ) 
+\f1\b \cf2 throws
+\f2\b0 \cf0  IOException \{\
+		DataDrivenExcelExampleFinal \cf10 r\cf0 =
+\f1\b \cf2 new
+\f2\b0 \cf0  DataDrivenExcelExampleFinal();\
+		\ul ArrayList\ulnone  \cf10 data\cf0 =\cf10 r\cf0 .getData(\cf11 "TestCase"\cf0 ); \cf9 //storing entire ResultSet into arrayList\cf0 \
+		\
+		\cf9 //print each value of the ArrayList\cf0 \
+		
+\f1\b \cf2 for
+\f2\b0 \cf0 (Object \cf10 x\cf0 :\cf10 data\cf0 ) \{\
+			System.
+\f3\i\b \cf12 out
+\f2\i0\b0 \cf0 .println(\cf10 x\cf0 );\
+		\}\
+		\
+	\}\
+\
+\}\
+\pard\pardeftab720\partightenfactor0
+\cf0 	                    }{\*\beandata789c9d935d6f82301486aff157748db752d876b12d8851c1c4cc2099b86497153a65e32ba5cef1ef57444aeb66b68c1bda73fabe4f7b4e6b8d3ed3047c105ac6793684a66e4040b2308fe26c3b84eb6036b88323bb675d39cb69f0e2bba048e292017f3d59cca7000e101a17454210720207f88bf92a00dc0321d78300ee182b1e103a1c0e3aae57e9619ed60b4be4d3bc2094550b6e36e0023d6211e498c65dd90e8f4671c8ec9e66bd93caee631aee62bec242f594474b46f9666d6ff5482a128d45fa146f75f9e68d84ac14324c29ae07c2a09fed934492692d573b3984092e855e4e37f9e9acbf9e3b5d5eb3e28c912da1f6ad85dae1518854636fa5f39fec2cf6a6502e603aceb5ca5140a8f36ca16715f93ff7e64fdc2eda567ce28ebd27f6ead6f78d778ef1e866cf48f9dcf4dfdba71ba591d2490dd334ee0df5c03ff68b5c3a9fb8360e57711aa6958c92572c8f8552b2dfead9d0329c1289f70b4354a4736bbc585e887b2a8a56cf2704670e665830cece7cde24513053ad540756ded6e9e109b6501bf52759b43a0b1d5facddfb02aa1d4161}

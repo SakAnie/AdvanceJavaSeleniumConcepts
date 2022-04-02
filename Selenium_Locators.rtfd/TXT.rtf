@@ -1,0 +1,663 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2636
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Georgia;\f1\fnil\fcharset0 Menlo-Regular;\f2\fnil\fcharset0 Georgia-Bold;
+\f3\fnil\fcharset77 GujaratiMT;\f4\froman\fcharset0 Times-Roman;\f5\fnil\fcharset0 HelveticaNeue;
+\f6\fnil\fcharset0 HelveticaNeue-Italic;\f7\fnil\fcharset0 HelveticaNeue-Bold;\f8\fnil\fcharset77 GujaratiSangamMN;
+\f9\fnil\fcharset0 Menlo-Bold;\f10\fnil\fcharset0 Menlo-Italic;\f11\fswiss\fcharset0 ArialMT;
+}
+{\colortbl;\red255\green255\blue255;\red255\green0\blue0;\red0\green104\blue218;\red0\green0\blue0;
+\red251\green2\blue7;\red127\green0\blue128;\red21\green22\blue24;\red255\green255\blue255;\red255\green255\blue11;
+\red127\green0\blue85;\red63\green127\blue95;\red0\green0\blue192;\red106\green62\blue62;\red100\green100\blue100;
+\red42\green0\blue255;\red42\green0\blue255;\red127\green0\blue85;\red100\green100\blue100;\red106\green62\blue62;
+\red0\green0\blue192;\red63\green127\blue95;\red181\green137\blue0;\red38\green139\blue210;\red147\green161\blue161;
+\red133\green153\blue0;\red42\green161\blue152;\red38\green139\blue210;\red181\green137\blue0;\red147\green161\blue161;
+\red42\green161\blue152;\red26\green26\blue26;}
+{\*\expandedcolortbl;;\csgenericrgb\c100000\c0\c0;\csgenericrgb\c0\c40784\c85490;\cssrgb\c0\c0\c0;
+\cssrgb\c100000\c14913\c0;\cssrgb\c57919\c12801\c57269;\cssrgb\c10980\c11373\c12157;\cssrgb\c100000\c100000\c100000;\cssrgb\c100000\c100000\c0;
+\csgenericrgb\c49804\c0\c33333;\csgenericrgb\c24706\c49804\c37255;\csgenericrgb\c0\c0\c75294;\csgenericrgb\c41569\c24314\c24314;\csgenericrgb\c39216\c39216\c39216;
+\csgenericrgb\c16471\c0\c100000;\csgenericrgb\c16471\c0\c100000;\csgenericrgb\c49804\c0\c33333;\csgenericrgb\c39216\c39216\c39216;\csgenericrgb\c41569\c24314\c24314;
+\csgenericrgb\c0\c0\c75294;\csgenericrgb\c24706\c49804\c37255;\csgenericrgb\c70980\c53725\c0;\csgenericrgb\c14902\c54510\c82353;\csgenericrgb\c57647\c63137\c63137;
+\csgenericrgb\c52157\c60000\c0;\csgenericrgb\c16471\c63137\c59608;\csgenericrgb\c14902\c54510\c82353;\csgenericrgb\c70980\c53725\c0;\csgenericrgb\c57647\c63137\c63137;
+\csgenericrgb\c16471\c63137\c59608;\cssrgb\c13333\c13333\c13333;}
+\paperw11900\paperh16840\margl1011\margr1011\margb1445\margt1011\vieww14000\viewh16000\viewkind1\viewscale220
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f0\fs18 \cf0 Exceptions in selenium\
+=================\
+\
+1. NoSuchElementException: when unable to locate element. wrong css/xpath etc/\
+2. NullPointerexception: when there is no LIFE to the driver.\
+3.FileNotFound/IOException: wrong file path. when DataProvider is missing or not detected\
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf2 ava.lang.String,java.lang.String) throws \cf3 \ul \ulc3 java.io.IOException\cf2 \ulnone  requires a @DataProvider named : getData()\
+4. ArrayIndexOytOfBound. while manipulatng Object[][] of Dataprovider.
+\fs24 \cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f0\fs18 \cf0 \
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf4 SWITCHINGS: POPUPS\
+driver.switchTo().alert();\
+\
+String parentWindow=driver.getWindowHandle();\
+driver.switchTo().window(parentWindow);\
+\
+WebElement ele=driver.findElement(By.xpath(\'93//*[contains(@id,\'92frame\'92)]\'94)\
+driver.switchTo().frame(by id/name/ele);\
+\
+\
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf0 \
+Selenium Locators:\
+==============\
+Plugins: SelectorsHub and ChroPath \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\pardirnatural\partightenfactor0
+\cf0 {{\NeXTGraphic Screenshot 2022-03-08 at 11.46.14 PM.png \width2360 \height2920 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\pardirnatural\partightenfactor0
+\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\pardirnatural\partightenfactor0
+\cf0 {{\NeXTGraphic Screenshot 2022-03-08 at 11.59.04 PM.png \width15980 \height5380 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\pardirnatural\partightenfactor0
+\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf0 \
+driver.findElement(By.cssSelector(\'93tagName[attribute=\'91value\'92]\'94)l\
+driver.findElement(By.ID(\'93id1\'94));\
+driver.findElement(By.name(\'93name1\'94));\
+driver.findElement(By.xpath(\'93//tagName[@attribute=\'91value\'92]\'94);\
+driver.findElement(By.linkText(\'93click here\'94));\
+driver.findElement(\cf5 By.tagName\cf0 (\'93iframe\'94));\
+\
+For choosing nth webElement(indexing of elements):\
+======================================\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f2\b \cf0 xpath:
+\f0\b0 \
+//input[text()=\'91hello\'92][2]\
+xpath=//tag [@attribute,\'91Value\'92]\
+\
+\
+
+\f2\b CSS:
+\f0\b0 \
+input[text()=\'91hello\'92]:nth-child(2)\
+css=tag[attribute=\'91value\'92]\
+\
+regular expression\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf5 //input[contains(@id,\'92submit\'92)]\
+//*[text()=\'91Log Out\'92]\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf0 \
+\
+CSS\
+======\
+Why CSS is better?\
+css=tagName[attribute=\'91value\'92]\
+tagName.className\
+tagName#ID\
+\
+PARENT CHILD\
+==============\
+xpath:=> //parentTagName/childTagName[index]\
+ex: //form/input[3]==>3rd input child of form tag\
+\
+css:=> parentTagName childTagName\
+ex: form input:nth-child(3)\
+\
+regular expression\
+//input[contains(@id,\'92submit\'92)]\
+\
+\
+SIBLING\
+========\
+parent->\cf6 child->another_child(sibling)\
+\cf0 Ans: //header/div\cf4 /button[1]\cf6 /
+\f2\b following-sibling::button[1]\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f0\b0 \cf6 \
+HOW to traverse back to PARENT?\
+=========================\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f3 \cf4  //
+\f4 header
+\f3 /
+\f4 div
+\f3 /
+\f4 button
+\f3 [1]/
+\f4 following
+\f3 -
+\f4 sibling
+\f3 ::
+\f4 button
+\f3 [1]/
+\f2\b \cf6 parent::button[1]\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f0\b0 \cf5 parent is not possible in CSS.
+\f2\b \cf6 \
+\
+\
+FOWARD<BACK<CHANGE TABS\
+==========================\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f0\b0 \cf4 driver.get(\'93url1\'94);// it waits until all components of page is loaded\
+driver.navigate.to(\'93url2\'94);// does not wait for all components even if basic are loaded its fine\
+driver.navigate.back();\
+driver.navigate.forward();
+\f2\b \cf6 \
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f0\b0 \cf0 \
+LOCATORS & STRING MANIPULATIONS\
+=============================\
+\pard\pardeftab720\sa400\partightenfactor0
+
+\f5 \cf7 \cb8 \expnd0\expndtw0\kerning0
+String passwordText =driver.findElement(By.
+\f6\i cssSelector
+\f5\i0 ("form p")).getText();\
+//Please use temporary password 'rahulshettyacademy' to Login.\
+String[] passwordArray = passwordText.split("'");\
+// String[] passwordArray2 = passwordArray[1].split("'");\
+// passwordArray2[0]\
+String password = passwordArray[1].split("'")[0];\
+\pard\pardeftab720\sa400\partightenfactor0
+
+\f7\b \cf7 return
+\f5\b0 \'a0password;\
+\pard\pardeftab720\sa400\partightenfactor0
+
+\f8\b \cf7 FRAMEWORK BUILDING USING SELENIUM\
+==================================\
+
+\b0 Step1)Create : 
+\b Config.properties
+\b0  for global Variables (browser, url etc)\
+Step2)Create 
+\b BaseTest.Java
+\b0  (it will have methods like initDriver() which reads the Config.properties and launches the desired Browser & the url.\
+Step3) Create PageObject Class(s) (Using PageFactory Constructor)\
+
+\f2\b\fs26 1.LandingPage.java
+\f8\b0\fs18 \
+package pageObjects;\
+public class LoginPage \{\
+	// POM DESIGN PATTERN\
+	// 1. CLASS VARIABLE -driver\
+	public WebDriver driver;\
+	// 2. CONSTRUCTOR - to initialise all web objects on the Page\
+	public LoginPage(WebDriver driver) \{\
+		this.driver = driver;\
+		PageFactory.initElements(driver, this);\
+	\}\
+	//3. Use of FindBy annotation to set the locator to the web element\
+	@FindBy(xpath = "//button[text()='NO THANKS']")\
+	public WebElement newsletter_popup_nothanks;\
+	//4. return the webElement\
+	public WebElement cancel_newsletter_popup() \{\
+		return newsletter_popup_nothanks;\
+	\}\
+	//2nd element\
+	@FindBy(xpath = "//span[text()='Login']")\
+	public WebElement login;\
+\cb9 	/* each time we encounter a webElement by clicking on which it takes us to a next page, then put the Page as the return time*/\cb8 \
+	public LandingPage login() \{\
+		login.click();\
+		return new LandingPage(driver);\
+	\}\
+\}\
+
+\f2\b\fs28 2. LoginPage.java
+\fs18 \
+\pard\pardeftab720\partightenfactor0
+
+\f9 \cf10 \cb1 \kerning1\expnd0\expndtw0 package
+\f1\b0 \cf0  pageObjects;\
+\
+\
+
+\f9\b \cf10 public
+\f1\b0 \cf0  
+\f9\b \cf10 class
+\f1\b0 \cf0  LandingPage \{\
+\
+	\cf11 // POM DESIGN PATTERN\cf0 \
+\
+	\cf11 // 1. CLASS VARIABLE -driver\cf0 \
+	
+\f9\b \cf10 public
+\f1\b0 \cf0  WebDriver \cf12 driver\cf0 ;\
+\
+	\cf11 // 2. CONSTRUCTOR - to initialise all web objects on the Page\cf0 \
+	
+\f9\b \cf10 public
+\f1\b0 \cf0  LandingPage(WebDriver \cf13 driver\cf0 ) \{\
+		
+\f9\b \cf10 this
+\f1\b0 \cf0 .\cf12 driver\cf0  = \cf13 driver\cf0 ;\
+		PageFactory.
+\f10\i initElements
+\f1\i0 (\cf13 driver\cf0 , 
+\f9\b \cf10 this
+\f1\b0 \cf0 );\
+\
+	\}\
+\
+	\cf11 // 3.i) Use of FindBy annotation to set the locator to the web element\cf0 \
+	\cf14 @FindBy\cf0 (css = \cf15 "input#user_email"\cf0 )\
+	
+\f9\b \cf10 public
+\f1\b0 \cf0  WebElement \cf12 user_email\cf0 ;\
+\
+	\cf11 // 4.i) return the webElement\cf0 \
+	
+\f9\b \cf10 public
+\f1\b0 \cf0  WebElement email() \{\
+		
+\f9\b \cf10 return
+\f1\b0 \cf0  \cf12 user_email\cf0 ;\
+	\}\
+\
+	\cf11 // 3.ii) Use of FindBy annotation to set the locator to the web element\cf0 \
+	\cf14 @FindBy\cf0 (css = \cf15 "input#user_password"\cf0 )\
+	
+\f9\b \cf10 public
+\f1\b0 \cf0  WebElement \cf12 password\cf0 ;\
+\
+	\cf11 // 4.ii) return the webElement\cf0 \
+	
+\f9\b \cf10 public
+\f1\b0 \cf0  WebElement password() \{\
+		
+\f9\b \cf10 return
+\f1\b0 \cf0  \cf12 password\cf0 ;\
+	\}\
+\
+	\cf11 // 3.iii) Use of FindBy annotation to set the locator to the web element\cf0 \
+	\cf14 @FindBy\cf0 (css = \cf15 "input[value='Log In']"\cf0 )\
+	
+\f9\b \cf10 public
+\f1\b0 \cf0  WebElement \cf12 LogInBtn\cf0 ;\
+\
+	\cf11 // 4.iii) return the webElement\cf0 \
+	
+\f9\b \cf10 public
+\f1\b0 \cf0  WebElement loginBtn() \{\
+		
+\f9\b \cf10 return
+\f1\b0 \cf0  \cf12 LogInBtn\cf0 ;\
+		\
+	\}\
+	\
+\cb9 //clicking on an element, takes to next page then capture that new page in the clicking function itself and return the new page to the main test class.\
+	\
+		\cf14 @FindBy\cf0 (xpath=\cf15 "//a[text()='Forgot Password?']"\cf0 )\
+		
+\f9\b \cf10 public
+\f1\b0 \cf0  WebElement \cf12 ForgotPassword\cf0 ;\
+\
+	\
+		
+\f9\b \cf10 public
+\f1\b0 \cf0  ResetPasswordPage forgotPassword() \{\
+			\cf12 ForgotPassword\cf0 .click();\
+			ResetPasswordPage \cf13 rs\cf0 =
+\f9\b \cf10 new
+\f1\b0 \cf0  ResetPasswordPage(\cf12 driver\cf0 );\
+			
+\f9\b \cf10 return
+\f1\b0 \cf0  \cf13 rs\cf0 ;\
+		\}\
+\cb1 \
+\}
+\fs24 \
+\pard\pardeftab720\sa400\partightenfactor0
+
+\f8\fs18 \cf7 \cb8 \expnd0\expndtw0\kerning0
+\
+
+\f2\b\fs26 3. ResetPasswordPage.java\
+
+\f0\b0\fs18 package pageObjects;\
+public class ResetPasswordPage \{\
+	// POM DESIGN PATTERN\
+	// 1. CLASS VARIABLE -driver\
+	public WebDriver driver;\
+	// 2. CONSTRUCTOR - to initialise all web objects on the Page\
+	public ResetPasswordPage(WebDriver driver) \{\
+		this.driver = driver;\
+		PageFactory.initElements(driver, this);\
+	\}\
+	//3. LOCATOR USING  @FindBy\
+	@FindBy(xpath = "//input[value='Send Me Instruction']")\
+	public WebElement sendMeInstrBtn;\
+	//4. Return Statement for the WebElement\
+	public WebElement sendMeInstruction() \{\
+		return sendMeInstrBtn;\
+	\}	\
+	@FindBy(css = "input#user_email")\
+	public WebElement user_email;\
+	public WebElement email() \{\
+		return user_email;\
+	\}\
+\}
+\f8 \
+Step4)
+\b Test.java. 
+\b0 (The actual Test class where design our tests using various TestNG capabilities).
+\f1 \cf0 \cb1 \kerning1\expnd0\expndtw0 \
+
+\f0 Step5) Convert the TestProject into 
+\f2\b TestNG.xml
+\f0\b0 . (right click->TestNg->Convert to TestNG--> testNg.xml will be created with the Desired class(s) which we need to execute as Tests. Edit it as per need.)\
+\
+
+\fs28 STEP1: Config.properties
+\fs18 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs24 \cf0 browser=\cf16 \ul \ulc16 chrome\cf0 \ulnone \
+url=\cf16 https://qaclickacademy.com\cf0 \
+\pard\pardeftab720\sa400\partightenfactor0
+
+\f0\fs18 \cf0 \
+
+\fs28 STEP2: BaseTest.java\
+
+\fs18 //To Initialise the Driver & TO Navigate to the Global Variable url\
+//this BaseTest takes care of Data Driven part using Config.properties.\
+//Here we have two keys : browser and url. So we handle the code using them\
+//All Browser Invocations (for all test suits) will be done here\
+
+\f2\b //How smarter can you design your Test project for better maintenance
+\f0\b0 \
+public class BaseTest \{\
+	public static WebDriver driver;\
+	public WebDriver 
+\f2\b initDriver() 
+\f0\b0 throws IOException \{\
+\
+		Properties prop = new Properties();\
+		File file = new File(\
+				"/Users/apple/Desktop/SwitchMaterials/Selenium/SeleniumWorkspace/SakshiSeleniumAutomation/src/main/java/resources/Config.properties");\
+		FileInputStream fis = new FileInputStream(file);\
+		prop.load(fis); // File Open in read mode\
+		System.out.println(prop.getProperty("browser"));\
+		//Fetching data from Config.properties file\
+	
+\f2\b 	String browserName = prop.getProperty("browser");\
+		String urlName=prop.getProperty("url");
+\f0\b0 \
+		if (browserName.equalsIgnoreCase("chrome")) \{\
+			System.setProperty("webdriver.chrome.driver", "chromedriver");\
+			driver = new ChromeDriver();\
+		\} else if (browserName.equalsIgnoreCase("firefox")) \{\
+			System.setProperty("webdriver.gecko.driver", "geckodriver");\
+			driver = new ChromeDriver();\
+		\} else if (browserName.equalsIgnoreCase("edge")) \{\
+			System.setProperty("webdriver.edge.driver", "chromedriver");\
+			driver = new EdgeDriver();\
+		\}		\
+		driver.get(urlName);\
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);\
+		return driver; \}\
+\} //end of BaseTest.Java Class\
+
+\fs28 STEP3: Test.java (extends BaseTest.Java)
+\f1\fs18 \
+\pard\pardeftab720\partightenfactor0
+
+\f9\b \cf17 public
+\f1\b0 \cf0  
+\f9\b \cf17 class
+\f1\b0 \cf0  MyTest001_LoginUsingPageObjects 
+\f9\b \cf17 extends
+\f1\b0 \cf0  BaseTest \{\
+\
+	\cf18 @BeforeTest\cf0 \
+	
+\f9\b \cf17 public
+\f1\b0 \cf0  
+\f9\b \cf17 void
+\f1\b0 \cf0  setDriver() 
+\f9\b \cf17 throws
+\f1\b0 \cf0  IOException \{\
+		BaseTest \cf19 b\cf0  = 
+\f9\b \cf17 new
+\f1\b0 \cf0  BaseTest();\
+		
+\f10\i \cf20 driver
+\f1\i0 \cf0  = \cf19 b\cf0 .initDriver(); \cf21 // Initialise Driver and navigate to \ul url\ulnone  given in Config.properties\cf0 \
+	\}\
+\
+	\cf14 @Test\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf0 	
+\f9\b \cf10 public
+\f1\b0 \cf0  
+\f9\b \cf10 void
+\f1\b0 \cf0  login() 
+\f9\b \cf10 throws
+\f1\b0 \cf0  IOException, InterruptedException \{\
+\
+		\cf11 //TEST FLOW:->LOGIN PAGE-->LANDING PAGE--> RESETPASSWORDPAGE.\cf0 \
+		\
+		\cf11 //PAGE NO:1 LOGIN PAGE '\ul ll\ulnone '\cf0 \
+		LoginPage \cf13 ll\cf0  = 
+\f9\b \cf10 new
+\f1\b0 \cf0  LoginPage(
+\f10\i \cf12 driver
+\f1\i0 \cf0 );\
+		
+\f10\i \cf12 driver
+\f1\i0 \cf0 .manage().window().maximize();\
+		Thread.
+\f10\i sleep
+\f1\i0 (5000);\
+		Assert.
+\f10\i assertTrue
+\f1\i0 (\cf13 ll\cf0 .cancel_newsletter_popup().isDisplayed(), \cf15 "Login Page landing is  successful"\cf0 );\
+		\
+		\cf11 //if PopUp present , then click on NO THANKS\cf0 \
+		
+\f9\b \cf10 if
+\f1\b0 \cf0  (\cf13 ll\cf0 .cancel_newsletter_popup() != 
+\f9\b \cf10 null
+\f1\b0 \cf0 ) \{\
+			\cf13 ll\cf0 .cancel_newsletter_popup().click();\
+		\}\
+ \
+		\cf11 //PAGE NO:2 LANDING PAGE 'l'\cf0 \
+		\cf11 \cb9 // Have the hold of NEXT PAGE\cf0 \cb1 \
+		\cb9 LandingPage \cf13 l\cf0  = \cf13 ll\cf0 .login();\
+\cb1 		
+\f10\i \cf12 Log
+\f1\i0 \cf0 .info(\cf15 "successfully clicked on login Button Top right on Login Page"\cf0 );\
+		Assert.
+\f10\i assertTrue
+\f1\i0 (\cf13 l\cf0 .email().isDisplayed(), \cf15 "Landing Page landing is  successful"\cf0 );\
+		\cf13 l\cf0 .email().sendKeys(\cf15 "saakshianie2410@gmail.com"\cf0 );\
+		\cf13 l\cf0 .password().sendKeys(\cf15 "tester123"\cf0 );\
+		\cf11 // l.loginBtn().click();\cf0 \
+		\cf11 // Log.info("successfully clicked on Submit Button on Landing Page");\cf0 \
+\
+		\cf11 //PAGE NO:3 RESETPASSWORD PAGE '\ul rp\ulnone '\cf0 \
+		\cb9 ResetPasswordPage \cf13 rp\cf0  = \cf13 l\cf0 .forgotPassword();\cb1 \
+		Assert.
+\f10\i assertTrue
+\f1\i0 (\cf13 rp\cf0 .\cf12 user_email\cf0 .isDisplayed(), \cf15 "RESET Password  Page landing is  successful"\cf0 );\
+		\cf13 rp\cf0 .\cf12 user_email\cf0 .sendKeys(\cf15 "ssakshi@v.com"\cf0 );\
+\
+	\}\
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+	\cf18 @DataProvider\cf0 \
+	
+\f9\b \cf17 public
+\f1\b0 \cf0  Object[][] getData() \{\
+		Object[][] \cf19 data\cf0  = 
+\f9\b \cf17 new
+\f1\b0 \cf0  Object[2][2];\
+		\cf21 // Each row represents One Data-Set. \ul username\ulnone  ,password\cf0 \
+		\cf21 // Count of arguments which the Test method needs is equal to the count of\cf0 \
+		\cf21 // arguments we are setting for each row,\cf0 \
+\
+		\cf21 // Data-Set1\cf0 \
+		\cf19 data\cf0 [0][0] = \cf16 "user1"\cf0 ;\
+		\cf19 data\cf0 [0][1] = \cf16 "password1"\cf0 ;\
+\
+\cf21 //		// Data-Set2\cf0 \
+\cf21 //		data[1][0] = "user2";\cf0 \
+\cf21 //		data[1][1] = "password2";\cf0 \
+\
+		
+\f9\b \cf17 return
+\f1\b0 \cf0  \cf19 data\cf0 ;\
+\
+	\}\
+\
+	\cf18 @AfterTest\cf0 \
+	
+\f9\b \cf17 public
+\f1\b0 \cf0  
+\f9\b \cf17 void
+\f1\b0 \cf0  tearDown() \{\
+		
+\f10\i \cf20 driver
+\f1\i0 \cf0 .quit();\
+	\}\
+\}\
+\pard\pardeftab720\sa400\partightenfactor0
+
+\f0 \cf0 \
+
+\fs28 STEP4: Convert to TestNG.xml\
+Project->right click->TestNG->convertToTestNg->Create testNg.xml \
+\pard\pardeftab720\sa400\partightenfactor0
+
+\f1\fs18 \cf22 <?\cf23 xml\cf24  version\cf22 =\cf24 "\cf22 1.0\cf24 " encoding\cf22 =\cf24 "\cf22 UTF-8\cf24 "\cf22 ?>\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf0 <!\cf25 DOCTYPE\cf0  \cf23 suite\cf0  SYSTEM "https://testng.org/testng-1.0.dtd">\
+<\cf23 suite\cf0  \cf24 name\cf0 =\cf24 "\cf26 Suite\cf24 "\cf0 >\
+  <\cf23 test\cf0  \cf24 thread-count\cf0 =\cf24 "\cf26 5\cf24 "\cf0  \cf24 name\cf0 =\cf24 "\cf26 Test\cf24 "\cf0 >\
+    <\cf23 classes\cf0 >\
+      <\cf23 class\cf0  \cf24 name\cf0 =\cf24 "\cf26 projectPkg.MyTest001_LoginUsingPageObjects\cf24 "\cf0 />\
+    </\cf23 classes\cf0 >\
+  </\cf23 test\cf0 > \cf24 <!-- Test -->\cf0 \
+</\cf23 suite\cf0 > \cf24 <!-- Suite -->
+\fs24 \cf0 \
+\
+STEP5: CONVERT TO MAVEN:\
+Add the testNg.xml to the pom.xml in order to run the test as maven test from terminal.\
+
+\fs18 \
+<\cf23 build\cf0 >\
+		<\cf23 plugins\cf0 >\
+\
+			<\cf23 plugin\cf0 >\
+				<\cf23 groupId\cf0 >org.apache.maven.plugins</\cf23 groupId\cf0 >\
+				<\cf23 artifactId\cf0 >\cf5 maven-surefire-plugin\cf0 </\cf23 artifactId\cf0 >\
+				<\cf23 version\cf0 >3.0.0-M5</\cf23 version\cf0 >\
+				<\cf23 configuration\cf0 >\
+					<\cf5 suiteXmlFiles\cf0 >\
+						<\cf23 suiteXmlFile\cf0 >testng.xml</\cf23 suiteXmlFile\cf0 >\
+					</\cf23 suiteXmlFiles\cf0 >\
+				</\cf23 configuration\cf0 >\
+			</\cf23 plugin\cf0 >\
+\
+		</\cf23 plugins\cf0 >\
+	</\cf23 build\cf0 >\
+\
+Please note:\
+============\
+in pom.xml, <build> tag has <resources> (where we provide Log4j.xml file folder) & <plugins>.\
+<plugin> has <configuration> which has <suiteXmlFile>\
+\pard\pardeftab720\partightenfactor0
+\cf0 <\cf27 build\cf0 >\
+\
+\
+		\cb9 <\cf27 resources\cf0 >\
+			<\cf27 resource\cf0 >\
+				<\cf27 directory\cf0 >src/main/resources</\cf27 directory\cf0 >\
+				<\cf27 filtering\cf0 >true</\cf27 filtering\cf0 >\
+			</\cf27 resource\cf0 >\
+		</\cf27 resources\cf0 >\
+\
+\cb1 		<\cf27 plugins\cf0 >\
+\
+			<\cf27 plugin\cf0 >\
+				<\cf27 groupId\cf0 >org.apache.maven.plugins</\cf27 groupId\cf0 >\
+				<\cf27 artifactId\cf0 >maven-surefire-plugin</\cf27 artifactId\cf0 >\
+				<\cf27 version\cf0 >3.0.0-M5</\cf27 version\cf0 >\
+				<\cf27 configuration\cf0 >\
+					<\cf27 suiteXmlFiles\cf0 >\
+						<\cf27 suiteXmlFile\cf0 >testng.xml</\cf27 suiteXmlFile\cf0 >\
+					</\cf27 suiteXmlFiles\cf0 >\
+				</\cf27 configuration\cf0 >\
+			</\cf27 plugin\cf0 >\
+\
+		</\cf27 plugins\cf0 >\
+	</\cf27 build\cf0 >\
+\pard\pardeftab720\partightenfactor0
+
+\fs24 \cf0 STEP6: ADD LOG\
+\
+\pard\pardeftab720\partightenfactor0
+
+\fs18 \cf0 Various log levels:\
+=====================\
+FATAL>ERROR>WARN>INFO>DEBUG>TRACE\
+\
+Default Log level:\
+===================\
+ERROR (will print error or above)\
+\
+Customisation\
+=============\
+(a)src/main/java/resources3 --> log4j2.xml\
+(b)Add location to classpath-->project right click->build configuration-->add source-->add this resources3 folder.\
+\
+done using \cb9 Log4j2.xml \cb1 configuration file.\
+\pard\pardeftab720\partightenfactor0
+\cf28 <?\cf27 xml\cf29  version\cf28 =\cf29 "\cf28 1.0\cf29 " encoding\cf28 =\cf29 "\cf28 UTF-8\cf29 "\cf28 ?>\cf0 \
+<\cf27 \ul \ulc27 Configuration\cf0 \ulnone  \cf29 status\cf0 =\cf29 "\cf30 WARN\cf29 "\cf0 >\
+  <\cf27 Appenders\cf0 >\
+    <\cf27 Console\cf0  \cf29 name\cf0 =\cf29 "\cf30 Console\cf29 "\cf0  \cf29 target\cf0 =\cf29 "\cf30 SYSTEM_OUT\cf29 "\cf0 >\
+      <\cf27 PatternLayout\cf0  \cf29 pattern\cf0 =\cf29 "\cf30 %d\{HH:mm:ss.SSS\} [%t] %-5level %logger\{36\} - %msg%n\cf29 "\cf0 />\
+    </\cf27 Console\cf0 >\
+  </\cf27 Appenders\cf0 >\
+  <\cf27 Loggers\cf0 >\
+    <\cf27 Root\cf0  \cf29 level\cf0 =\cf29 "\cf30 trace\cf29 "\cf0 >\
+      <\cf27 AppenderRef\cf0  \cf29 ref\cf0 =\cf29 "\cf30 Console\cf29 "\cf0 />\
+    </\cf27 Root\cf0 >\
+  </\cf27 Loggers\cf0 >\
+</\cf27 Configuration\cf0 >\
+\
+in pom.xml, specify\
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+		<\cf27 resources\cf0 >\
+			<\cf27 resource\cf0 >\
+				<\cf27 directory\cf0 >src/main/java/resources3</\cf27 directory\cf0 >\
+				<\cf27 filtering\cf0 >true</\cf27 filtering\cf0 >\
+			</\cf27 resource\cf0 >\
+		</\cf27 resources\cf0 >\
+===========================================================\
+\pard\pardeftab720\partightenfactor0
+
+\fs24 \cf0 STEP7: ADD HTML REPORTS\
+\pard\pardeftab720\partightenfactor0
+
+\f11\fs26 \cf31 \cb8 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec31 8nK*79M5WHDP}{\*\beandata789c9d935d6f82301486aff157748db752d876b12d8851c1c4cc2099b86497153a65e32ba5cef1ef57444aeb66b68c1bda73fabe4f7b4e6b8d3ed3047c105ac6793684a66e4040b2308fe26c3b84eb6036b88323bb675d39cb69f0e2bba048e292017f3d59cca7000e101a17454210720207f88bf92a00dc0321d78300ee182b1e103a1c0e3aae57e9619ed60b4be4d3bc2094550b6e36e0023d6211e498c65dd90e8f4671c8ec9e66bd93caee631aee62bec242f594474b46f9666d6ff5482a128d45fa146f75f9e68d84ac14324c29ae07c2a09fed934492692d573b3984092e855e4e37f9e9acbf9e3b5d5eb3e28c912da1f6ad85dae1518854636fa5f39fec2cf6a6502e603aceb5ca5140a8f36ca16715f93ff7e64fdc2eda567ce28ebd27f6ead6f78d778ef1e866cf48f9dcf4dfdba71ba591d2490dd334ee0df5c03ff68b5c3a9fb8360e57711aa6958c92572c8f8552b2dfead9d0329c1289f70b4354a4736bbc585e887b2a8a56cf2704670e665830cece7cde24513053ad540756ded6e9e109b6501bf52759b43a0b1d5facddfb02aa1d4161}

@@ -1,0 +1,370 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2636
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Georgia;\f1\fnil\fcharset0 Georgia-Bold;\f2\fnil\fcharset0 Menlo-Regular;
+\f3\fnil\fcharset0 Menlo-Bold;\f4\fnil\fcharset0 Menlo-BoldItalic;}
+{\colortbl;\red255\green255\blue255;\red127\green0\blue128;\red0\green0\blue0;\red106\green62\blue62;
+\red127\green0\blue85;\red63\green127\blue95;\red0\green0\blue192;\red251\green2\blue7;\red42\green0\blue255;
+\red153\green102\blue51;}
+{\*\expandedcolortbl;;\cssrgb\c57919\c12801\c57269;\cssrgb\c0\c0\c0;\csgenericrgb\c41569\c24314\c24314;
+\csgenericrgb\c49804\c0\c33333;\csgenericrgb\c24706\c49804\c37255;\csgenericrgb\c0\c0\c75294;\cssrgb\c100000\c14913\c0;\csgenericrgb\c16471\c0\c100000;
+\cssrgb\c66800\c47512\c25860;}
+\paperw11900\paperh16840\margl1011\margr1011\margb1445\margt1011\vieww14000\viewh16000\viewkind1\viewscale220
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f0\fs18 \cf0 COLLECTIONS IN JAVA\
+-------------------------------\
+PROGRAM1: LIST INTERFACE\
+\
+ArrayList<Integer> arrObj=new ArrayList<Integer>();\
+ArrayList<Integer> arrObj=new ArrayList<Integer>(Arrays.asList(4,3,4,5,9,7,6,0));\
+\
+- DYNAMIC ARRAY . sizes increases dynamically.\
+- Internally backed by which Data Structure? using 
+\f1\b \cf2 Arrays of Object Class. Object[]\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f0\b0 \cf3 - 
+\f1\b Insertion, Remove : O(N)
+\f0\b0  & Search ie 
+\f1\b Get O(1).
+\f0\b0  For 
+\f1\b frequent Search
+\f0\b0  we 
+\f1\b prefer ArrayList
+\f0\b0 . For frequent \cf2 Insert\cf3  and \cf2 delete\cf3 , we prefer \cf2 LinkedList\cf0 \
+-Sequential-maintained insertion order\
+- 
+\f1\b THREAD SAFE
+\f0\b0 -
+\f1\b synchronised
+\f0\b0  therefore its 
+\f1\b SLOW
+\f0\b0 \
+-index based\
+-It allows 
+\f1\b RANDOM ACCESS O(1)
+\f0\b0 :FETCH THE VALUE. O(1) Get due to arr.get(i)\
+- To iterate over arrayList,we can use:\
+(a) For loop (coz i based)\
+(b) For each loop\
+(c) Iterator\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f2 \cf0 \
+C.1 > Iterator for PRIMITIVE DATATYPE OBJECT\
+\pard\pardeftab720\partightenfactor0
+\cf0 		ArrayList<Integer> \cf4 a_naveen\cf0 =
+\f3\b \cf5 new
+\f2\b0 \cf0  ArrayList<Integer>();\
+		\cf4 a_naveen\cf0 .add(30);\
+		\cf4 a_naveen\cf0 .add(334);\
+		\cf4 a_naveen\cf0 .add(341);\
+		\cf4 a_naveen\cf0 .add(3);\
+		\cf4 a_naveen\cf0 .add(98);\
+		\
+       \cf6 //10. Iterate over ArrayList USING ITERATOR\cf0 \
+		Iterator<Integer> \cf4 it\cf0 =\cf4 a_naveen\cf0 .iterator();\
+		
+\f3\b \cf5 while
+\f2\b0 \cf0 (\cf4 it\cf0 .hasNext()) \{\
+			Integer \cf4 tempEle\cf0 =\cf4 it\cf0 .next();\
+			System.
+\f4\i\b \cf7 out
+\f2\i0\b0 \cf0 .println(\cf4 tempEle\cf0 );\
+		\}
+\f0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f2 \cf0 C.2 > Iterator for NON-PRIMITIVE DATATYPE OBJECT 
+\f3\b \cf8 (VVI)
+\f2\b0 \cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf0 {{\NeXTGraphic Screenshot 2022-03-05 at 12.22.03 PM.png \width5900 \height4880 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf0 {{\NeXTGraphic Screenshot 2022-03-05 at 12.19.43 PM.png \width5500 \height4380 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f3\b \cf8 \
+\
+\
+//AddAll() : To merge 2 ArrayList\
+\
+
+\f2\b0 \cf3 arrlstObj1.addAll(arrlstObj2);\
+//it will add the objects of Array List 2 into ArrayList 1\cf0 \
+
+\f0 \
+
+\f3\b \cf8 //removeAll() : To remove 2 ArrayList\
+
+\f2\b0 \cf3 arr1.removeAll(arr2);\
+\
+
+\f3\b \cf8 //retainAll() : To retain the common element of the given 2 ArrayList\
+
+\f2\b0 \cf3 arr1.retainAll(arr2);
+\f3\b \cf8 \
+
+\f0\b0 \cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf0 {{\NeXTGraphic Screenshot 2022-03-05 at 12.34.07 PM.png \width16460 \height7660 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f1\b \cf0 - Generics Concept: <>\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f0\b0 \cf0 For all Collections, since 
+\f1\b Java 1.7
+\f0\b0 , We should 
+\f1\b define the DataType of the Object which we want to store 
+\f0\b0 in that DataStructure using 
+\f1\b <>\
+
+\f0\b0 \
+We can do without <> generics also, but it will be 
+\f1\b warning
+\f0\b0  because in that case we can store any dataType ( PRIMITIVE/NON-PRIMITIVE) Object to that DataStructure\
+\
+Example:\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f1\b \cf0 //Without Generics \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f0\b0 \cf0 ArrayList arrObj=new ArrayList(); //no compile error but WARNING       [PRIMITIVE]\
+arr.add(34); //Integer Type Object  [PRIMITIVE] \cf2 ALLOWED\
+\cf0 arr.add(45.2);//Float Type Object (4 bytes)  [PRIMITIVE] \cf2 ALLOWED\
+\cf0 \
+arr.add(\'93Sakshi\'94);//String Type Object  [PRIMITIVE] \cf2 ALLOWED\
+\cf0 \
+arr.add(true);//Boolean Type Object  [PRIMITIVE] \cf2 ALLOWED\
+\cf0 \
+arr.add(r);//Character Type Object  [PRIMITIVE] \cf2 ALLOWED\
+\cf0 \
+arr.add(444234324);//Double Type Object (8 bytes) [PRIMITIVE] \cf2 ALLOWED\
+\cf0 \
+arr.add(studentObject);//Class Object type Object [NON-PRIMITIVE] \cf2 ALLOWED\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f1\b \cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f0\b0 \cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f1\b \cf0 //With Generics<>\
+PRIMITIVE\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f0\b0 \cf0 ArrayList<Integer>arrObj=new ArrayList<Integer>(); \
+arrObj.add(34);\cf2 //ALLOWED\cf0 \
+arrObj.add(\'93Sakshi\'94); \cf2 //NO-ALLOWED\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f1\b \cf3 NON_PRIMITIVE
+\f0\b0 \cf2 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf3 ArrayList<Student> arrObj=new ArrayList<Student>();\
+arrObj.add(studen1Obj);\
+arrObj.add(23);\cf2 // NOT aLLOWED\
+\
+\
+\
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf0 \
+\cf8 ArrayList Looks? 
+\f2 \cf8 [1, 2, 3, 4, 5]
+\f0 \cf0 \
+>>implemented by ArrayList class, LinkedList class etc\
+>> ArrayList \cf8 can accept duplicate Values \cf0 since it implements List Collection\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f1\b \cf0 >>MEMORY:
+\f0\b0 \
+   Array has fixed size which must be defined while Array declaration.\
+   ArrayList has DYNAMIC SIZE which does not need to be pre-defined. It will adjust as per need. \
+  Array elements are stored in sequential fashion. A\cf8 rrayList elements are also stored in sequential fashion\cf0 \
+   Array is stored in Contiguous Memory allocation. Same for ArrayList.\
+   ArrayList-> DYNAMIC: means we can add or delete at any point of time,\cf8  from any index\cf0 \
+
+\f1\b >>SPEED: 
+\f0\b0 \
+That is why ArrayList is slower than Array c
+\f1\b oz it used Array at the backend & continuous re-sizing is 	   needed.\
+>>DATA -TYPE: 
+\f0\b0 \
+Array can store PRIMITIVE (int, float, boolean, char)as well as NON-PRIMITIVE (objects,String,Interface,Arrays,Class)data.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf8 ArrayList can store only NON_PRIMITIVE (objects)data. if we try to use primitive then it internally converts them to objects first\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f1\b \cf0 >>INSERTION:
+\f0\b0 \
+Array elements are added using assignment operator: =\
+ArrayList elements are added using inbuilt \cf8 add() \cf0 method.\
+
+\f1\b >>PRINTING ELEMENTS:
+\f0\b0 \
+Array: we need to right for loop ( one for for single, two for loop for 2D and so on)\
+ArrayList: No need to write any loop. Simply print the arrayList object under SYSO\
+>> ArrayList \cf8 can be created without specifying the Data Type of objects\cf0 . DataType will be decided on the basis of 	     the first element being added dynamically.\
+\pard\pardeftab720\partightenfactor0
+
+\f2 \cf0 \ul \ulc0 			ArrayList\ulnone  \cf4 \ul \ulc4 ar\cf0 \ulnone =
+\f3\b \cf5 new
+\f2\b0 \cf0  \ul \ulc4 ArrayList\ulnone ();\
+			\cf4 ar\cf0 .add(\cf9 "Sakshi"\cf0 );\
+			System.
+\f4\i\b \cf7 out
+\f2\i0\b0 \cf0 .println(\cf4 ar\cf0 .\cf8 \
+\
+\pard\pardeftab720\partightenfactor0
+\cf0 0));
+\f0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f1\b \cf0 >>DIMENSION:
+\f0\b0 \
+Array can be \cf10 single\cf0  or \cf2 multi dimensional\
+\cf10 int a[] = new int[8]; //size must be declared before-hand while initialization directly\
+int a[] =\{3,4,5,6,7\};///size must be declared before-hand while initialization IN-directly\
+\cf0 \
+\
+\cf2 int a[][]=new  int[3][4]; //3*4 matrix\
+int a[][]= \{\{3,4,1,2\},\{5,2,9,8\},\{0,9,3,4\}\}; //3*4 matrix\cf0 \
+3 4 1 2\
+5 2 9 8\
+0 9 3 4\
+\
+\cf8 ArrayList is ONLY SINGLE DIMENSIONAL.\cf0 \
+ArrayList<ObjectDataType> arrlist=new ArrayList<ObjectDataType>();\
+ObjectType --> Integer , String,Float etc\
+ \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f3\b \cf5 package
+\f2\b0 \cf0  practiseSelenium2;\
+\
+
+\f3\b \cf5 import
+\f2\b0 \cf0  java.util.ArrayList;\
+\
+
+\f3\b \cf5 public
+\f2\b0 \cf0  
+\f3\b \cf5 class
+\f2\b0 \cf0  ArrayListDemo \{\
+\
+	
+\f3\b \cf5 public
+\f2\b0 \cf0  
+\f3\b \cf5 static
+\f2\b0 \cf0  
+\f3\b \cf5 void
+\f2\b0 \cf0  main(String[] \cf4 args\cf0 ) \{\
+		ArrayList<Integer> \cf4 arraylstObj\cf0  = 
+\f3\b \cf5 new
+\f2\b0 \cf0  ArrayList<Integer>();\
+		\
+		\cf6 //1. INSERTION IN ARRAYLIST\cf0 \
+		\cf4 arraylstObj\cf0 .add(1);\
+		\cf4 arraylstObj\cf0 .add(2);\
+		\cf4 arraylstObj\cf0 .add(3);\
+		\cf4 arraylstObj\cf0 .add(4);\
+		\cf4 arraylstObj\cf0 .add(5);\
+		\
+		System.
+\f4\i\b \cf7 out
+\f2\i0\b0 \cf0 .println(\cf9 "ArrayList before shifting...."\cf0 +\cf4 arraylstObj\cf0 );\
+\
+		\cf6 /*\cf0 \
+\cf6 		 * if we want have added an element at index i, and we again add another element\cf0 \
+\cf6 		 * at the same index i , then ArrayList will move the older value to right by\cf0 \
+\cf6 		 * one index.\cf0 \
+\cf6 		 */\cf0 \
+		\
+		\cf4 arraylstObj\cf0 .add(1, 8); \cf6 //here, i = 1\cf0 \
+		System.
+\f4\i\b \cf7 out
+\f2\i0\b0 \cf0 .println(\cf9 "ArrayList After Shifting...."\cf0 +\cf4 arraylstObj\cf0 );\
+		\
+		\
+		\cf6 //2. REMOVAL IN ARRAYLIST\cf0 \
+		\cf4 arraylstObj\cf0 .remove(1);\
+		System.
+\f4\i\b \cf7 out
+\f2\i0\b0 \cf0 .println(\cf9 "ArrayList After removal from index 1...."\cf0 +\cf4 arraylstObj\cf0 );\
+		\
+		\cf6 //3. FETCHING THE ELEMENTS OF AN ARRAYLIST\cf0 \
+		Integer \cf4 a\cf0 =\cf4 arraylstObj\cf0 .get(2); \cf6 //fetching the object at index position 2\cf0 \
+		System.
+\f4\i\b \cf7 out
+\f2\i0\b0 \cf0 .println(\cf4 a\cf0 );\
+		\
+		\cf6 //4. To CHECK 
+\f4\i\b \cf2 WHETHER A PARTICULAR VALUE IS PRESENT OR NOT WITHIN ARRYALIST
+\f2\i0\b0 \cf0 \
+		
+\f3\b \cf5 if
+\f2\b0 \cf0 (\cf4 arraylstObj\cf0 .contains(4))\{\
+			System.
+\f4\i\b \cf7 out
+\f2\i0\b0 \cf0 .println(\cf9 "Yes! 4 is present inside this arrayList"\cf0 );\
+			\
+			\
+		\cf6 //5. To find the index Of a particular object in ArrayLIST\cf0 \
+			Integer \cf4 b\cf0 =\cf4 arraylstObj\cf0 .indexOf(3);\
+			System.
+\f4\i\b \cf7 out
+\f2\i0\b0 \cf0 .println(\cf9 "the index of object 3 is.."\cf0 +\cf4 b\cf0 );\
+			\
+		\cf6 //6. To find the size of an ArrayList\cf0 \
+			System.
+\f4\i\b \cf7 out
+\f2\i0\b0 \cf0 .println(\cf9 "Total number of elements inside this arrayList is.."\cf0 +\cf4 arraylstObj\cf0 .size());\
+			\
+		\cf6 //7. To check if an ArrayLst is empty or not\cf0 \
+			
+\f3\b \cf5 if
+\f2\b0 \cf0 (\cf4 arraylstObj\cf0 .isEmpty()) \{\
+				System.
+\f4\i\b \cf7 out
+\f2\i0\b0 \cf0 .println(\cf9 "This arrayList is Empty"\cf0 );\
+			\}\
+			else \{\
+				System.
+\f4\i\b \cf7 out
+\f2\i0\b0 \cf0 .println(\cf9 "This arrayList is NOT empty"\cf0 );\
+			\}\
+		\}\
+		\
+\
+	\}\
+\
+\}\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f0 \cf0 \
+o/p:\
+ 
+\f2 ArrayList before shifting....[1, 2, 3, 4, 5]\
+\pard\pardeftab720\partightenfactor0
+\cf0 	ArrayList After Shifting....[1, 8, 2, 3, 4, 5]\
+	ArrayList After removal from index 1....[1, 2, 3, 4, 5]\
+	3\
+	Yes! 4 is present inside this arrayList\
+	the index of object 3 is..2\
+	Total number of elements inside this arrayList is..5\
+	This arrayList is NOT empty
+\f0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf0 \
+\
+}{\*\beandata789c9d935d6f82301486aff157748db752d876b12d8851c1c4cc2099b86497153a65e32ba5cef1ef57444aeb66b68c1bda73fabe4f7b4e6b8d3ed3047c105ac6793684a66e4040b2308fe26c3b84eb6036b88323bb675d39cb69f0e2bba048e292017f3d59cca7000e101a17454210720207f88bf92a00dc0321d78300ee182b1e103a1c0e3aae57e9619ed60b4be4d3bc2094550b6e36e0023d6211e498c65dd90e8f4671c8ec9e66bd93caee631aee62bec242f594474b46f9666d6ff5482a128d45fa146f75f9e68d84ac14324c29ae07c2a09fed934492692d573b3984092e855e4e37f9e9acbf9e3b5d5eb3e28c912da1f6ad85dae1518854636fa5f39fec2cf6a6502e603aceb5ca5140a8f36ca16715f93ff7e64fdc2eda567ce28ebd27f6ead6f78d778ef1e866cf48f9dcf4dfdba71ba591d2490dd334ee0df5c03ff68b5c3a9fb8360e57711aa6958c92572c8f8552b2dfead9d0329c1289f70b4354a4736bbc585e887b2a8a56cf2704670e665830cece7cde24513053ad540756ded6e9e109b6501bf52759b43a0b1d5facddfb02aa1d4161}

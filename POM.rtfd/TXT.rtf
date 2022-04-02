@@ -1,0 +1,284 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2636
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Georgia;\f1\fnil\fcharset0 Menlo-Regular;\f2\fnil\fcharset0 Menlo-Bold;
+\f3\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red251\green2\blue7;\red127\green0\blue128;\red127\green0\blue85;
+\red63\green127\blue95;\red0\green0\blue192;\red106\green62\blue62;\red100\green100\blue100;\red42\green0\blue255;
+}
+{\*\expandedcolortbl;;\cssrgb\c100000\c14913\c0;\cssrgb\c57919\c12801\c57269;\csgenericrgb\c49804\c0\c33333;
+\csgenericrgb\c24706\c49804\c37255;\csgenericrgb\c0\c0\c75294;\csgenericrgb\c41569\c24314\c24314;\csgenericrgb\c39216\c39216\c39216;\csgenericrgb\c16471\c0\c100000;
+}
+\paperw11900\paperh16840\margl1011\margr1011\margb1445\margt1011\vieww14000\viewh16000\viewkind1\viewscale220
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Page Object Model\
+==============\
+\
+- Easy readability of scripts\
+-\cf2 POM is a Design Pattern approach to organise test.\
+-POM helps in separating the scripts (methods-code)from the objects present on a particular webPage. PageFactory helps in achieving those.\cf0 \
+- \cf3 Every webpage of the \'91target Web Application\'92 is represented as a Class.\
+-All web objects belonging to a particular Webpage will be stored in a particular Class.\cf2 \
+-Each webpage has a \cf3 (i)OR class\cf2 (contains all locators), \cf3 (ii)Method Class\cf2 (all functions are defined here which will be applicable over the webElements stored in OR.java), \cf3 (iii)Test Class \cf2 (Test flows)\cf0 \
+- Eliminate duplicity in the code\
+\
+Normal Repo Class File--> By\
+PageFactory --> @FindBy\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\pardirnatural\partightenfactor0
+\cf0 {{\NeXTGraphic Screenshot 2022-03-20 at 2.15.59 PM.png \width6780 \height7060 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\pardirnatural\partightenfactor0
+
+\f1\fs18 \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf0 EXAMPLE: here user_email input field is a Page Object\
+======================================================
+\f0\fs24 \cf3 \
+
+\f2\b\fs18 \cf4 public
+\f1\b0 \cf0  
+\f2\b \cf4 class
+\f1\b0 \cf0  LandingPage \{\
+\
+	\cf5 // POM DESIGN PATTERN\cf0 \
+\
+	\cf5 // 1. CLASS VARIABLE -driver\cf0 \
+	
+\f2\b \cf4 public
+\f1\b0 \cf0  WebDriver \cf6 driver\cf0 ;\
+\
+	\cf5 // 2. CONSTRUCTOR - to initialise all web objects on the Page\cf0 \
+	
+\f2\b \cf4 public
+\f1\b0 \cf0  LandingPage(WebDriver \cf7 driver\cf0 ) \{\
+		
+\f2\b \cf4 this
+\f1\b0 \cf0 .\cf6 driver\cf0  = \cf7 driver\cf0 ;\
+		\cf2 PageFactory.
+\f3\i initElements
+\f1\i0 (driver, 
+\f2\b this
+\f1\b0 );\cf0 \
+\
+	\}\
+\
+	\cf5 //3. Use of FindBy annotation to set the locator to the web element\cf0 \
+	\cf8 @FindBy\cf0 (css = \cf9 "input#user_email"\cf0 )\
+	
+\f2\b \cf4 public
+\f1\b0 \cf0  WebElement \cf6 user_email\cf0 ;\
+\
+	\cf5 //4. return the webElement\cf0 \
+	
+\f2\b \cf4 public
+\f1\b0 \cf0  WebElement email() \{\
+		
+\f2\b \cf4 return
+\f1\b0 \cf0  \cf6 user_email\cf0 ;\
+	\}\
+\
+\}
+\f0\fs24 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf0 1. Normal OR\
+==========\
+classname: 
+\f1\fs18 ebc2LoginOR\
+
+\f0\fs24 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs18 \cf5     // class variable- Driver\cf0 \
+	WebDriver \cf6 driver\cf0 ;\
+\
+	\cf5 // Constructor with Driver as argument\cf0 \
+	
+\f2\b \cf4 public
+\f1\b0 \cf0  ebc2LoginOR(WebDriver \cf7 driver\cf0 ) \{\
+		
+\f2\b \cf4 this
+\f1\b0 \cf0 .\cf6 driver\cf0  = \cf7 driver\cf0 ;\
+\
+	\}\
+\
+	\cf5 // Other Class Variables declared using By operator\cf0 \
+	By \cf6 username\cf0  = By.
+\f3\i xpath
+\f1\i0 (\cf9 "//*[@id=\\"login1\\"]"\cf0 );\
+	By \cf6 password\cf0  = By.
+\f3\i xpath
+\f1\i0 (\cf9 "//*[@id=\\"password\\"]"\cf0 );\
+	\
+\
+	\cf5 // To access each WebElement of the Page , we need these functions\cf0 \
+	
+\f2\b \cf4 public
+\f1\b0 \cf0  WebElement userName() \{\
+		
+\f2\b \cf4 return
+\f1\b0 \cf0  \cf6 driver\cf0 .findElement(\cf6 username\cf0 );\
+\
+	\}\
+\
+	\cf5 // To access each WebElement of the Page , we need these functions\cf0 \
+	
+\f2\b \cf4 public
+\f1\b0 \cf0  WebElement passWord() \{\
+		
+\f2\b \cf4 return
+\f1\b0 \cf0  \cf6 driver\cf0 .findElement(\cf6 password\cf0 );\
+\
+	\}\
+\
+\}\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 =============================================\
+classname: 
+\f1\fs18 PageFactoryLoginOR \cf5 //use of @FindBy\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf0 \
+
+\f2\b \cf4 	public
+\f1\b0 \cf0  
+\f2\b \cf4 class
+\f1\b0 \cf0  PageFactoryLoginOR \{\
+	\
+	\
+	\cf5 //Class Variable\cf0 \
+	WebDriver \cf6 driver\cf0 ;\
+	\
+	\cf5 //Class Constructor\cf0 \
+	
+\f2\b \cf4 public
+\f1\b0 \cf0  PageFactoryLoginOR(WebDriver \cf7 driver\cf0 ) \{\
+		
+\f2\b \cf4 this
+\f1\b0 \cf0 .\cf6 driver\cf0 =\cf7 driver\cf0 ;\
+\cf2 	PageFactory.
+\f3\i initElements
+\f1\i0 (driver, 
+\f2\b this
+\f1\b0 )\cf0 ;\
+\
+	\}\
+	\
+	\
+	\cf8 @FindBy\cf0 (id=\cf9 "login1"\cf0 )\
+	WebElement \cf6 username1\cf0 ;\
+	\
+	\cf8 @FindBy\cf0 (xpath=\cf9 "//*[@id='password']"\cf0 )\
+	WebElement \cf6 password1\cf0 ;	\
+\
+\}\
+\
+So, in PageFactory Model:
+\f2\b \cf2  (VVI- here we do not need to initialise every object .)
+\f1\b0 \cf0 \
+-------------------------\
+\
+	\cf8 @FindBy\cf0 (id=\cf9 "login1"\cf0 )\
+	WebElement \cf6 username1\cf0 ;\
+\
+
+\f2\b \cf4 	public
+\f1\b0 \cf0  WebElement userName() \{\
+		
+\f2\b \cf4 return
+\f1\b0 \cf0  \cf6 username1\cf0 ;\
+	\}\
+\
+Additional Step in Constructor:\
+===============================================\
+\pard\pardeftab720\partightenfactor0
+
+\fs24 \cf0 	\
+	
+\fs18 \cf5 //Class Constructor\cf0 \
+	
+\f2\b \cf4 public
+\f1\b0 \cf0  PageFactoryLoginOR(WebDriver \cf7 driver\cf0 ) \{\
+		
+\f2\b \cf4 this
+\f1\b0 \cf0 .\cf6 driver\cf0 =\cf7 driver\cf0 ;\
+		\cf2 PageFactory.
+\f3\i initElements
+\f1\i0 (driver, 
+\f2\b this
+\f1\b0 )\cf0 ; \cf3 //we initialise the object at constructor level, so no need to any other initialisation\cf0 \
+	\}
+\fs24 \
+	
+\fs18 \
+\
+MY UI:\
+======\
+\
+Maven structure:\
+---------------\
+\
+src/main/java --> com.cybersource --->\
+\
+(a)pages\
+(b)uimodel\
+\
+POM:\
+========\
+LoginOR.java : PageFactory class\
+LoginPage.java : Action Defined  (methods)\
+LoginTest.java: Flows defined @Test (all test cases)\
+\
+\
+Our WebElements have special attribute called 
+\f2\b data-test
+\f1\b0  which helps us to define CSS or xpath or locator easily and it does not changes.\
+\
+\
+\
+We take data of configuration from 
+\f2\b test.properties
+\f1\b0  file using the concept*****\
+\
+ \
+\
+\
+tests folder--> has all XML TESTNG Runner files module wise\
+in a TestNG file:\
+===========================\
+<listeners>\
+ <listener --->ReportListener and ExtentReport Listener\
+ </listener>\
+</listeners>\
+\
+\
+<parameter name=bType value=\'93chrome\'94>\
+<parameter name=csvFile value=\'93filelocation\'94> -- it has orgid,username,password\
+<parameter name=startRow value=\'931\'94>\
+<parameter name=endRow value=\'9310\'94>\
+\
+\
+\
+<classes>\
+    <class name=\'93location_to_Test.java where flow is defined\'94></class>\
+</classes>\
+\pard\pardeftab720\partightenfactor0
+
+\fs24 \cf0 {{\NeXTGraphic IMG_4938.HEIC \width80640 \height60480 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\pardeftab720\partightenfactor0
+\cf0 {{\NeXTGraphic IMG_4936.HEIC \width80640 \height60480 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\pardeftab720\partightenfactor0
+\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf0 {{\NeXTGraphic IMG_4935.HEIC \width80640 \height60480 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\pardeftab720\partightenfactor0
+\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf0 {{\NeXTGraphic IMG_4932.HEIC \width80640 \height60480 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\pardeftab720\partightenfactor0
+\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf0 {{\NeXTGraphic IMG_4937.HEIC \width60480 \height80640 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\pardeftab720\partightenfactor0
+\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf0 {{\NeXTGraphic IMG_4933.HEIC \width60480 \height80640 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}}{\*\beandata789c9d935d6f82301486aff157748db752d876b12d8851c1c4cc2099b86497153a65e32ba5cef1ef57444aeb66b68c1bda73fabe4f7b4e6b8d3ed3047c105ac6793684a66e4040b2308fe26c3b84eb6036b88323bb675d39cb69f0e2bba048e292017f3d59cca7000e101a17454210720207f88bf92a00dc0321d78300ee182b1e103a1c0e3aae57e9619ed60b4be4d3bc2094550b6e36e0023d6211e498c65dd90e8f4671c8ec9e66bd93caee631aee62bec242f594474b46f9666d6ff5482a128d45fa146f75f9e68d84ac14324c29ae07c2a09fed934492692d573b3984092e855e4e37f9e9acbf9e3b5d5eb3e28c912da1f6ad85dae1518854636fa5f39fec2cf6a6502e603aceb5ca5140a8f36ca16715f93ff7e64fdc2eda567ce28ebd27f6ead6f78d778ef1e866cf48f9dcf4dfdba71ba591d2490dd334ee0df5c03ff68b5c3a9fb8360e57711aa6958c92572c8f8552b2dfead9d0329c1289f70b4354a4736bbc585e887b2a8a56cf2704670e665830cece7cde24513053ad540756ded6e9e109b6501bf52759b43a0b1d5facddfb02aa1d4161}

@@ -1,0 +1,323 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2636
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Georgia;\f1\fnil\fcharset0 Menlo-Bold;\f2\fnil\fcharset0 Menlo-Regular;
+\f3\fnil\fcharset0 Menlo-BoldItalic;\f4\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red127\green0\blue85;\red106\green62\blue62;\red42\green0\blue255;
+\red63\green127\blue95;\red0\green0\blue192;\red127\green0\blue85;\red106\green62\blue62;\red42\green0\blue255;
+\red63\green127\blue95;\red0\green0\blue192;}
+{\*\expandedcolortbl;;\csgenericrgb\c49804\c0\c33333;\csgenericrgb\c41569\c24314\c24314;\csgenericrgb\c16471\c0\c100000;
+\csgenericrgb\c24706\c49804\c37255;\csgenericrgb\c0\c0\c75294;\csgenericrgb\c49804\c0\c33333;\csgenericrgb\c41569\c24314\c24314;\csgenericrgb\c16471\c0\c100000;
+\csgenericrgb\c24706\c49804\c37255;\csgenericrgb\c0\c0\c75294;}
+\paperw11900\paperh16840\margl1011\margr1011\margb1445\margt1011\vieww14000\viewh16000\viewkind1\viewscale220
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Walmart now!!:\
+===========\
+How HashSet works?\
+Time complexity for ArrayList, HashMap, HashTable,HashSet?\
+Linke List -all functions\
+Each collection-all functions\
+Basic practise questions.\
+\
+HTTP Method Codes\
+\
+Interview Question _Paytm?\
+\
+\
+How to count each character of a String?\
+\
+Ans:\
+String str = "My name is Sakshi Sinha"\
+m =2\
+y=1\
+n=2\
+a=2\
+e=1\
+\
+\
+DB- SUBQUERY\
+Q:5th LARGEST SALARY .\
+TOP COMMAND SQL\
+DELETE AND TRUNCATE DIFFERENCE:\
+\
+\
+403?\
+\
+\
+Convert the String to a Char array.\
+=========================\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\fs18 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf2 package
+\f2\b0 \cf0  packageinterview;\
+\
+
+\f1\b \cf2 import
+\f2\b0 \cf0  java.util.Hashtable;\
+\
+
+\f1\b \cf2 public
+\f2\b0 \cf0  
+\f1\b \cf2 class
+\f2\b0 \cf0  PaytmQuestion \{\
+\
+	
+\f1\b \cf2 public
+\f2\b0 \cf0  
+\f1\b \cf2 static
+\f2\b0 \cf0  
+\f1\b \cf2 void
+\f2\b0 \cf0  main(String[] \cf3 args\cf0 ) \{\
+		String \cf3 str\cf0 =\cf4 "MynameisSakshi"\cf0 ;\
+		\cf3 str\cf0 =\cf3 str\cf0 .toUpperCase();\
+		\cf5 //expected output\cf0 \
+		\cf5 //M->2, y->1,n->1, so on count of each character in the String given\cf0 \
+	\
+		\cf5 //convert the string to array of characters\cf0 \
+		
+\f1\b \cf2 char
+\f2\b0 \cf0 [] \cf3 c\cf0 =\cf3 str\cf0 .toCharArray();\
+		\
+		Hashtable<Character,Integer> \cf3 hs\cf0 = 
+\f1\b \cf2 new
+\f2\b0 \cf0  Hashtable<Character,Integer>();\
+		
+\f1\b \cf2 for
+\f2\b0 \cf0 (
+\f1\b \cf2 int
+\f2\b0 \cf0  \cf3 i\cf0 =0;\cf3 i\cf0 <\cf3 c\cf0 .\cf6 length\cf0 ;\cf3 i\cf0 ++)\
+		\{\
+			
+\f1\b \cf2 if
+\f2\b0 \cf0 (!\cf3 hs\cf0 .containsKey(\cf3 c\cf0 [\cf3 i\cf0 ]))\
+			\{\
+				\cf3 hs\cf0 .put(\cf3 c\cf0 [\cf3 i\cf0 ],1);\
+			\}\
+			
+\f1\b \cf2 else
+\f2\b0 \cf0 \
+			\{\
+				\cf3 hs\cf0 .put(\cf3 c\cf0 [\cf3 i\cf0 ],(\cf3 hs\cf0 .get(\cf3 c\cf0 [\cf3 i\cf0 ])+1));\
+				\cf5 //add 1 to the \ul hs\ulnone  collection where key is c[i]\cf0 \
+			\}\
+		\}\
+		\
+		\cf5 // LAMBDA EXPRESSION FOR PRINTING HASHTABLE- DICTIONARY\cf0 \
+		\
+		\cf3 hs\cf0 .forEach((\cf3 k\cf0 ,\cf3 v\cf0 ) -> \{\
+			System.
+\f3\i\b \cf6 out
+\f2\i0\b0 \cf0 .format(\cf4 "character is :%s, value is : %d%n"\cf0 ,\cf3 k\cf0 ,\cf3 v\cf0 );\
+		\});\
+		\
+		\
+		\}\
+		\
+	\}\
+\
+--------------------------------------------------------------------------------------
+\f0\fs24 \
+Find out occurrence of character in String\
+\
+String str = "My name is Sakshi Sinha"\
+m =2\
+y=1\
+n=2\
+a=2\
+e=1\
+\
+\
+\
+\
+//rough-work:\
+pseudo-code:\
+\
+String[] s1= str.split(' ');\
+\
+s1=[My,name,is,Sakshi,Sinha]\
+\
+//Iterate over each element of the string array\
+for (int i=0;i<s1.length();i++)\{\
+\
+s1[i] --> My ,name, is, Sakshi, sinha\
+\
+for (int j=0;j<s1[i].length();j++)\{\
+\
+\
+\
+\}//end of j\
+\}//end of i\
+\
+===============================================APPROACH========\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b\fs18 \cf7 package
+\f2\b0 \cf0  packageinterview;\
+\
+
+\f1\b \cf7 import
+\f2\b0 \cf0  java.util.Hashtable;\
+\
+
+\f1\b \cf7 public
+\f2\b0 \cf0  
+\f1\b \cf7 class
+\f2\b0 \cf0  PaytmQuestion \{\
+\
+	
+\f1\b \cf7 public
+\f2\b0 \cf0  
+\f1\b \cf7 static
+\f2\b0 \cf0  
+\f1\b \cf7 void
+\f2\b0 \cf0  main(String[] \cf8 args\cf0 ) \{\
+		String \cf8 str\cf0 =\cf9 "MynameisSakshi"\cf0 ;\
+		\cf8 str\cf0 =\cf8 str\cf0 .toUpperCase();\
+		\cf10 //expected output\cf0 \
+		\cf10 //M->2, y->1,n->1, so on count of each character in the String given\cf0 \
+	\
+		\cf10 //convert the string to array of characters\cf0 \
+		
+\f1\b \cf7 char
+\f2\b0 \cf0 [] \cf8 c\cf0 =\cf8 str\cf0 .toCharArray();\
+		\
+		Hashtable<Character,Integer> \cf8 hs\cf0 = 
+\f1\b \cf7 new
+\f2\b0 \cf0  Hashtable<Character,Integer>();\
+		
+\f1\b \cf7 for
+\f2\b0 \cf0 (
+\f1\b \cf7 int
+\f2\b0 \cf0  \cf8 i\cf0 =0;\cf8 i\cf0 <\cf8 c\cf0 .\cf11 length\cf0 ;\cf8 i\cf0 ++)\
+		\{\
+			
+\f1\b \cf7 if
+\f2\b0 \cf0 (!\cf8 hs\cf0 .containsKey(\cf8 c\cf0 [\cf8 i\cf0 ]))\
+			\{\
+				\cf8 hs\cf0 .put(\cf8 c\cf0 [\cf8 i\cf0 ],1);\
+			\}\
+			
+\f1\b \cf7 else
+\f2\b0 \cf0 \
+			\{\
+				\cf8 hs\cf0 .put(\cf8 c\cf0 [\cf8 i\cf0 ],(\cf8 hs\cf0 .get(\cf8 c\cf0 [\cf8 i\cf0 ])+1));\
+				\cf10 //add 1 to the \ul hs\ulnone  collection where key is c[i]\cf0 \
+			\}\
+		\}\
+		\
+		\cf10 // LAMBDA EXPRESSION FOR PRINTING HASHTABLE- DICTIONARY\cf0 \
+		\
+		\cf8 hs\cf0 .forEach((\cf8 k\cf0 ,\cf8 v\cf0 ) -> \{\
+			System.
+\f3\i\b \cf11 out
+\f2\i0\b0 \cf0 .format(\cf9 "character is :%s, value is : %d%n"\cf0 ,\cf8 k\cf0 ,\cf8 v\cf0 );\
+		\});\
+		\
+		\
+		\}\
+		\
+	\}
+\f0\fs24 \
+\pard\pardeftab720\partightenfactor0
+\cf0 =================================\
+\
+1 Scooter---\
+2 + 1 (extra tyre)\
+\
+every tyre can run till 20km\
+\
+tyre can be changes any no of times.\
+\
+maximum utilise the distance.\
+\
+10km -->.  10 Km-->10km\
+\
+Scooter --> 10km . --> 10km ---> 10km   Take out my one tyre and replacing it with third tyre\
+=======================\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b\fs18 \cf7 package
+\f2\b0 \cf0  packageinterview;\
+\
+
+\f1\b \cf7 public
+\f2\b0 \cf0  
+\f1\b \cf7 class
+\f2\b0 \cf0  WalmartQuestion \{\
+\
+	
+\f1\b \cf7 public
+\f2\b0 \cf0  
+\f1\b \cf7 static
+\f2\b0 \cf0  
+\f1\b \cf7 int
+\f2\b0 \cf0  findminimum(
+\f1\b \cf7 int
+\f2\b0 \cf0 [] \cf8 arr\cf0 ) \{\
+\
+		
+\f1\b \cf7 int
+\f2\b0 \cf0  \cf8 min\cf0  = \cf8 arr\cf0 [0];\
+\
+		
+\f1\b \cf7 for
+\f2\b0 \cf0  (
+\f1\b \cf7 int
+\f2\b0 \cf0  \cf8 j\cf0  = 1; \cf8 j\cf0  < \cf8 arr\cf0 .\cf11 length\cf0 ; \cf8 j\cf0 ++) \{\
+\
+			
+\f1\b \cf7 if
+\f2\b0 \cf0  (\cf8 min\cf0  > \cf8 arr\cf0 [\cf8 j\cf0 ]) \{\
+				\cf8 min\cf0  = \cf8 arr\cf0 [\cf8 j\cf0 ];\
+				
+\f1\b \cf7 break
+\f2\b0 \cf0 ;\
+\
+			\}\
+\
+		\} \cf10 // end of j\cf0 \
+\
+		
+\f1\b \cf7 return
+\f2\b0 \cf0  \cf8 min\cf0 ;\
+\
+	\}\cf10 // end of function ' find minimum'\cf0 \
+\
+	
+\f1\b \cf7 public
+\f2\b0 \cf0  
+\f1\b \cf7 static
+\f2\b0 \cf0  
+\f1\b \cf7 void
+\f2\b0 \cf0  main(String[] \cf8 args\cf0 ) \{\
+\
+		
+\f1\b \cf7 int
+\f2\b0 \cf0 [] \cf8 array\cf0  = \{ 5, 6, 7, 8, 1, 2, 3, 4 \};\
+		System.
+\f3\i\b \cf11 out
+\f2\i0\b0 \cf0 .println(\cf9 "Minimum is"\cf0  + 
+\f4\i findminimum
+\f2\i0 (\cf8 array\cf0 ));\
+\
+		\cf10 // \{1,2,3,4,5,6,7,8\};\cf0 \
+		\cf10 // \{5,6,7,8,1,2,3,4\}\cf0 \
+	\}\
+\
+\}
+\fs24 \
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs18 \cf0 \
+==========================================\
+
+\fs24 \
+\
+\
+\
+\
+\
+\
+}{\*\beandata789c9d935d6f82301486aff157748db752d876b12d8851c1c4cc2099b86497153a65e32ba5cef1ef57444aeb66b68c1bda73fabe4f7b4e6b8d3ed3047c105ac6793684a66e4040b2308fe26c3b84eb6036b88323bb675d39cb69f0e2bba048e292017f3d59cca7000e101a17454210720207f88bf92a00dc0321d78300ee182b1e103a1c0e3aae57e9619ed60b4be4d3bc2094550b6e36e0023d6211e498c65dd90e8f4671c8ec9e66bd93caee631aee62bec242f594474b46f9666d6ff5482a128d45fa146f75f9e68d84ac14324c29ae07c2a09fed934492692d573b3984092e855e4e37f9e9acbf9e3b5d5eb3e28c912da1f6ad85dae1518854636fa5f39fec2cf6a6502e603aceb5ca5140a8f36ca16715f93ff7e64fdc2eda567ce28ebd27f6ead6f78d778ef1e866cf48f9dcf4dfdba71ba591d2490dd334ee0df5c03ff68b5c3a9fb8360e57711aa6958c92572c8f8552b2dfead9d0329c1289f70b4354a4736bbc585e887b2a8a56cf2704670e665830cece7cde24513053ad540756ded6e9e109b6501bf52759b43a0b1d5facddfb02aa1d4161}

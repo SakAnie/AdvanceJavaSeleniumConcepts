@@ -1,0 +1,822 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2636
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Georgia;\f1\fnil\fcharset0 Phosphate-Inline;\f2\fnil\fcharset0 Georgia-Bold;
+\f3\fnil\fcharset0 HelveticaNeue;\f4\fnil\fcharset0 Menlo-Bold;\f5\fnil\fcharset0 Menlo-Regular;
+\f6\fnil\fcharset0 Menlo-BoldItalic;\f7\fswiss\fcharset0 ArialRoundedMTBold;}
+{\colortbl;\red255\green255\blue255;\red21\green22\blue24;\red255\green255\blue255;\red251\green2\blue7;
+\red127\green0\blue128;\red0\green0\blue0;\red127\green0\blue85;\red0\green0\blue192;\red42\green0\blue255;
+\red63\green127\blue95;\red106\green62\blue62;\red100\green100\blue100;\red253\green128\blue8;\red244\green0\blue51;
+}
+{\*\expandedcolortbl;;\cssrgb\c10980\c11373\c12157;\cssrgb\c100000\c100000\c100000;\cssrgb\c100000\c14913\c0;
+\cssrgb\c57919\c12801\c57269;\cssrgb\c0\c0\c0;\csgenericrgb\c49804\c0\c33333;\csgenericrgb\c0\c0\c75294;\csgenericrgb\c16471\c0\c100000;
+\csgenericrgb\c24706\c49804\c37255;\csgenericrgb\c41569\c24314\c24314;\csgenericrgb\c39216\c39216\c39216;\cssrgb\c100000\c57637\c0;\cssrgb\c97680\c9472\c25561;
+}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}}{\leveltext\leveltemplateid1\'01\'00;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\paperw11900\paperh16840\margl1011\margr1011\margb1445\margt1011\vieww14000\viewh16000\viewkind1\viewscale220
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f0\fs18 \cf0 Selenium_notes_2: 
+\f1 Core JAVA
+\f0 \
+========================\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f2\b \cf0 Abstraction Vs Encapsulation
+\f0\b0 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa200\partightenfactor0
+\ls1\ilvl0
+\f3 \cf2 \cb3 {\listtext	1	}\expnd0\expndtw0\kerning0
+Abstraction provides a general structure of a class and leaves the details for the implementers. Encapsulation is to create and define the permissions and restrictions of an object and its member variables and methods.\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa200\partightenfactor0
+\ls1\ilvl0\cf2 \cb3 \kerning1\expnd0\expndtw0 {\listtext	2	}\cf4 \expnd0\expndtw0\kerning0
+Abstraction\cf2  is implemented in Java using i\cf4 nterface\cf2  and \cf4 abstract class\cf2  while \cf5 Encapsulation\cf2  is implemented using four types of access level modifiers: \cf5 public, protected, no modifier and private.\cb1 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f0 \cf0 \kerning1\expnd0\expndtw0 \
+Packages in JAVA:-\
+-----------------------\
+Class A and Class B can access each other directly if they belong to the same package.\
+However, if they sit in different package , then we need import statement.\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f2\b \cf6 PROGRAM_1: ACCESS MODIFIERS IN JAVA\
+==================================
+\f0\b0 \cf0 \
+>>public \
+>>private\
+>>protected\
+>>default\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f4\b \cf7 package
+\f5\b0 \cf0  practiseSelenium;\
+\
+
+\f4\b \cf7 public
+\f5\b0 \cf0  
+\f4\b \cf7 class
+\f5\b0 \cf0  AccessModifierDemo \{\
+	String \cf8 varDefault\cf0 =\cf9 "DefaultClassVariable"\cf0 ;\
+	
+\f4\b \cf7 public
+\f5\b0 \cf0  String \cf8 varPublic\cf0 =\cf9 "PublicClassVariable"\cf0 ;\
+	
+\f4\b \cf7 protected
+\f5\b0 \cf0  String \cf8 varProtected\cf0 =\cf9 "ProtectedClassVariable"\cf0 ;\
+	
+\f4\b \cf7 private
+\f5\b0 \cf0  String \cf8 varPrivate\cf0 =\cf9 "PrivateClassVariable"\cf0 ;\
+	\
+	\cf10 /* public, private, protected, default*/\cf0 \
+	\
+	\cf10 /* [1]for 'default' Access Modifier , we do not use any keyword\cf0 \
+\cf10 	 * it can be accessed in any class within the SAME PACKAGE*/\cf0 \
+	
+\f4\b \cf7 void
+\f5\b0 \cf0  getDataDefault() \{\
+		System.
+\f6\i\b \cf8 out
+\f5\i0\b0 \cf0 .println(\cf9 "Inside getDefaultData(): "\cf0 +\cf8 varDefault\cf0 );\
+	\}\
+	\
+	\cf10 /* [2]for 'public' Access Modifier , we use keyword 'public'\cf0 \
+\cf10 	 * it can be accessed in any class across all packages */\cf0 \
+	
+\f4\b \cf7 public
+\f5\b0 \cf0  
+\f4\b \cf7 void
+\f5\b0 \cf0  getDataPublic() \{\
+		System.
+\f6\i\b \cf8 out
+\f5\i0\b0 \cf0 .println(\cf9 "Inside getDataPublic(): "\cf0 +\cf8 varPublic\cf0 );\
+	\}\
+	\
+	\cf10 /* [3]for 'protected' Access Modifier , we use keyword 'protected'\cf0 \
+\cf10 	 * It can be accessed within all classes of the SAME PACKAGE + SUB_CLASSES of different PACKAGES \ul ie\ulnone  \cf0 \
+\cf10 	 * the ones which belong to the same family outside the current package\cf0 \
+\cf10 	 * PROTECTED= DEFAULT + same family items outside current package */\cf0 \
+	
+\f4\b \cf7 protected
+\f5\b0 \cf0  
+\f4\b \cf7 void
+\f5\b0 \cf0  getDataProtected() \{\
+		System.
+\f6\i\b \cf8 out
+\f5\i0\b0 \cf0 .println(\cf9 "Inside getDataProtected(): "\cf0 +\cf8 varProtected\cf0 );\
+	\}\
+	\
+	\cf10 /* [4]for 'private' Access Modifier , we use keyword 'private'\cf0 \
+\cf10 	 * it can be accessed ONLY WITHIN THE SAME CLASS */\cf0 \
+	
+\f4\b \cf7 private
+\f5\b0 \cf0  
+\f4\b \cf7 void
+\f5\b0 \cf0  getDataPrivate() \{\
+		System.
+\f6\i\b \cf8 out
+\f5\i0\b0 \cf0 .println(\cf9 "Inside getDataPrivate(): "\cf0 +\cf8 varPrivate\cf0 );\
+	\}\
+	\
+	\
+	
+\f4\b \cf7 public
+\f5\b0 \cf0  
+\f4\b \cf7 static
+\f5\b0 \cf0  
+\f4\b \cf7 void
+\f5\b0 \cf0  main(String[] \cf11 args\cf0 ) \{\
+		AccessModifierDemo \cf11 obj\cf0 =
+\f4\b \cf7 new
+\f5\b0 \cf0  AccessModifierDemo();\
+		\cf11 obj\cf0 .getDataDefault();\cf10 // accessible to classes which lie within the SAME PACKAGE\cf0 \
+		\cf11 obj\cf0 .getDataPublic(); \cf10 //accessible to all the classes across ALL PACKAGES\cf0 \
+		\cf11 obj\cf0 .getDataProtected();\cf10 //accessible to all the classes of the SAME PACKAGE + its sub-classes outside the current PACKAGE\cf0 \
+		\cf11 obj\cf0 .getDataPrivate(); \cf10 //accessible ONLY WITHIN THE SAME CLASS\cf0 \
+	\}\
+\
+\}\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f0 \cf0 \
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f2\b \cf6 \
+---------------------------------------------------------------------------------------------------------------------\
+\pard\pardeftab720\partightenfactor0
+
+\f4 \cf7 package
+\f5\b0 \cf0  practiseSelenium2;\
+\
+
+\f4\b \cf7 import
+\f5\b0 \cf0  practiseSelenium.AccessModifierDemo; \
+\
+
+\f4\b \cf7 public
+\f5\b0 \cf0  
+\f4\b \cf7 class
+\f5\b0 \cf0  AccessModiferNewPackageClass  
+\f4\b \cf7 extends
+\f5\b0 \cf0  AccessModifierDemo\{\
+	\
+	
+\f4\b \cf7 public
+\f5\b0 \cf0  
+\f4\b \cf7 static
+\f5\b0 \cf0  
+\f4\b \cf7 void
+\f5\b0 \cf0  main(String[] \cf11 args\cf0 ) \{\
+		AccessModifierDemo \cf11 object\cf0 =
+\f4\b \cf7 new
+\f5\b0 \cf0  AccessModifierDemo();\
+	\
+		\cf11 object\cf0 .getDataPublic();\
+		\cf10 //object.getDataDefault();---> NOT ALLOWED ACROSS DIFF PACKAGE\cf0 \
+		\cf10 //object.getDataProtected();--> not allowed .\cf0 \
+		\cf10 //object.getDataPrivate();-->not allowed because private members are accessible only within the same CLASS\cf0 \
+		\
+		\
+		AccessModiferNewPackageClass \cf11 object2\cf0 =
+\f4\b \cf7 new
+\f5\b0 \cf0  AccessModiferNewPackageClass();\
+		\cf11 object2\cf0 .getDataProtected(); 
+\f6\i\b \cf10 /* Here, since current class 'AccessModiferNewPackageClass' extends  'AccessModifierDemo' class, thus \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf10 		the object of \cf4 this childClass\cf10  can access the Protected Members of its parent class*/\cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f5\i0\b0 \cf0 		\
+	\}\
+\
+\}
+\f2\b \cf6 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf6 ------------------------------------------------------------------------------------------------------------------\
+\
+PROGRAM_2: CLASS - STATIC KEYWORD\
+==============================\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f0\b0 \cf6 >>> we can call methods or instance variables of a class \cf4 only via object creation\cf6 \
+>>> 
+\f2\b V.I>
+\f0\b0 \cf4 An object\cf6  can only be created \cf4 inside the \'93\'94main function \'93\'94\
+\cf6 >>>However, \cf4 static members(\cf6 methods and variables )are \cf4 independent of objects. \cf6 we do not need object to call any static member of the class\
+>>>static variables->-> class variables\
+>>>static methods ->->class methods\
+>>>static members 
+\f2\b can be accessed
+\f0\b0  using \cf4 Classname.static_member\
+
+\f7 \cf5 >>>Class object can\'92t access static member
+\f2\b \cf6 \
+>>>
+\f0\b0 \cf4 Static variables\cf6  (defined at class level)sticks to \cf4 the same copy throughout the program execution\cf6 . It does not resets throughout the program
+\f2\b \
+
+\f0\b0 \cf4 >>>Static Methods\cf6  will only accept \cf4 Static variables. \cf6 We can \cf4 not use normal instance variable\cf6  inside a static method\cf4 .\
+\cf6 >>>\cf4 STATIC BLOCK:\cf6 static block is used to initialise static variables\
+static\{\
+\}\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f2\b \cf6 PROGRAM_3: FINAL - STATIC KEYWORD\
+==============================\
+>>>Final keyword is about restricting access
+\f0\b0 \cf4 \
+>>> Once a variable is declared final, its value can\'92t be changed, \
+>>>FINAL VARIABLES--> CONSTANT VARIABLES.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf0 final int=8;\cf4 \
+>>>FINAL CLASS--> Can\'92t be extended by inheritance, ie a final class can not be used as a PARENT CLASS\
+\cf0 public final Class DemoClass\{ \
+\}\cf4 \
+>>>FINAL METHODS--> can\'92t be overridden\
+\cf0 final void getData()\{\
+\}\
+>>>\cf4 FINALLY BLOCK \cf0 is used after try-catch exception handling.it will always execute whether the program passes or fails\
+\
+\
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f5 \cf0 \
+\pard\pardeftab720\partightenfactor0
+
+\f4\b \cf0 	PROGRAM_4: THIS KEYWORD
+\f5\b0 \
+      =================================\
+>>>\'92this\'92 refers to the current object & the scope lies at class level/\
+>>>To access the class level components , we make the use of this keyword.\
+>>>super() keyword brings us value from Parent Class\
+>>>this() keyword brings us value from current Class ie GLOBAL VARIABLE.\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f4\b \cf7 package
+\f5\b0 \cf0  practiseSelenium;\
+\
+
+\f4\b \cf7 public
+\f5\b0 \cf0  
+\f4\b \cf7 class
+\f5\b0 \cf0  thisKeywordDemo \{\
+\
+	String \cf8 var\cf0 =\cf9 "Classvariable_sakshi"\cf0 ; \cf4 //GLOBAL VARIABLE\cf0 \
+	\
+	
+\f4\b \cf7 public
+\f5\b0 \cf0  
+\f4\b \cf7 void
+\f5\b0 \cf0  getData() \{\
+		String \cf11 var\cf0 =\cf9 "MethodLocalVariable_Sakshi"\cf0 ;  \cf4 //LOCAL VARIABLE\cf0 \
+\
+		System.
+\f6\i\b \cf8 out
+\f5\i0\b0 \cf0 .println(\cf9 "executing getData() method: ...>>>"\cf0 +\cf9 "\\nwithout this keyword is :"\cf0 +\cf11 var\cf0 +\cf9 "\\n,With this keyword is :  "\cf0 +
+\f4\b \cf7 this
+\f5\b0 \cf0 .\cf8 var\cf0 );\
+	\}\
+	\
+	
+\f4\b \cf7 public
+\f5\b0 \cf0  
+\f4\b \cf7 static
+\f5\b0 \cf0  
+\f4\b \cf7 void
+\f5\b0 \cf0  main(String[] \cf11 args\cf0 ) \{\
+		thisKeywordDemo \cf11 obj\cf0 =
+\f4\b \cf7 new
+\f5\b0 \cf0  thisKeywordDemo();\
+		\cf11 obj\cf0 .getData();\
+	\}\
+\}\
+\
+\
+o/p:\
+executing getData() method: ...>>>\
+without this keyword is :MethodLocalVariable_Sakshi\
+,With this keyword is :  Classvariable_sakshi
+\f0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf0 \
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f4\b \cf0 ==================================\
+PROGRAM_5: INTERFACE\
+====================\
+\pard\pardeftab720\partightenfactor0
+
+\f5\b0 \cf0 (i)All variables and methods inside interface must be and are by-\cf4 default public\cf0 .\
+\
+(ii)Interface have only method declaration\cf4 -NO BODY.\cf0 \
+\
+(iii)They are the \cf4 blueprint\cf0  or \cf4 the contractual obligation\cf0  which every class implementing them show follow . \
+\
+(iv)The class which implements an interface \cf4 must Override every method declared under that interface\
+\
+\cf0 Example:-\
+---------INTERFACE------------\
+
+\f4\b \cf7 package
+\f5\b0 \cf0  practiseSelenium;\
+\
+
+\f4\b \cf7 public
+\f5\b0 \cf0  
+\f4\b \cf7 interface
+\f5\b0 \cf0  Myinterface1 \{\
+	
+\f4\b \cf7 int
+\f5\b0 \cf0  
+\f6\i\b \cf8 a
+\f5\i0\b0 \cf0  = 10; \cf10 // always public by default in an Interface\cf0 \
+\
+	
+\f4\b \cf7 public
+\f5\b0 \cf0  
+\f4\b \cf7 void
+\f5\b0 \cf0  redSignal(); \cf10 //method declaration just .NO BODY\cf0 \
+\
+\}\
+------------CLASS-------------------\
+
+\f4\b \cf7 package
+\f5\b0 \cf0  practiseSelenium;\
+\
+
+\f4\b \cf7 public
+\f5\b0 \cf0  
+\f4\b \cf7 class
+\f5\b0 \cf0  ClassImplementingInterface 
+\f4\b \cf7 implements
+\f5\b0 \cf0  Myinterface1,Myinterface2 \{\
+	\
+	
+\f4\b \cf7 public
+\f5\b0 \cf0  
+\f4\b \cf7 static
+\f5\b0 \cf0  
+\f4\b \cf7 void
+\f5\b0 \cf0  main (String[] \cf11 args\cf0 ) \{\
+		\
+		Myinterface1 \cf11 obj\cf0 =
+\f4\b \cf7 new
+\f5\b0 \cf0  ClassImplementingInterface(); \cf10 //\ul Obj\ulnone  will have access to all the methods inside the Myinterface1 only\cf0 \
+		\cf11 obj\cf0 .redSignal(); \cf10 //\ul obj\ulnone  will not \ul have\ulnone  access to \ul pinksignal\ulnone ()\cf0 \
+		\
+		ClassImplementingInterface \cf11 obj2\cf0 =
+\f4\b \cf7 new
+\f5\b0 \cf0  ClassImplementingInterface();\
+		\cf11 obj2\cf0 .pinkSignal(); \cf10 //the exclusive  method of the current class is accessible ONLY by the object of this class, obj2 can access all methods defined under this class (interface1+interface2+own)\cf0 \
+		\
+		Myinterface2 \cf11 obj3\cf0 =
+\f4\b \cf7 new
+\f5\b0 \cf0  ClassImplementingInterface(); \
+		\cf11 obj3\cf0 .magentasignal(); \cf10 //obj2 & obj3 can access methods declared under Myinterface2\cf0 \
+		\
+	\}\
+\
+	\cf12 @Override\cf0 \
+	
+\f4\b \cf7 public
+\f5\b0 \cf0  
+\f4\b \cf7 void
+\f5\b0 \cf0  redSignal() \{\
+		System.
+\f6\i\b \cf8 out
+\f5\i0\b0 \cf0 .println(\cf9 "redSignal from Myinterface1 implemented by current class"\cf0 );\
+		\
+	\}\
+\
+	\
+	
+\f4\b \cf7 public
+\f5\b0 \cf0  
+\f4\b \cf7 void
+\f5\b0 \cf0  pinkSignal() \{\
+		System.
+\f6\i\b \cf8 out
+\f5\i0\b0 \cf0 .println(\cf9 "pinkSignal is \'93my own exclusive method\cf0 );\
+	\}\
+\
+	\cf12 @Override\cf0 \
+	
+\f4\b \cf7 public
+\f5\b0 \cf0  
+\f4\b \cf7 void
+\f5\b0 \cf0  magentasignal() \{\
+		System.
+\f6\i\b \cf8 out
+\f5\i0\b0 \cf0 .println(\cf9 "magentaSignal from Myinterface2"\cf0 );\
+		\
+	\}\
+\
+\}\
+========================================================\
+\pard\pardeftab720\partightenfactor0
+
+\f4\b \cf0 PROGRAM_6: ABSTRACTION
+\f5\b0 \
+The user will have knowledge on \cf4 what the object does\cf0  & \cf4 not about how it does it.\
+\
+\pard\pardeftab720\partightenfactor0
+\cf6 ABSTRACT Class Vs Interface -\
+\
+1)Interface is 100% abstraction. ie all of its methods are abstract. however, an abstract class might have non -abstract ie concrete methods too.\
+\
+2)An abstract class is inherited.(extends)\
+An interface is implemented.(implements)\
+\
+\cf5 3)Abstract class \cf6 c\cf4 ant not be instantiated\cf6 . We c\cf5 an\'92t create object of any abstract class\cf6 . An interface object can be created. Ex: WebDriver.\
+\
+4)all\cf4  interface methods\cf6  are\cf4  only public\cf6 . Only private access modifier is not allowed for an abstract method or variable under \cf5 abstract class\cf6  . it can have \cf5 public\cf6  or \cf5 protected\cf6 .\
+\
+5)An \cf4 interface\cf6  can have \cf4 variables\cf6  which are \cf4 public,static & final\
+\
+\cf6 Real Example of abstraction:\
+---------------------------------\cf4 \
+\cf6 Suppose there is a \cf4 flightCorporation\cf6  class which belongs to a country. It has methods such as flightPolicy(),  flightGuidelines() which must be same for all the flight of that nation. However, there are few methods/properties like color(), name() which can be different for each of the country\'92s airlines. In such situation, \cf4 class flightCorporation will be an abstract class which has few concrete methods like flightpolicy(),flightguidelines() \cf6 which will be defined & will be exact same for the child classes. However, methods like \cf4 color(),name() will be declared abstract and each of the child classes will have the liberty to implement it as per their custom need.\
+\cf6 \
+\
+\
+ABSTRACT CLASS:\
+-------------------\
+\pard\pardeftab720\partightenfactor0
+
+\f4\b \cf7 package
+\f5\b0 \cf0  practiseSelenium;\
+\
+
+\f4\b \cf7 public
+\f5\b0 \cf0  
+\f4\b \cf7 abstract
+\f5\b0 \cf0  
+\f4\b \cf7 class
+\f5\b0 \cf0  FlightCorporationAbstractClass \{\
+	\
+	\
+	
+\f4\b \cf7 public
+\f5\b0 \cf0  
+\f4\b \cf7 void
+\f5\b0 \cf0  flightGuidelines() \{\
+		System.
+\f6\i\b \cf8 out
+\f5\i0\b0 \cf0 .println(\cf9 "Flight guidelines must be same for all flights of a country"\cf0 ); \cf13 //concrete method\cf0 \
+	\}\
+	\
+	
+\f4\b \cf7 public
+\f5\b0 \cf0  
+\f4\b \cf7 abstract
+\f5\b0 \cf0  
+\f4\b \cf7 void
+\f5\b0 \cf0  color(); /\cf13 /abstract method\cf0 \
+	\
+	\
+\
+\}\
+\pard\pardeftab720\partightenfactor0
+\cf6 \
+CLASS WHICH EXTENDS ABSTRACT CLASS:\
+------------------------------------\
+\pard\pardeftab720\partightenfactor0
+
+\f4\b \cf7 package
+\f5\b0 \cf0  practiseSelenium;\
+\
+
+\f4\b \cf7 public
+\f5\b0 \cf0  
+\f4\b \cf7 class
+\f5\b0 \cf0  IndigoExtendsAbstractClass 
+\f4\b \cf7 extends
+\f5\b0 \cf0  FlightCorporationAbstractClass \{\
+\
+	\cf12 @Override\cf0 \
+	
+\f4\b \cf7 public
+\f5\b0 \cf0  
+\f4\b \cf7 void
+\f5\b0 \cf0  color() \{\
+		System.
+\f6\i\b \cf8 out
+\f5\i0\b0 \cf0 .println(\cf9 "Indigo flight color is blue"\cf0 );\
+		\
+	\}\
+	\
+	
+\f4\b \cf7 public
+\f5\b0 \cf0  
+\f4\b \cf7 static
+\f5\b0 \cf0  
+\f4\b \cf7 void
+\f5\b0 \cf0  main(String[] \cf11 args\cf0 ) \{\
+		\
+		IndigoExtendsAbstractClass \cf11 obj\cf0 =
+\f4\b \cf7 new
+\f5\b0 \cf0  IndigoExtendsAbstractClass();\
+		\cf11 obj\cf0 .flightGuidelines(); \cf10 //\ul Obj\ulnone  has access to its parents class method contents\cf0 \
+		\cf11 obj\cf0 .color(); \cf10 //\ul obj\ulnone  has access to the child class exclusive contents\cf0 \
+	\}\
+\
+\}\cf6 \
+----------------------------------------------------------------\
+\pard\pardeftab720\partightenfactor0
+
+\f4\b \cf6 PROGRAM_7: INHERITANCE
+\f5\b0 \
+\
+->Multiple Inheritance is not allowed\
+->the class which extends a parent class can not extends more than one parent class at the same time\
+\
+\pard\pardeftab720\partightenfactor0
+\cf6 {{\NeXTGraphic 73063386-A6DC-4AC4-8240-720C4476A847.jpg \width9760 \height6100 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\pardeftab720\partightenfactor0
+\cf6 \
+-> if one class needs to extend properties from multiple parent class at a time then \cf4 we use Interface & not Inheritance\
+-->  A a=new B();\
+    print(a); //will give 20 in both cases due to METHOD OVERRIDNG because the ref variable of object a is A clASS\
+\
+->{{\NeXTGraphic Screenshot 2022-01-15 at 6.53.43 PM.png \width8040 \height5020 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\
+\cf6 ==========================================\
+\pard\pardeftab720\partightenfactor0
+
+\f4\b \cf6 PROGRAM_8: FUNCTION OVERLOADING
+\f5\b0 \
+\
+-> two functions having the same Name within a class , but \cf4 different argument count\cf6  or \cf4 different argument return type\cf6  of the arguments is called method overloading\
+REAL TIME EXAMPLE:\
+\
+\pard\pardeftab720\partightenfactor0
+\cf4 getPaymentMethod()\cf6  in an \cf4 E-commerce\cf6  website. where one getPaymentMethod() accepts \cf4 Debit card \cf6 as argument, the other getPaymentMethod() accepts \cf4 Credit card\cf6  as an argument & another \
+getPaymentMethod() accepts \cf4 giftCard\cf6  as an argument.\
+==========================================\
+\pard\pardeftab720\partightenfactor0
+
+\f4\b \cf6 PROGRAM_9: FUNCTION OVERRIDING
+\f5\b0 \
+\
+Suppose, there is a method A defined in parent class P. Suppose we defined the same method A in its child class C but the method work is different though.\
+	Now, if we create an object of the child class pr parent class inside the child class and call this method, this obj will call the method defined in the child class ONLY & not of its parent class.\
+\
+Here two methods will have exact same signature ie\
+-same Method name\
+-same Method return type\
+-same arguments\
+-same argument return type\
+\
+The child class\'92s method basically replaces its parent class method definition. this is overriding. the same does not happen for class variables though\
+\
+PARENT CLASS:\
+-------------\
+\pard\pardeftab720\partightenfactor0
+
+\f4\b \cf7 package
+\f5\b0 \cf0  myPractise;\
+\
+
+\f4\b \cf7 public
+\f5\b0 \cf0  
+\f4\b \cf7 class
+\f5\b0 \cf0  ParentClassA \{\
+	\
+	String \cf8 var\cf0 =\cf9 "From parent class"\cf0 ;\
+	\
+	\
+	
+\f4\b \cf7 public
+\f5\b0 \cf0  
+\f4\b \cf7 void
+\f5\b0 \cf0  getData() \{\
+		System.
+\f6\i\b \cf8 out
+\f5\i0\b0 \cf0 .println(\cf9 "printing var vraible from Parent class"\cf0 +\cf8 var\cf0 );\
+	\}\
+\
+\}\
+\
+\pard\pardeftab720\partightenfactor0
+\cf6 \
+CHILD CLASS:\
+---------------\
+\pard\pardeftab720\partightenfactor0
+
+\f4\b \cf7 package
+\f5\b0 \cf0  myPractise;\
+\
+
+\f4\b \cf7 public
+\f5\b0 \cf0  
+\f4\b \cf7 class
+\f5\b0 \cf0  childClassB 
+\f4\b \cf7 extends
+\f5\b0 \cf0  ParentClassA \{\
+	\
+	String \cf8 var\cf0 =\cf9 "From child class variable"\cf0 ;\
+	\
+	\
+	
+\f4\b \cf7 public
+\f5\b0 \cf0  
+\f4\b \cf7 void
+\f5\b0 \cf0  getData() \{\
+		System.
+\f6\i\b \cf8 out
+\f5\i0\b0 \cf0 .println(\cf9 "From child class"\cf0 +\cf8 var\cf0 );\
+	\}\
+	\
+	
+\f4\b \cf7 public
+\f5\b0 \cf0  
+\f4\b \cf7 static
+\f5\b0 \cf0  
+\f4\b \cf7 void
+\f5\b0 \cf0  main(String[] \cf11 args\cf0 ) \{\
+		\
+		\
+		ParentClassA \cf11 ob\cf0 =
+\f4\b \cf7 new
+\f5\b0 \cf0  childClassB();\
+		\cf11 ob\cf0 .getData(); \cf10 //due to \ul overrriding\ulnone  , child class method will be called\cf0 \
+		\
+	    	System.
+\f6\i\b \cf8 out
+\f5\i0\b0 \cf0 .println(\cf11 ob\cf0 .\cf8 var\cf0 ); \cf10 //from parent class since \ul ref\ulnone  variable is of parent class\cf0 \
+	    	\
+		\
+		childClassB \cf11 ob2\cf0 =
+\f4\b \cf7 new
+\f5\b0 \cf0  childClassB();\
+		\cf11 ob2\cf0 .getData(); \cf10 //from child class\cf0 \
+		System.
+\f6\i\b \cf8 out
+\f5\i0\b0 \cf0 .println(\cf11 ob2\cf0 .\cf8 var\cf0 ); \cf10 //from child class\cf0 \
+		\
+		\
+		\
+	\}\
+	\
+	\
+\
+\}\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f4\b \cf0 \
+PROGRAM_10: SUPER KEYWORD (VARIABLES,METHODS & CONSTRUCTORS)\
+============================================================\
+\pard\pardeftab720\partightenfactor0
+\cf4 we do not make the use of super() inside main method but other methods of the child class!
+\f5\b0 \cf0 \
+1))If we want the child object to explicitly access the parent class member, then we make the use of \cf4 super\cf0  keyword.\
+\
+If there is any classVariable defined inside parent Class, then its child class can access that variable in any of its methods \cf4 (except from the main method) \cf0 using super.variablename.\
+\
+	System.
+\f6\i\b \cf8 out
+\f5\i0\b0 \cf0 .println(\cf9 " Use of super keyword"\cf0 +
+\f4\b \cf7 super
+\f5\b0 \cf0 .\cf8 a\cf0 ); \cf10 //Parent Class Instance Variable can be accessed using super.variablename\cf0 \
+		\cf10 //inside the child class method (NOT THE MAIN METHOD)\
+\
+\pard\pardeftab720\partightenfactor0
+\cf6 2)) If there is no same variable defined under child class as that of parent class, then by default the child class object will call the parent class variable value. However, if there is any duplicate variable-name in child class, then \cf4 the precedence will be given to the child variable value & NOT the parent.\
+\cf6 	This precedence can be overriden using super keyword though.\cf10 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f4\b \cf7 public
+\f5\b0 \cf0  
+\f4\b \cf7 class
+\f5\b0 \cf0  ChildClassInheritance 
+\f4\b \cf7 extends
+\f5\b0 \cf0  ParentClassInheritance \{\
+\
+	 
+\f4\b \cf7 int
+\f5\b0 \cf0  \cf8 a\cf0  = 30;\
+\
+	
+\f4\b \cf7 public
+\f5\b0 \cf0  
+\f4\b \cf7 void
+\f5\b0 \cf0  getData() \{\
+		System.
+\f6\i\b \cf8 out
+\f5\i0\b0 \cf0 .println(\cf9 "i am getData() from child class giving value of instance variable "\cf0 +\cf8 a\cf0 );\
+	\}\
+\
+\
+Here, if \'91ParentClassInheritance\'92 has variable a defined, & child class also has variable a defined, then getData() called from child class object will give the value 30(child value). \
+	\cf4 If we remove that line from ChildClassInheritance, then parent a will be called.\
+\
+\cf0 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f4\b \cf0 ==SUPER KEYWORD FOR ACCESSING PARENT CLASS METHODS,VARIABLES & CONSTRUCTOR=
+\f5\b0 \
+PARENT:\
+\pard\pardeftab720\partightenfactor0
+
+\f4\b \cf7 public
+\f5\b0 \cf0  
+\f4\b \cf7 class
+\f5\b0 \cf0  ParentClassInheritance \{\
+	
+\f4\b \cf7 int
+\f5\b0 \cf0  \cf8 a\cf0 =10; 
+\f4\b \cf14 //Class(Instance) Variable of Parent Class\
+
+\f5\b0 \cf0 ------------------------------------------------------------\
+	
+\f4\b \cf7 public
+\f5\b0 \cf0  ParentClassInheritance()\{\
+		\
+		System.
+\f6\i\b \cf8 out
+\f5\i0\b0 \cf0 .println(\cf9 "Parent class constructor"\cf0 );\
+		\
+	\}
+\f4\b \cf14 //Custom Constructor of Parent Class\
+
+\f5\b0 \cf0 ------------------------------------------------------------\
+	
+\f4\b \cf7 public
+\f5\b0 \cf0  
+\f4\b \cf7 void
+\f5\b0 \cf0  getData() \{\
+		System.
+\f6\i\b \cf8 out
+\f5\i0\b0 \cf0 .println(\cf9 "i am getData() from parent class"\cf0 );\
+	\}
+\f4\b \cf14 //Method of Parent Class
+\f5\b0 \cf0 \
+------------------------------------------------------------\
+\}\
+\
+CHILD:\
+
+\f4\b \cf7 public
+\f5\b0 \cf0  
+\f4\b \cf7 class
+\f5\b0 \cf0  ChildClassInheritance 
+\f4\b \cf7 extends
+\f5\b0 \cf0  ParentClassInheritance \{\
+\
+	 
+\f4\b \cf7 int
+\f5\b0 \cf0  \cf8 a\cf0  = 30;
+\f4\b \cf14 //Class(Instance) Variable of Child Class\
+
+\f5\b0 \cf0 ------------------------------------------------------------\
+ 	
+\f4\b \cf7 public
+\f5\b0 \cf0  ChildClassInheritance() \{\
+		 
+\f4\b \cf7 super
+\f5\b0 \cf0 (); 
+\f4\b \cf4 //this super() should be always first line of the code
+\f5\b0 \cf0 \
+		 System.
+\f6\i\b \cf8 out
+\f5\i0\b0 \cf0 .println(\cf9 "Child class constructor"\cf0 );\
+	 \}
+\f4\b \cf14 //Custom Constructor of Child Class
+\f5\b0 \cf0 \
+------------------------------------------------------------\
+	
+\f4\b \cf7 public
+\f5\b0 \cf0  
+\f4\b \cf7 void
+\f5\b0 \cf0  getData() \{\
+		
+\f4\b \cf7 super
+\f5\b0 \cf0 .getData();
+\f4\b \cf4 //if we want to call parent getData()
+\f5\b0 \cf0 \
+		System.
+\f6\i\b \cf8 out
+\f5\i0\b0 \cf0 .println(\cf9 "i am getData() from child class giving value of instance variable using super keyword "\cf0 +
+\f4\b \cf7 super
+\f5\b0 \cf0 .\cf8 a\cf0 ); 
+\f4\b \cf4 //parent \'91a\'92 will be called
+\f5\b0 \
+\cf0 	\}
+\f4\b \cf14 //Method of Child Class
+\f5\b0 \cf0 \
+------------------------------------------------------------\
+O/P:\
+i am getData() from parent class\
+i am getData() from child class giving value of instance variable using super keyword 10\
+}{\*\beandata789c9d935d6f82301486aff157748db752d876b12d8851c1c4cc2099b86497153a65e32ba5cef1ef57444aeb66b68c1bda73fabe4f7b4e6b8d3ed3047c105ac6793684a66e4040b2308fe26c3b84eb6036b88323bb675d39cb69f0e2bba048e292017f3d59cca7000e101a17454210720207f88bf92a00dc0321d78300ee182b1e103a1c0e3aae57e9619ed60b4be4d3bc2094550b6e36e0023d6211e498c65dd90e8f4671c8ec9e66bd93caee631aee62bec242f594474b46f9666d6ff5482a128d45fa146f75f9e68d84ac14324c29ae07c2a09fed934492692d573b3984092e855e4e37f9e9acbf9e3b5d5eb3e28c912da1f6ad85dae1518854636fa5f39fec2cf6a6502e603aceb5ca5140a8f36ca16715f93ff7e64fdc2eda567ce28ebd27f6ead6f78d778ef1e866cf48f9dcf4dfdba71ba591d2490dd334ee0df5c03ff68b5c3a9fb8360e57711aa6958c92572c8f8552b2dfead9d0329c1289f70b4354a4736bbc585e887b2a8a56cf2704670e665830cece7cde24513053ad540756ded6e9e109b6501bf52759b43a0b1d5facddfb02aa1d4161}

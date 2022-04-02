@@ -1,0 +1,251 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2636
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Georgia;\f1\fnil\fcharset0 Menlo-Regular;\f2\fswiss\fcharset0 Arial-BoldMT;
+\f3\fswiss\fcharset0 ArialMT;}
+{\colortbl;\red255\green255\blue255;\red251\green2\blue7;\red0\green0\blue0;\red38\green139\blue210;
+\red24\green25\blue27;\red255\green255\blue255;\red147\green161\blue161;\red42\green161\blue152;}
+{\*\expandedcolortbl;;\cssrgb\c100000\c14913\c0;\cssrgb\c0\c0\c0;\csgenericrgb\c14902\c54510\c82353;
+\cssrgb\c12549\c12941\c14118;\cssrgb\c100000\c100000\c100000;\csgenericrgb\c57647\c63137\c63137;\csgenericrgb\c16471\c63137\c59608;}
+\paperw11900\paperh16840\margl1011\margr1011\margb1445\margt1011\vieww14000\viewh16000\viewkind1\viewscale220
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f0\fs18 \cf0 MAVEN: \
+\
+Is a software project management / build management tool for Java frameworks\
+Basically we use Maven for 2 things in testing automation:-\
+1) project structure (Template: \cf2 maven architype quickstartTemplate\cf0 )\
+2)pom.xml for downloading dependencies automatically in the local \cf2 .m2\cf0  folder\
+This makes our project \cf2 easily sharable\cf0  because we are not hard-coding jars or we do not need to re-configure the locations for jars and all\
+\
+\
+Default Template of Maven Project hierarchy which we use for automation:\
+\cf2 maven-archetype-quickstartTemplate\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf2 {{\NeXTGraphic Screenshot 2022-03-02 at 9.48.41 PM.png \width17980 \height14120 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf2 \
+\cf0 \
+\
+GROUP-ID:- parent (package)\
+ARTIFACT-ID:-project name\
+\
+\
+Interview: what is the plugin using which you can execute all your maven tests from the \cf2 src/test/maven \cf0 folder?\
+Ans:\cf2 maven-surefire-plugin\
+\
+while reading dependencies, maven first checks the local repository ie .m2 and then maven repository.\
+\
+mvn clean- \cf3 to remove the pre-compiled files etc(previous build info)\
+\cf2 mvn compile\cf3 - syntax check (checked exception of java)\
+\cf2 mvn test\cf3  - will fetch the jars and execute the test\
+\
+\cf2 V.V.I\cf3 :in-order for Maven to recognise our Tests , we must provide every Class file with suffix \cf2 Test. Example: LoginTest.java, TransactionTest.java\
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf3 Integration of TestNG with Maven\
+========================\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf2 How will i trigger TestNG.xml test-runner file from Maven?\cf3 \
+(because many controls of executions are defined in TestNG.xml file in real scenario)\
+\
+<configurations>\
+<suiteXMLfiles>\
+<suiteXMLfile>CustomTestNG.xml\
+</suiteXMLfile>\
+</suiteXMLfiles>\
+</configurations>\
+\
+place it here in pom.xml\
+=================\
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf0 <\cf4 build\cf0 >\
+	<\cf4 plugins\cf0 >\
+		<\cf4 plugin\cf0 >\
+			<\cf4 groupId\cf0 >org.apache.maven.plugins</\cf4 groupId\cf0 >\
+			<\cf4 artifactId\cf0 >maven-surefire-plugin</\cf4 artifactId\cf0 >\
+			<\cf4 version\cf0 >3.0.0-M5</\cf4 version\cf0 >\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f0 \cf3 		      <\cf2 configurations\cf3 >\
+			<s\cf2 uiteXMLfiles\cf3 >										<\cf2 suiteXMLfile\cf3 >CustomTestNG.xml</suiteXMLfile>\
+			</suiteXMLfiles>\
+		</configurations>
+\f1 \cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf0 		</\cf4 plugin\cf0 >\
+	</\cf4 plugins\cf0 >\
+</\cf4 build\cf0 >\
+\
+\
+now if we run mvn test, it will pick the tests of CustomTestNG.xml otherwise all tests under test folder will execute\
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f0 \cf3 Maven Profiling\
+====================\
+if we want to run specific testNg.xml then we use this profiling concept.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+\cf2 we can maintain multiple testNG runner test suits in a single pom.xml through profiling.\cf3 \
+\
+every profile is stored under separate <id> in pom.xml.\
+\
+\cf2 mvn test -P ProfileName
+\f1 \cf0 \
+\
+\
+Example:- Everyday we do not need to execute regression testNG.xml but we do need to execute smoke testNG.xml , so in such cases, \cf2 we can control which profile testRunner we want to execute from command prompt using maven profile.\
+\
+Sanity vs Smoke?\
+\pard\pardeftab720\partightenfactor0
+
+\f2\b \cf5 \cb6 \expnd0\expndtw0\kerning0
+Smoke testing is performed to ascertain that the acute functionalities of the program are operating properly
+\f3\b0 . Sanity testing is done to check that bugs have been fixed after the build. Smoke testing can be documented and is scripted.\
+Sanity is more shallow testing\
+\
+<profile> ><build>> <pluginManagement> > <\
+\
+we put the code in pom.xml before defining <dependencies>:\
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf0 \cb1 \kerning1\expnd0\expndtw0 <\cf4 profiles\cf0 >\
+  <\cf4 profile\cf0 >\
+  <\cf4 id\cf0 >Regression</\cf4 id\cf0 >\
+  \
+  <\cf4 build\cf0 >\
+    <\cf4 pluginManagement\cf0 >\
+      <\cf4 plugins\cf0 >\
+        <\cf4 plugin\cf0 >\
+          <\cf4 groupId\cf0 >org.apache.maven.plugins</\cf4 groupId\cf0 >\
+          <\cf4 artifactId\cf0 >maven-surefire-plugin</\cf4 artifactId\cf0 >\
+          <\cf4 version\cf0 >2.20.1</\cf4 version\cf0 >\
+           <\cf4 configuration\cf0 >\
+          <\cf4 suiteXmlFiles\cf0 >\
+            <\cf4 suiteXmlFile\cf0 >testng2.xml</\cf4 suiteXmlFile\cf0 >\
+          </\cf4 suiteXmlFiles\cf0 >\
+        </\cf4 configuration\cf0 >\
+        </\cf4 plugin\cf0 >\
+      </\cf4 plugins\cf0 >\
+    </\cf4 pluginManagement\cf0 >\
+  </\cf4 build\cf0 >\
+  </\cf4 profile\cf0 >\
+\
+  <\cf4 profile\cf0 >\
+   <\cf4 id\cf0 >Smoke</\cf4 id\cf0 >\
+  \
+  <\cf4 build\cf0 >\
+    <\cf4 pluginManagement\cf0 >\
+      <\cf4 plugins\cf0 >\
+        <\cf4 plugin\cf0 >\
+          <\cf4 groupId\cf0 >org.apache.maven.plugins</\cf4 groupId\cf0 >\
+          <\cf4 artifactId\cf0 >maven-surefire-plugin</\cf4 artifactId\cf0 >\
+          <\cf4 version\cf0 >2.20.1</\cf4 version\cf0 >\
+           <\cf4 configuration\cf0 >\
+          <\cf4 suiteXmlFiles\cf0 >\
+            <\cf4 suiteXmlFile\cf0 >testng.xml</\cf4 suiteXmlFile\cf0 >\
+          </\cf4 suiteXmlFiles\cf0 >\
+        </\cf4 configuration\cf0 >\
+        </\cf4 plugin\cf0 >\
+      </\cf4 plugins\cf0 >\
+    </\cf4 pluginManagement\cf0 >\
+  </\cf4 build\cf0 >\
+  \
+  </\cf4 profile\cf0 >\
+  </\cf4 profiles\cf0 >\
+\
+\
+Entire pom.xml\
+===============\
+<\cf4 project\cf0  \cf7 xmlns\cf0 =\cf7 "\cf8 http://maven.apache.org/POM/4.0.0\cf7 "\cf0  \cf7 xmlns:xsi\cf0 =\cf7 "\cf8 http://www.w3.org/2001/XMLSchema-instance\cf7 "\cf0 \
+  \cf7 xsi:schemaLocation\cf0 =\cf7 "\cf8 http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd\cf7 "\cf0 >\
+  <\cf4 modelVersion\cf0 >4.0.0</\cf4 modelVersion\cf0 >\
+  <\cf4 groupId\cf0 >qaclickacademy</\cf4 groupId\cf0 >\
+  <\cf4 artifactId\cf0 >Mavenjava</\cf4 artifactId\cf0 >\
+  <\cf4 packaging\cf0 >jar</\cf4 packaging\cf0 >\
+  <\cf4 version\cf0 >1.0-SNAPSHOT</\cf4 version\cf0 >\
+  <\cf4 name\cf0 >Mavenjava</\cf4 name\cf0 >\
+  <\cf4 url\cf0 >http://maven.apache.org</\cf4 url\cf0 >\
+  \
+  <\cf4 profiles\cf0 >\
+  <\cf4 profile\cf0 >\
+  <\cf4 id\cf0 >Regression</\cf4 id\cf0 >\
+  \
+  <\cf4 build\cf0 >\
+    <\cf4 pluginManagement\cf0 >\
+      <\cf4 plugins\cf0 >\
+        <\cf4 plugin\cf0 >\
+          <\cf4 groupId\cf0 >org.apache.maven.plugins</\cf4 groupId\cf0 >\
+          <\cf4 artifactId\cf0 >maven-surefire-plugin</\cf4 artifactId\cf0 >\
+          <\cf4 version\cf0 >2.20.1</\cf4 version\cf0 >\
+           <\cf4 configuration\cf0 >\
+          <\cf4 suiteXmlFiles\cf0 >\
+            <\cf4 suiteXmlFile\cf0 >testng2.xml</\cf4 suiteXmlFile\cf0 >\
+          </\cf4 suiteXmlFiles\cf0 >\
+        </\cf4 configuration\cf0 >\
+        </\cf4 plugin\cf0 >\
+      </\cf4 plugins\cf0 >\
+    </\cf4 pluginManagement\cf0 >\
+  </\cf4 build\cf0 >\
+  </\cf4 profile\cf0 >\
+  <\cf4 profile\cf0 >\
+  \
+   <\cf4 id\cf0 >Smoke</\cf4 id\cf0 >\
+  \
+  <\cf4 build\cf0 >\
+    <\cf4 pluginManagement\cf0 >\
+      <\cf4 plugins\cf0 >\
+        <\cf4 plugin\cf0 >\
+          <\cf4 groupId\cf0 >org.apache.maven.plugins</\cf4 groupId\cf0 >\
+          <\cf4 artifactId\cf0 >maven-surefire-plugin</\cf4 artifactId\cf0 >\
+          <\cf4 version\cf0 >2.20.1</\cf4 version\cf0 >\
+           <\cf4 configuration\cf0 >\
+          <\cf4 suiteXmlFiles\cf0 >\
+            <\cf4 suiteXmlFile\cf0 >testng.xml</\cf4 suiteXmlFile\cf0 >\
+          </\cf4 suiteXmlFiles\cf0 >\
+        </\cf4 configuration\cf0 >\
+        </\cf4 plugin\cf0 >\
+      </\cf4 plugins\cf0 >\
+    </\cf4 pluginManagement\cf0 >\
+  </\cf4 build\cf0 >\
+  \
+  </\cf4 profile\cf0 >\
+  </\cf4 profiles\cf0 >\
+  \
+   \
+  <\cf4 dependencies\cf0 >\
+  \
+  <\cf4 dependency\cf0 >\
+    <\cf4 groupId\cf0 >org.seleniumhq.selenium</\cf4 groupId\cf0 >\
+    <\cf4 artifactId\cf0 >selenium-java</\cf4 artifactId\cf0 >\
+    <\cf4 version\cf0 >3.6.0</\cf4 version\cf0 >\
+</\cf4 dependency\cf0 >\
+\
+    \cf7 <!-- https://mvnrepository.com/artifact/org.testng/testng -->\cf0 \
+<\cf4 dependency\cf0 >\
+    <\cf4 groupId\cf0 >org.testng</\cf4 groupId\cf0 >\
+    <\cf4 artifactId\cf0 >testng</\cf4 artifactId\cf0 >\
+    <\cf4 version\cf0 >6.11</\cf4 version\cf0 >\
+    <\cf4 scope\cf0 >test</\cf4 scope\cf0 >\
+</\cf4 dependency\cf0 >\
+    \
+    \cf7 <!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->\cf0 \
+<\cf4 dependency\cf0 >\
+    <\cf4 groupId\cf0 >io.rest-assured</\cf4 groupId\cf0 >\
+    <\cf4 artifactId\cf0 >rest-assured</\cf4 artifactId\cf0 >\
+    <\cf4 version\cf0 >3.0.5</\cf4 version\cf0 >\
+    <\cf4 scope\cf0 >test</\cf4 scope\cf0 >\
+</\cf4 dependency\cf0 >\
+    \cf7 <!-- https://mvnrepository.com/artifact/io.appium/java-client -->\cf0 \
+<\cf4 dependency\cf0 >\
+    <\cf4 groupId\cf0 >io.appium</\cf4 groupId\cf0 >\
+    <\cf4 artifactId\cf0 >java-client</\cf4 artifactId\cf0 >\
+    <\cf4 version\cf0 >5.0.4</\cf4 version\cf0 >\
+</\cf4 dependency\cf0 >\
+    \
+  </\cf4 dependencies\cf0 >\
+</\cf4 project\cf0 >\
+\
+  \
+   }{\*\beandata789c9d935d6f82301486aff157748db752d876b12d8851c1c4cc2099b86497153a65e32ba5cef1ef57444aeb66b68c1bda73fabe4f7b4e6b8d3ed3047c105ac6793684a66e4040b2308fe26c3b84eb6036b88323bb675d39cb69f0e2bba048e292017f3d59cca7000e101a17454210720207f88bf92a00dc0321d78300ee182b1e103a1c0e3aae57e9619ed60b4be4d3bc2094550b6e36e0023d6211e498c65dd90e8f4671c8ec9e66bd93caee631aee62bec242f594474b46f9666d6ff5482a128d45fa146f75f9e68d84ac14324c29ae07c2a09fed934492692d573b3984092e855e4e37f9e9acbf9e3b5d5eb3e28c912da1f6ad85dae1518854636fa5f39fec2cf6a6502e603aceb5ca5140a8f36ca16715f93ff7e64fdc2eda567ce28ebd27f6ead6f78d778ef1e866cf48f9dcf4dfdba71ba591d2490dd334ee0df5c03ff68b5c3a9fb8360e57711aa6958c92572c8f8552b2dfead9d0329c1289f70b4354a4736bbc585e887b2a8a56cf2704670e665830cece7cde24513053ad540756ded6e9e109b6501bf52759b43a0b1d5facddfb02aa1d4161}

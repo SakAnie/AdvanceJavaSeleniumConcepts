@@ -1,0 +1,244 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2636
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Georgia;\f1\fnil\fcharset0 Menlo-Bold;\f2\fnil\fcharset0 Menlo-Regular;
+\f3\fnil\fcharset0 Menlo-BoldItalic;}
+{\colortbl;\red255\green255\blue255;\red106\green62\blue62;\red251\green2\blue7;\red251\green2\blue7;
+\red127\green0\blue85;\red100\green100\blue100;\red63\green127\blue95;\red127\green159\blue191;\red0\green0\blue192;
+\red42\green0\blue255;\red181\green137\blue0;\red38\green139\blue210;\red147\green161\blue161;\red133\green153\blue0;
+\red42\green161\blue152;}
+{\*\expandedcolortbl;;\csgenericrgb\c41569\c24314\c24314;\cssrgb\c100000\c14913\c0;\cssrgb\c100000\c14913\c0;
+\csgenericrgb\c49804\c0\c33333;\csgenericrgb\c39216\c39216\c39216;\csgenericrgb\c24706\c49804\c37255;\csgenericrgb\c49804\c62353\c74902;\csgenericrgb\c0\c0\c75294;
+\csgenericrgb\c16471\c0\c100000;\csgenericrgb\c70980\c53725\c0;\csgenericrgb\c14902\c54510\c82353;\csgenericrgb\c57647\c63137\c63137;\csgenericrgb\c52157\c60000\c0;
+\csgenericrgb\c16471\c63137\c59608;}
+\paperw11900\paperh16840\margl1011\margr1011\margb1445\margt1011\vieww14000\viewh16000\viewkind1\viewscale220
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\fi722\sl288\slmult1\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 LISTENERS\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b\fs18 \cf0 LISTENERS IN TESTNG:\
+\
+are very imp feature of \cf3 TestNg \cf0 which helps us to \cf3 customise LOGS and Reports\cf0  of the Test Execution.\
+\
+It \'93Listens to the certain events & act accordingly\'94\
+\
+It can be implemented at Class Level(using @Listeners) or at Suite Level<inside testNg.xml>\
+\
+\
+Java interface-->\cf3 iTestListener\cf0 \
+\pard\pardeftab720\partightenfactor0
+\cf0 {{\NeXTGraphic Screenshot 2022-03-07 at 4.13.30 PM.png \width4300 \height2720 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\pardeftab720\partightenfactor0
+\cf0 \
+CLASS LEVEL - As Annotation @Listener\
+===========\
+\pard\pardeftab720\partightenfactor0
+\cf0 {{\NeXTGraphic Screenshot 2022-03-07 at 4.14.37 PM.png \width4780 \height3580 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\pardeftab720\partightenfactor0
+\cf0 \
+\
+\
+SUITE LEVEL -inside TestNg.xml TestRunner as <Listener>\
+=========== \
+\pard\pardeftab720\partightenfactor0
+\cf0 {{\NeXTGraphic Screenshot 2022-03-07 at 4.12.19 PM.png \width4460 \height3200 \appleattachmentpadding0 \appleembedtype0 \appleaqc
+}¬}\pard\pardeftab720\partightenfactor0
+\cf0 \
+\
+example1:if we want to perform some actions like getting to know the tests which caused the failures while executing a Test suite.\
+r.getName();\
+\
+Example2:\
+When we situation wherein i need to take screenshots the moment there is some failure in the test execution.\
+\
+step1:implement \cf4 ITestListener
+\f2\b0 \cf0  interface\
+========================================\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b \cf5 package
+\f2\b0 \cf0  sakshiTestNg;\
+\
+
+\f1\b \cf5 import
+\f2\b0 \cf0  org.testng.ITestContext;\
+
+\f1\b \cf5 import
+\f2\b0 \cf0  org.testng.ITestListener;\
+
+\f1\b \cf5 import
+\f2\b0 \cf0  org.testng.ITestResult;\
+\
+
+\f1\b \cf5 public
+\f2\b0 \cf0  
+\f1\b \cf5 class
+\f2\b0 \cf0  ListenersSakshi 
+\f1\b \cf5 implements
+\f2\b0 \cf0  
+\f1\b \cf4 ITestListener
+\f2\b0 \cf0 \{\
+\
+	\cf6 @Override\cf0 \
+	
+\f1\b \cf5 public
+\f2\b0 \cf0  
+\f1\b \cf5 void
+\f2\b0 \cf0  onTestStart(ITestResult \cf2 result\cf0 ) \{\
+		\cf7 // 
+\f1\b \cf8 TODO
+\f2\b0 \cf7  Auto-generated method stub\cf0 \
+		ITestListener.
+\f1\b \cf5 super
+\f2\b0 \cf0 .onTestStart(\cf2 result\cf0 );\
+	\}\
+\
+	\cf6 @Override\cf0 \
+	
+\f1\b \cf5 public
+\f2\b0 \cf0  
+\f1\b \cf5 void
+\f2\b0 \cf0  onTestSuccess(ITestResult \cf2 result\cf0 ) \{\
+		\cf7 // 
+\f1\b \cf8 TODO
+\f2\b0 \cf7  Auto-generated method stub\cf0 \
+		System.
+\f3\i\b \cf9 out
+\f2\i0\b0 \cf0 .println(\cf10 "I am Success"\cf0 );\
+	\}\
+\
+	\cf6 @Override\cf0 \
+	
+\f1\b \cf5 public
+\f2\b0 \cf0  
+\f1\b \cf5 void
+\f2\b0 \cf0  onTestFailure(ITestResult \cf2 result\cf0 ) \{\
+		\cf7 //if the \ul api\ulnone  response fails , then the \ul api\ulnone  handling code\cf0 \
+		\cf7 //UI: screenshot code if the test fails\cf0 \
+		System.
+\f3\i\b \cf9 out
+\f2\i0\b0 \cf0 .println(\cf10 "I am Failure! Handle with Screenshot cdoe or proper error respons emessage"\cf0 );\
+		System.
+\f3\i\b \cf9 out
+\f2\i0\b0 \cf0 .println(\cf10 "due to Which test the suite failed?  "\cf0 +\cf2 result\cf0 .getName());\
+	\}\
+\
+	\cf6 @Override\cf0 \
+	
+\f1\b \cf5 public
+\f2\b0 \cf0  
+\f1\b \cf5 void
+\f2\b0 \cf0  onTestSkipped(ITestResult \cf2 result\cf0 ) \{\
+		\cf7 // 
+\f1\b \cf8 TODO
+\f2\b0 \cf7  Auto-generated method stub\cf0 \
+		ITestListener.
+\f1\b \cf5 super
+\f2\b0 \cf0 .onTestSkipped(\cf2 result\cf0 );\
+	\}\
+\
+	\cf6 @Override\cf0 \
+	
+\f1\b \cf5 public
+\f2\b0 \cf0  
+\f1\b \cf5 void
+\f2\b0 \cf0  onStart(ITestContext \cf2 context\cf0 ) \{\
+		\cf7 // 
+\f1\b \cf8 TODO
+\f2\b0 \cf7  Auto-generated method stub\cf0 \
+		ITestListener.
+\f1\b \cf5 super
+\f2\b0 \cf0 .onStart(\cf2 context\cf0 );\
+	\}\
+\
+	\cf6 @Override\cf0 \
+	
+\f1\b \cf5 public
+\f2\b0 \cf0  
+\f1\b \cf5 void
+\f2\b0 \cf0  onFinish(ITestContext \cf2 context\cf0 ) \{\
+		\cf7 // 
+\f1\b \cf8 TODO
+\f2\b0 \cf7  Auto-generated method stub\cf0 \
+		ITestListener.
+\f1\b \cf5 super
+\f2\b0 \cf0 .onFinish(\cf2 context\cf0 );\
+	\}\
+\
+\}\
+\
+step2: If we want to implement Listeners at CLASS LEVEL, then at the beginning of the Test Class.we define\
+@Listeners(sakshiTestNg.ListenersSakshi.class)\
+@Test\
+\
+\
+\
+\
+\
+step2: edit the TestNg.xml file with <listener>\
+================================================\
+in the testNG.xml file you have to define it like\
+\pard\pardeftab720\partightenfactor0
+\cf11 <?\cf12 xml\cf13  version\cf11 =\cf13 "\cf11 1.0\cf13 " encoding\cf11 =\cf13 "\cf11 UTF-8\cf13 "\cf11 ?>\cf0 \
+<!\cf14 DOCTYPE\cf0  \cf12 suite\cf0  SYSTEM "https://testng.org/testng-1.0.dtd">\
+<\cf12 suite\cf0  \cf13 name\cf0 =\cf13 "\cf15 Suite\cf13 "\cf0 >\
+	<\cf12 listeners\cf0 >\
+		<\cf12 listener\cf0  \cf13 name\cf0 =\cf13 "\cf15 sakshiTestNg.ListenersSakshi\cf13 "\cf0 ></\cf12 listener\cf0 >\
+	</\cf12 listeners\cf0 >\
+	<\cf12 test\cf0  \cf13 thread-count\cf0 =\cf13 "\cf15 5\cf13 "\cf0  \cf13 name\cf0 =\cf13 "\cf15 Test\cf13 "\cf0 >\
+		<\cf12 classes\cf0 >\
+			<\cf12 class\cf0  \cf13 name\cf0 =\cf13 "\cf15 sakshiTestNg.TestNGSakshi2\cf13 "\cf0  />\
+			<\cf12 class\cf0  \cf13 name\cf0 =\cf13 "\cf15 sakshiTestNg.TestNgSakshi\cf13 "\cf0  />\
+			<\cf12 class\cf0  \cf13 name\cf0 =\cf13 "\cf15 sakshiTestNg.MyOhterInterests\cf13 "\cf0  />\
+		</\cf12 classes\cf0 >\
+	</\cf12 test\cf0 > \cf13 <!-- Test -->\cf0 \
+</\cf12 suite\cf0 > \cf13 <!-- Suite -->\cf0 \
+\
+When you catch listener , then how do you get to know the test case name?\
+\
+>using the 
+\f1\b \cf4 result object.
+\f2\b0 \cf0 \
+>result.getName()\
+\pard\pardeftab720\partightenfactor0
+\cf6 @Override\cf0 \
+	
+\f1\b \cf5 public
+\f2\b0 \cf0  
+\f1\b \cf5 void
+\f2\b0 \cf0  onTestFailure(ITestResult \cf2 result\cf0 ) \{\
+		\cf7 //if the \ul api\ulnone  response fails , then the \ul api\ulnone  handling code\cf0 \
+		\cf7 //UI: screenshot code if the test fails\cf0 \
+		System.
+\f3\i\b \cf9 out
+\f2\i0\b0 \cf0 .println(\cf10 "I am Failure! Handle with Screenshot code or proper error respons emessage"\cf0 );\
+		System.
+\f3\i\b \cf9 out
+\f2\i0\b0 \cf0 .println(\cf10 "due to Which test the suite failed?  "\cf0 +\cf2 result\cf0 .getName());\
+	\}\
+\
+\
+PARALLEL TESTS:\
+==============\
+\
+we can run parallel tests or classes\
+\pard\pardeftab720\partightenfactor0
+\cf4 (i)parallel=\'93tests\'94  inside <suite>\
+(ii)parallel=\'93classes\'94 inside <test>\cf0 \
+\
+\
+\pard\pardeftab720\partightenfactor0
+\cf11 <?\cf12 xml\cf13  version\cf11 =\cf13 "\cf11 1.0\cf13 " encoding\cf11 =\cf13 "\cf11 UTF-8\cf13 "\cf11 ?>\cf0 \
+<!\cf14 DOCTYPE\cf0  \cf12 suite\cf0  SYSTEM "https://testng.org/testng-1.0.dtd">\
+<\cf12 suite\cf0  \cf13 name\cf0 =\cf13 "\cf15 MyFirstTestNGSuite\cf13 "\cf0  \cf13 parallel\cf0 =\cf13 "\cf15 tests\cf13 "\cf0  \cf13 thread-count\cf0 =\cf13 "\cf15 6\cf13 "\cf0 >\
+	<\cf12 listeners\cf0 >\
+		<\cf12 listener\cf0  \cf13 class-name\cf0 =\cf13 "\cf15 sakshiTestNg.ListenersSakshi\cf13 "\cf0 ></\cf12 listener\cf0 >\
+	</\cf12 listeners\cf0 >\
+	<\cf12 test\cf0  \cf13 parallel\cf0 =\cf13 "\cf15 classes\cf13 "\cf0  \cf13 thread-count\cf0 =\cf13 "\cf15 5\cf13 "\cf0  \cf13 name\cf0 =\cf13 "\cf15 Test\cf13 "\cf0 >\
+		<\cf12 classes\cf0 >\
+			<\cf12 class\cf0  \cf13 name\cf0 =\cf13 "\cf15 sakshiTestNg.TestNGSakshi2\cf13 "\cf0  />\
+			<\cf12 class\cf0  \cf13 name\cf0 =\cf13 "\cf15 sakshiTestNg.TestNgSakshi\cf13 "\cf0  />\
+			<\cf12 class\cf0  \cf13 name\cf0 =\cf13 "\cf15 sakshiTestNg.MyOhterInterests\cf13 "\cf0  />\
+		</\cf12 classes\cf0 >\
+	</\cf12 test\cf0 > \cf13 <!-- Test -->\cf0 \
+</\cf12 suite\cf0 > \cf13 <!-- Suite -->}{\*\beandata789c9d935d6f82301486aff157748db752d876b12d8851c1c4cc2099b86497153a65e32ba5cef1ef57444aeb66b68c1bda73fabe4f7b4e6b8d3ed3047c105ac6793684a66e4040b2308fe26c3b84eb6036b88323bb675d39cb69f0e2bba048e292017f3d59cca7000e101a17454210720207f88bf92a00dc0321d78300ee182b1e103a1c0e3aae57e9619ed60b4be4d3bc2094550b6e36e0023d6211e498c65dd90e8f4671c8ec9e66bd93caee631aee62bec242f594474b46f9666d6ff5482a128d45fa146f75f9e68d84ac14324c29ae07c2a09fed934492692d573b3984092e855e4e37f9e9acbf9e3b5d5eb3e28c912da1f6ad85dae1518854636fa5f39fec2cf6a6502e603aceb5ca5140a8f36ca16715f93ff7e64fdc2eda567ce28ebd27f6ead6f78d778ef1e866cf48f9dcf4dfdba71ba591d2490dd334ee0df5c03ff68b5c3a9fb8360e57711aa6958c92572c8f8552b2dfead9d0329c1289f70b4354a4736bbc585e887b2a8a56cf2704670e665830cece7cde24513053ad540756ded6e9e109b6501bf52759b43a0b1d5facddfb02aa1d4161}
